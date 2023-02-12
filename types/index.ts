@@ -12,7 +12,7 @@ export interface AddressData {
   slug: string
 }
 
-interface CouncilElectionData {
+export interface CouncilElectionData {
   councilName: string
   councilSlug: string
   wards: {
@@ -23,7 +23,7 @@ interface CouncilElectionData {
   geoJsonUri: string
 }
 
-interface WardElectionData {
+export interface WardElectionData {
   councilName: string
   councilSlug: string
   wardName: string

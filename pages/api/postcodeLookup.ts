@@ -1,29 +1,38 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
+import axios, { AxiosResponse, AxiosError } from 'axios'
 
 import { AddressData, BallotData } from '../../types'
+
+interface RequestParams {
+  addressSlug: string
+  postcode: string
+}
 
 interface ResponseData {
   addressPicker: boolean
   addresses: Array<AddressData>
-  featuredBallot?: Ballot
+  featuredBallot?: BallotData
   otherBallots: Array<BallotData>
 }
 
-const mapDcDataToBallots = (dcData) => {
+interface ResponseError {
+  error: string
+}
+
+const mapDcDataToBallots = (dcData: any): BallotData[] => {
   console.log("mapDcDataToBallots called with", dcData)
   console.log("dcData.dates is", dcData.dates)
   console.log("dcData.dates[0] is", (dcData.dates || [])[0])
   console.log("dcData.dates[0]?.ballots is", (dcData.dates || [])[0]?.ballots)
 
-  const mapping = (dcData.dates || []).map(dateObj => (
+  const mapping = (dcData.dates || []).map((dateObj: any) => (
     (dateObj.ballots || [])[0]
   ))
   console.log("mapping is", mapping)
 
   return (
-    (dcData.dates || []).map(dateObj => (
-      (dateObj.ballots || []).map(ballotObj => (
+    (dcData.dates || []).map((dateObj: any) => (
+      (dateObj.ballots || []).map((ballotObj: any) => (
         {
           ballotPaperId: ballotObj.ballot_paper_id,
           ballotTitle: ballotObj.ballot_title,
@@ -37,13 +46,13 @@ const mapDcDataToBallots = (dcData) => {
   )
 }
 
-const getFeaturedBallot = (ballots) => {
+const getFeaturedBallot = (ballots: BallotData[]) => {
   return ballots.filter(ballot => (
     ballot.date === '2023-05-04' && ballot.electedRole === 'Local Councillor'
   ))[0]
 }
 
-const getOtherBallots = (ballots) => {
+const getOtherBallots = (ballots: BallotData[]) => {
   return ballots.filter(ballot => (
     ballot.date !== '2023-05-04' || ballot.electedRole !== 'Local Councillor'
   ))
@@ -51,10 +60,15 @@ const getOtherBallots = (ballots) => {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse<ResponseData | ResponseError>
 ) {
-  const addressSlug = req.query.addressSlug
-  const postcode = req.query.postcode?.toUpperCase()?.replace(/\s+/g, '')
+  // Params could (in theory) be arrays if the query param has been passed multiple times...
+  const addressSlug = Array.isArray(req.query.addressSlug)
+                      ? req.query.addressSlug[0]
+                      : req.query.addressSlug
+  const postcode = Array.isArray(req.query.postcode)
+                   ? req.query.postcode[0].toUpperCase()?.replace(/\s+/g, '')
+                   : req.query.postcode?.toUpperCase()?.replace(/\s+/g, '')
 
   if (!addressSlug && !postcode) {
     res.status(400).json({ error: 'postcode or addressSlug must be provided' })
@@ -78,13 +92,13 @@ export default async function handler(
 
     res.status(200).json({
       addressPicker: data.address_picker,
-      addresses: data.addresses.map(a => ({ address: a.address, slug: a.slug })),
+      addresses: data.addresses.map((a: any) => ({ address: a.address, slug: a.slug })),
       featuredBallot: getFeaturedBallot(allBallots),
       otherBallots: getOtherBallots(allBallots)
     })
-  } catch(error) {
+  } catch(error: unknown) {
     console.log(error);
-    if (error.response) {
+    if (axios.isAxiosError(error) && error.response) {
       res.status(error.response.status).end()
     } else {
       res.status(500).end()

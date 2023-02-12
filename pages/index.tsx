@@ -4,7 +4,8 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import axios from 'axios'
 
-import { AddressData } from '../../types'
+import { getPathFromElectionId } from '../lib/democracyClub/electionIdHelpers'
+import { AddressData } from '../types'
 
 export default function Home() {
   const STATE_LOOKUP_POSTCODE = 'LOOKUP_POSTCODE'
@@ -16,7 +17,6 @@ export default function Home() {
   const [postcode, setPostcode] = useState('')
   const [addresses, setAddresses] = useState<Array<AddressData>>([])
   const [selectedAddress, setSelectedAddress] = useState('')
-  const [featuredBallot, setFeaturedBallot] = useState<Ballot>(undefined) // Probs don't need this anymore
 
   const router = useRouter()
 
@@ -36,15 +36,18 @@ export default function Home() {
       } else if (response.data.featuredBallot) {
         console.log("Found the ward & ballot!", response.data.featuredBallot)
         // Redirect to the council/ward page
-        const regexp = new RegExp(`[^\.]+\.([^\.]+)\.([^\.]+)\.[^\.]+`)
-        const matches = regexp.exec(response.data.featuredBallot.ballotPaperId)
-        console.log(`Redirecting to /council/${matches[1]}/${matches[2]}`)
-        router.push(`/council/${matches[1]}/${matches[2]}`)
-        // TODO: pass on otherBallots as a URL param so they can be shown as well as the local election?
+        try {
+          const path = getPathFromElectionId(response.data.featuredBallot.ballotPaperId)
+          console.log(`Redirecting to ${path}`)
+          router.push(path)
+          // TODO: pass on otherBallots as a URL param so they can be shown as well as the local election?
+        } catch (error) {
+          console.log("Error", error)
+          setState(STATE_ERROR)
+        }
       } else {
         // Found the ward, but no featuredBallot
         console.log("Found the ward with no ballot!")
-        setFeaturedBallot(response.data.featuredBallot)
         setState(STATE_FOUND_WARD)
       }
     }).catch(function(err) {
@@ -135,13 +138,7 @@ export default function Home() {
         )}
 
         {state === STATE_FOUND_WARD && (
-          <>
-            {featuredBallot ? (
-              <p>Looks like you have an election: {featuredBallot.ballotTitle}</p>
-            ) : (
-              <p>Looks like you don&apos;t have an upcoming election</p>
-            )}
-          </>
+          <p>Looks like you don&apos;t have an upcoming election</p>
         )}
       </main>
     </>

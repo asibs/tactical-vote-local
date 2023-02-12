@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link'
 
-import { CouncilElectionData } from '../../types'
+import { CouncilElectionData } from '../types'
 
 interface Props {
   data: CouncilElectionData
 }
 
-export default function CouncilElection({ data }: CouncilElectionData) {
+export default function CouncilElection({ data }: Props) {
 
   return (
     <>

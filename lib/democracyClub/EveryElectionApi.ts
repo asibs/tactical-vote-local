@@ -1,10 +1,12 @@
-import axios from 'axios'
+import axios, { AxiosInstance } from 'axios'
 
 import { getCouncilElectionId, getCouncilWardElectionId } from './electionIdHelpers'
 
 const EVERY_ELECTION_URI = "https://elections.democracyclub.org.uk/api/elections"
 
 class EveryElectionApi {
+  axiosInstance: AxiosInstance
+
   constructor() {
     this.axiosInstance = axios.create({ baseURL: EVERY_ELECTION_URI })
   }
@@ -36,12 +38,12 @@ class EveryElectionApi {
 
   async getCouncilElectionData(councilSlug: string, electionDate: string) {
     const electionId = getCouncilElectionId(councilSlug, electionDate)
-    return getElection(electionId)
+    return this.getElection(electionId)
   }
 
   async getWardElectionData(councilSlug: string, wardSlug: string, electionDate: string) {
     const electionId = getCouncilWardElectionId(councilSlug, wardSlug, electionDate)
-    return getElection(electionId)
+    return this.getElection(electionId)
   }
 }
 

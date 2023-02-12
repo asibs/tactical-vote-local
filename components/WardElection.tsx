@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { WardElectionData } from '../../types'
+import { WardElectionData } from '../types'
 
 interface Props {
   data: WardElectionData
 }
 
-export default function WardElection({ data }: WardElectionData) {
+export default function WardElection({ data }: Props) {
   console.log("WardElection", data)
   return (
     <>
