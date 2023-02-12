@@ -17,6 +17,12 @@ function CouncilElectionCsv({ csvData }: Props) {
 
 // Statically generate props at build time on server-side.
 export async function getStaticProps() {
+  if (process.env.NODE_ENV === 'production') {
+    // We don't need to generate this page on Prod
+    // TODO: Shift this out of a page, or otherwise exclude from the prod build somehow...
+    return "Oops"
+  }
+
   const api = new EveryElectionApi()
   const councilElections = await api.getElections(ELECTION_DATE, ELECTION_ID_REGEX)
   // console.log("Got councilElections", councilElections)
