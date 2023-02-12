@@ -25,7 +25,7 @@ export default function WardElection({ data }: WardElectionData) {
       {data.targetCouncil && (
         <p>
           This is a target council - it could easily flip away from the Tories!
-          Make sure you're registered to vote, and share this page with your
+          Make sure you&apos;re registered to vote, and share this page with your
           friends who live locally for the best change of turfing out the Tories!
         </p>
       )}

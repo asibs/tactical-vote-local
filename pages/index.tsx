@@ -139,7 +139,7 @@ export default function Home() {
             {featuredBallot ? (
               <p>Looks like you have an election: {featuredBallot.ballotTitle}</p>
             ) : (
-              <p>Looks like you don't have an upcoming election</p>
+              <p>Looks like you don&apos;t have an upcoming election</p>
             )}
           </>
         )}
