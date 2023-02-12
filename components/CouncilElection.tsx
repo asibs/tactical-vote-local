@@ -8,7 +8,6 @@ interface Props {
 }
 
 export default function CouncilElection({ data }: Props) {
-
   return (
     <>
       <h1>{data.councilName}</h1>

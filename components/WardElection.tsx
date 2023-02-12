@@ -7,7 +7,6 @@ interface Props {
 }
 
 export default function WardElection({ data }: Props) {
-  console.log("WardElection", data)
   return (
     <>
       <h1>{data.councilName} - {data.wardName}</h1>
