@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
-import { Address, Ballot } from '../../types'
+import { AddressData, BallotData } from '../../types'
 
 interface ResponseData {
   addressPicker: boolean
-  addresses: Array<Address>
+  addresses: Array<AddressData>
   featuredBallot?: Ballot
-  otherBallots: Array<Ballot>
+  otherBallots: Array<BallotData>
 }
 
 const mapDcDataToBallots = (dcData) => {

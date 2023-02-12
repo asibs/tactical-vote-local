@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import axios from 'axios'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
+import axios from 'axios'
 
-import { Address } from '../../types'
+import { AddressData } from '../../types'
 
 export default function Home() {
   const STATE_LOOKUP_POSTCODE = 'LOOKUP_POSTCODE'
@@ -13,9 +14,11 @@ export default function Home() {
   const [state, setState] = useState(STATE_LOOKUP_POSTCODE)
 
   const [postcode, setPostcode] = useState('')
-  const [addresses, setAddresses] = useState<Array<Address>>([])
+  const [addresses, setAddresses] = useState<Array<AddressData>>([])
   const [selectedAddress, setSelectedAddress] = useState('')
-  const [featuredBallot, setFeaturedBallot] = useState<Ballot>(undefined)
+  const [featuredBallot, setFeaturedBallot] = useState<Ballot>(undefined) // Probs don't need this anymore
+
+  const router = useRouter()
 
   const lookupAddress = () => {
     axios.get('/api/postcodeLookup', {
@@ -30,8 +33,17 @@ export default function Home() {
         console.log("Got some addresses!", response.data.addresses)
         setAddresses(response.data.addresses)
         setState(STATE_SELECT_ADDRESS)
+      } else if (response.data.featuredBallot) {
+        console.log("Found the ward & ballot!", response.data.featuredBallot)
+        // Redirect to the council/ward page
+        const regexp = new RegExp(`[^\.]+\.([^\.]+)\.([^\.]+)\.[^\.]+`)
+        const matches = regexp.exec(response.data.featuredBallot.ballotPaperId)
+        console.log(`Redirecting to /council/${matches[1]}/${matches[2]}`)
+        router.push(`/council/${matches[1]}/${matches[2]}`)
+        // TODO: pass on otherBallots as a URL param so they can be shown as well as the local election?
       } else {
-        console.log("Found the ward!", response.data.featuredBallot)
+        // Found the ward, but no featuredBallot
+        console.log("Found the ward with no ballot!")
         setFeaturedBallot(response.data.featuredBallot)
         setState(STATE_FOUND_WARD)
       }
