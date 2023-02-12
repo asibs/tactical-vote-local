@@ -21,10 +21,10 @@ interface Props {
 
 export default function ElectionPage({ councilElection, wardElection }: Props) {
   if (councilElection) {
-    console.log("COUNCIL ELECTION", councilElection)
+    // console.log("COUNCIL ELECTION", councilElection)
     return <CouncilElection data={councilElection} />
   } else if (wardElection) {
-    console.log("WARD ELECTION", wardElection)
+    // console.log("WARD ELECTION", wardElection)
     return <WardElection data={wardElection} />
   } else {
     return (
@@ -38,8 +38,6 @@ export default function ElectionPage({ councilElection, wardElection }: Props) {
 // Only called once at build-time (or per-request in dev mode)
 */
 export async function getStaticPaths() {
-  console.log("called getStaticPaths")
-
   const paths = []
 
   const parser = fs
