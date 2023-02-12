@@ -17,7 +17,7 @@ export default function CouncilElection({ data }: Props) {
         {data.wards.map(wardData => {
           return (
             <li key={wardData.wardSlug}>
-              <Link href={`/council/${data.councilSlug}/${wardData.wardSlug}`}>
+              <Link href={`/local/${data.councilSlug}/${wardData.wardSlug}`}>
                 {wardData.wardName}
               </Link>
             </li>

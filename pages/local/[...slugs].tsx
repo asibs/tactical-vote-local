@@ -33,8 +33,8 @@ export default function ElectionPage({ councilElection, wardElection }: Props) {
   }
 }
 
-/* Generate the dynamic paths at /council/...
-// ie. the valid values of councilSlug & wardSlug in /council/[councilSlug]/[wardSlug]
+/* Generate the dynamic paths at /local/...
+// ie. the valid values of councilSlug & wardSlug in /local/[councilSlug]/[wardSlug]
 // Only called once at build-time (or per-request in dev mode)
 */
 export async function getStaticPaths() {
@@ -66,10 +66,10 @@ export async function getStaticPaths() {
   //   const newPaths = data.results.forEach(election => {
   //     const councilSlug = election.organisation.slug
   //
-  //     // Push the /council/[councilSlug] page (top-level page for a whole council election)
+  //     // Push the /local/[councilSlug] page (top-level page for a whole council election)
   //     paths.push({ params: { slugs: [councilSlug] } })
   //
-  //     // Push the /council/[councilSlug]/[wardSlug] pages
+  //     // Push the /local/[councilSlug]/[wardSlug] pages
   //     const regexp = new RegExp(`[^\.]+\.${councilSlug}\.([^\.]+)\.${ELECTION_DATE}`)
   //     election.children.forEach(childSlug => {
   //       const matches = regexp.exec(childSlug)
@@ -89,7 +89,7 @@ export async function getStaticPaths() {
 
 
 
-/* Generate the data for statically rendering /council/[councilSlug]/[wardSlug]
+/* Generate the data for statically rendering /local/[councilSlug]/[wardSlug]
 // Called once at build-time for each page / value of councilSlug / wardSlug (or per-request in dev mode)
 */
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slugs: string[] }>) {
