@@ -29,4 +29,10 @@ interface WardElectionData {
   wardName: string
   wardSlug: string
   geoJsonUri: string
+  totalSeats: number
+  seatsContested: number
+  targetCouncil: boolean
+  recommendedParty: string
+  recommendationAdvice: string
+  localGroups: string[]
 }
