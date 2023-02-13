@@ -4,10 +4,22 @@ import 'bootstrap/dist/css/bootstrap.css'
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 
-export default function App({ Component, pageProps }: AppProps) {
-  // useEffect(() => {
-  //   import('bootstrap/dist/js/bootstrap')
-  // }, [])
+import NavBar from '../components/NavBar'
 
-  return <Component {...pageProps} />
+export default function App({ Component, pageProps }: AppProps) {
+  // Import bootstrap js on the client-side only
+  useEffect(() => {
+    typeof document !== undefined
+      ? require('bootstrap/dist/js/bootstrap')
+      : null
+  }, [])
+
+  return (
+    <>
+      <NavBar />
+      <div className="container-md">
+        <Component {...pageProps} />
+      </div>
+    </>
+  )
 }

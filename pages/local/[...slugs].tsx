@@ -137,7 +137,7 @@ async function getWardData(councilSlug: string, wardSlug: string) {
     geoJsonUri: wardRecord.council_name,
     totalSeats: wardRecord.no_ward_seats,
     seatsContested: wardRecord.no_seats_contested,
-    targetCouncil: wardRecord.target_council,
+    targetCouncil: wardRecord.target_council === 'TRUE',
     recommendedParty: wardRecord.recommended_party,
     recommendationAdvice: wardRecord.recommendation_advice,
     localGroups: [
