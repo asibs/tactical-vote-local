@@ -1,12 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 
+import { AddressData } from '../types'
+
 interface Props {
   addresses: Array<AddressData>
   selectedAddress: string
   setSelectedAddress: (value: string) => void
   loading: boolean
-  error: boolean
+  error: string
   onClick: () => void
 }
 

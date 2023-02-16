@@ -17,6 +17,7 @@ interface ResponseData {
 
 interface ResponseError {
   error: string
+  userError?: string
 }
 
 const mapDcDataToBallots = (dcData: any): BallotData[] => {

@@ -5,7 +5,7 @@ interface Props {
   postcode: string
   setPostcode: (value: string) => void
   loading: boolean
-  error: boolean
+  error: string
   onClick: () => void
 }
 
