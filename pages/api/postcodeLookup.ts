@@ -71,11 +71,16 @@ export default async function handler(
                    : req.query.postcode?.toUpperCase()?.replace(/\s+/g, '')
 
   if (!addressSlug && !postcode) {
-    res.status(400).json({ error: 'postcode or addressSlug must be provided' })
+    res.status(400).json({
+      error: 'postcode or addressSlug must be provided'
+    })
   }
 
   if (!!postcode && !/^[A-Z][A-Z0-9]{3,5}[A-Z]$/.test(postcode)) {
-    res.status(400).json({ error: 'postcode not a valid format' })
+    res.status(400).json({
+      error: 'postcode not a valid format',
+      userError: "Oops, that postcode doesn't look right - please try again"
+    })
   }
 
   const BASE_URI = 'https://developers.democracyclub.org.uk/api/v1'

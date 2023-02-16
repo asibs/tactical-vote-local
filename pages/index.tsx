@@ -4,15 +4,21 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import axios from 'axios'
 
+import LookupPostcode from '../components/LookupPostcode'
+import SelectAddress from '../components/SelectAddress'
 import { getPathFromElectionId } from '../lib/democracyClub/electionIdHelpers'
 import { AddressData } from '../types'
 
 export default function Home() {
-  const STATE_LOOKUP_POSTCODE = 'LOOKUP_POSTCODE'
-  const STATE_SELECT_ADDRESS = 'SELECT_ADDRESS'
-  const STATE_FOUND_WARD = 'FOUND_WARD'
-  const STATE_ERROR = 'ERROR'
-  const [state, setState] = useState(STATE_LOOKUP_POSTCODE)
+  const STEP_LOOKUP_POSTCODE = 'LOOKUP_POSTCODE'
+  const STEP_SELECT_ADDRESS = 'SELECT_ADDRESS'
+  const STEP_FOUND_WARD = 'FOUND_WARD'
+  const [step, setStep] = useState(STEP_LOOKUP_POSTCODE)
+
+  const [loading, setLoading] = useState(false)
+
+  const DEFAULT_ERROR_MESSAGE = "Oops, something went wrong. Please try entering your postcode again."
+  const [error, setError] = useState('')
 
   const [postcode, setPostcode] = useState('')
   const [addresses, setAddresses] = useState<Array<AddressData>>([])
@@ -21,6 +27,9 @@ export default function Home() {
   const router = useRouter()
 
   const lookupAddress = () => {
+    setLoading(true)
+    setError('')
+
     axios.get('/api/postcodeLookup', {
       params: {
         postcode: postcode,
@@ -32,7 +41,7 @@ export default function Home() {
       if (response.data.addressPicker) {
         console.log("Got some addresses!", response.data.addresses)
         setAddresses(response.data.addresses)
-        setState(STATE_SELECT_ADDRESS)
+        setStep(STEP_SELECT_ADDRESS)
       } else if (response.data.featuredBallot) {
         console.log("Found the ward & ballot!", response.data.featuredBallot)
         // Redirect to the council/ward page
@@ -43,16 +52,22 @@ export default function Home() {
           // TODO: pass on otherBallots as a URL param so they can be shown as well as the local election?
         } catch (error) {
           console.log("Error", error)
-          setState(STATE_ERROR)
+          setError(DEFAULT_ERROR_MESSAGE)
+          setStep(STEP_LOOKUP_POSTCODE)
         }
       } else {
         // Found the ward, but no featuredBallot
         console.log("Found the ward with no ballot!")
-        setState(STATE_FOUND_WARD)
+        setStep(STEP_FOUND_WARD)
       }
-    }).catch(function(err) {
-      console.log("ERROR", err)
-      setState(STATE_ERROR)
+    }).catch(function(error) {
+      console.log("ERROR", error)
+      console.log("USER ERROR", error?.response?.data?.userError)
+      const errorMessage = error?.response?.data?.userError || DEFAULT_ERROR_MESSAGE
+      setError(errorMessage)
+      setStep(STEP_LOOKUP_POSTCODE)
+    }).finally(() => {
+      setLoading(false)
     })
   }
 
@@ -67,77 +82,28 @@ export default function Home() {
       <main>
         <h1>Local Tactical Voting</h1>
 
-        {[STATE_LOOKUP_POSTCODE, STATE_ERROR].includes(state) && (
-          <div className="input-group input-group-lg mb-3">
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <label htmlFor="postcodeInput" className="form-label">Enter your postcode:</label>
-                </div>
-              </div>
-              <div className="row gx-0">
-                <div className="col">
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="postcodeInput"
-                    placeholder="SW1A 1AA"
-                    value={postcode}
-                    onChange={(e) => setPostcode(e.target.value)}
-                  />
-                </div>
-                <div className="col">
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    onClick={() => lookupAddress()}
-                  >
-                    Go »
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+        {step === STEP_LOOKUP_POSTCODE && (
+          <LookupPostcode
+            postcode={postcode}
+            setPostcode={setPostcode}
+            loading={loading}
+            error={error}
+            onClick={lookupAddress}
+          />
         )}
 
-        {state === STATE_SELECT_ADDRESS && (
-          <div className="input-group input-group-lg mb-3">
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <label htmlFor="addressInput" className="form-label">Select your address:</label>
-                </div>
-              </div>
-              <div className="row gx-0">
-                <div className="col">
-                  <select
-                    id="addressInput"
-                    className="form-select"
-                    value={selectedAddress}
-                    onChange={(e) => setSelectedAddress(e.target.value)}
-                  >
-                    {addresses.map(address => {
-                      return (
-                        <option key={address.slug} value={address.slug}>{address.address}</option>
-                      )
-                    })}
-                  </select>
-                </div>
-                <div className="col">
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    onClick={() => lookupAddress()}
-                  >
-                    Go »
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+        {step === STEP_SELECT_ADDRESS && (
+          <SelectAddress
+            addresses={addresses}
+            selectedAddress={selectedAddress}
+            setSelectedAddress={setSelectedAddress}
+            loading={loading}
+            error={error}
+            onClick={lookupAddress}
+          />
         )}
 
-        {state === STATE_FOUND_WARD && (
+        {step === STEP_FOUND_WARD && (
           <p>Looks like you don&apos;t have an upcoming election</p>
         )}
       </main>
