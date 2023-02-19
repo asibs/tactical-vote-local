@@ -4,16 +4,16 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import axios from 'axios'
 
+import Layout from '../components/Layout'
 import LookupPostcode from '../components/LookupPostcode'
 import SelectAddress from '../components/SelectAddress'
 import { getPathFromElectionId } from '../lib/democracyClub/electionIdHelpers'
 import { AddressData } from '../types'
 
+type Step = 'LOOKUP_POSTCODE' | 'SELECT_ADDRESS' | 'NO_ELECTION'
+
 export default function Home() {
-  const STEP_LOOKUP_POSTCODE = 'LOOKUP_POSTCODE'
-  const STEP_SELECT_ADDRESS = 'SELECT_ADDRESS'
-  const STEP_FOUND_WARD = 'FOUND_WARD'
-  const [step, setStep] = useState(STEP_LOOKUP_POSTCODE)
+  const [step, setStep] = useState<Step>('LOOKUP_POSTCODE')
 
   const [loading, setLoading] = useState(false)
 
@@ -41,7 +41,8 @@ export default function Home() {
       if (response.data.addressPicker) {
         console.log("Got some addresses!", response.data.addresses)
         setAddresses(response.data.addresses)
-        setStep(STEP_SELECT_ADDRESS)
+        setStep('SELECT_ADDRESS')
+        setLoading(false)
       } else if (response.data.featuredBallot) {
         console.log("Found the ward & ballot!", response.data.featuredBallot)
         // Redirect to the council/ward page
@@ -51,24 +52,23 @@ export default function Home() {
           router.push(path)
           // TODO: pass on otherBallots as a URL param so they can be shown as well as the local election?
         } catch (error) {
-          console.log("Error", error)
-          setError(DEFAULT_ERROR_MESSAGE)
-          setStep(STEP_LOOKUP_POSTCODE)
+          handleError(DEFAULT_ERROR_MESSAGE)
         }
       } else {
         // Found the ward, but no featuredBallot
         console.log("Found the ward with no ballot!")
-        setStep(STEP_FOUND_WARD)
+        setStep('NO_ELECTION')
+        setLoading(false)
       }
     }).catch(function(error) {
-      console.log("ERROR", error)
-      console.log("USER ERROR", error?.response?.data?.userError)
-      const errorMessage = error?.response?.data?.userError || DEFAULT_ERROR_MESSAGE
-      setError(errorMessage)
-      setStep(STEP_LOOKUP_POSTCODE)
-    }).finally(() => {
-      setLoading(false)
+      handleError(error?.response?.data?.userError)
     })
+  }
+
+  const handleError = (errorMessage: string) => {
+    setError(errorMessage || DEFAULT_ERROR_MESSAGE)
+    setStep('LOOKUP_POSTCODE')
+    setLoading(false)
   }
 
   return (
@@ -79,10 +79,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1>Local Tactical Voting</h1>
 
-        {step === STEP_LOOKUP_POSTCODE && (
+      <Layout>
+        {step === 'LOOKUP_POSTCODE' && (
           <LookupPostcode
             postcode={postcode}
             setPostcode={setPostcode}
@@ -92,7 +91,7 @@ export default function Home() {
           />
         )}
 
-        {step === STEP_SELECT_ADDRESS && (
+        {step === 'SELECT_ADDRESS' && (
           <SelectAddress
             addresses={addresses}
             selectedAddress={selectedAddress}
@@ -103,10 +102,10 @@ export default function Home() {
           />
         )}
 
-        {step === STEP_FOUND_WARD && (
+        {step === 'NO_ELECTION' && (
           <p>Looks like you don&apos;t have an upcoming election</p>
         )}
-      </main>
+      </Layout>
     </>
   )
 }

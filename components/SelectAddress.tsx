@@ -22,7 +22,7 @@ export default function LookupPostcode({
 }: Props) {
   return (
     <div className="input-group input-group-lg mb-3">
-      <div className="container">
+      <div className="container" style={{ maxWidth: '576px' }}>
 
         <div className="row">
           <div className="col">
@@ -31,10 +31,11 @@ export default function LookupPostcode({
         </div>
 
         <div className="row gx-0">
-          <div className="col-9 col-md-10">
+          <div className="col-9 col-sm-10">
             <select
               id="addressInput"
               className="form-select"
+              style={{ backgroundColor: '#EEEEEE' }}
               value={selectedAddress}
               onChange={(e) => setSelectedAddress(e.target.value)}
             >
@@ -45,10 +46,10 @@ export default function LookupPostcode({
               })}
             </select>
           </div>
-          <div className="col col-3 col-md-2">
+          <div className="col col-3 col-sm-2">
             <button
               type="button"
-              className="btn btn-success"
+              className="btn btn-primary w-100"
               onClick={onClick}
             >
               {loading
@@ -61,6 +62,19 @@ export default function LookupPostcode({
                 'Go »'
               )}
             </button>
+          </div>
+        </div>
+
+        <div className="row mt-3">
+          <p>
+            <a data-bs-toggle="collapse" href="#addressExplainer" role="button" aria-expanded="false" aria-controls="addressExplainer">
+              Why do you need my address?
+            </a>
+          </p>
+          <div className="collapse" id="addressExplainer">
+            Not all of the households in your postcode are part of the same council or ward.
+            We need to know the full address to accurately work out which council & ward you
+            live in. We never store this information.
           </div>
         </div>
 

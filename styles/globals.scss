@@ -1,0 +1,40 @@
+// Customise bootstrap variables
+$primary: #D63384;
+
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+
+body {
+  color: #EEEEEE;
+  background-color: $gray-800;
+}
+
+.highlight {
+  position: relative;
+}
+.highlight::before {
+  /* Highlight color */
+  background-color: $primary;
+
+  content: "";
+  position: absolute;
+  width: calc(100% + 12px);
+  left: -6px;
+  height: 80%;
+  bottom: 0;
+  z-index: -1;
+  transform: rotate(-2deg);
+}
+
+// Make input placeholders italic
+input::-webkit-input-placeholder { /* WebKit browsers */
+  font-style: italic;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  font-style: italic;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  font-style: italic;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  font-style: italic;
+}

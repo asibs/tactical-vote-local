@@ -18,7 +18,7 @@ export default function LookupPostcode({
 }: Props) {
   return (
     <div className="input-group input-group-lg mb-3">
-      <div className="container">
+      <div className="container" style={{ maxWidth: '576px' }}>
 
         <div className="row">
           <div className="col">
@@ -27,20 +27,21 @@ export default function LookupPostcode({
         </div>
 
         <div className="row gx-0">
-          <div className="col-9 col-md-10">
+          <div className="col-9 col-sm-10">
             <input
               type="email"
               className="form-control"
+              style={{ backgroundColor: '#EEEEEE' }}
               id="postcodeInput"
               placeholder="SW1A 1AA"
               value={postcode}
               onChange={(e) => setPostcode(e.target.value)}
             />
           </div>
-          <div className="col col-3 col-md-2">
+          <div className="col col-3 col-sm-2">
             <button
               type="button"
-              className="btn btn-success"
+              className="btn btn-primary w-100"
               onClick={onClick}
             >
               {loading

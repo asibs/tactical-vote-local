@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
+import Layout from './Layout'
 import { CouncilElectionData } from '../types'
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 export default function CouncilElection({ data }: Props) {
   return (
-    <>
+    <Layout showTagline={false}>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
@@ -34,6 +35,6 @@ export default function CouncilElection({ data }: Props) {
           )
         })}
       </ul>
-    </>
+    </Layout>
   );
 }

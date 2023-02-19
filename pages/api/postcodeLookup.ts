@@ -59,6 +59,11 @@ const getOtherBallots = (ballots: BallotData[]) => {
   ))
 }
 
+const normaliseAddress = (address: string) => {
+  // Convert to lower, then convert 1st char after a whitespace to upper
+  return address.toLowerCase().replace(/\s[a-z]/g, (match) => match.toUpperCase())
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData | ResponseError>
@@ -98,7 +103,7 @@ export default async function handler(
 
     res.status(200).json({
       addressPicker: data.address_picker,
-      addresses: data.addresses.map((a: any) => ({ address: a.address, slug: a.slug })),
+      addresses: data.addresses.map((a: any) => ({ address: normaliseAddress(a.address), slug: a.slug })),
       featuredBallot: getFeaturedBallot(allBallots),
       otherBallots: getOtherBallots(allBallots)
     })

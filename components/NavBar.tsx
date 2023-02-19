@@ -1,11 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
+import { Permanent_Marker } from '@next/font/google'
+
+const permanentMarker = Permanent_Marker({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-md bg-light">
+    <nav className="navbar navbar-dark bg-dark navbar-expand-md">
       <div className="container-fluid">
-        <Link className="navbar-brand" href="#">Tactical Vote Local</Link>
+        <Link className={`${permanentMarker.className} navbar-brand`} href="#">Vote Smart</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

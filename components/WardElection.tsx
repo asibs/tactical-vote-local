@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
+import Layout from './Layout'
 import { WardElectionData } from '../types'
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 export default function WardElection({ data }: Props) {
   return (
-    <>
+    <Layout showTagline={false}>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
@@ -54,6 +55,6 @@ export default function WardElection({ data }: Props) {
           </ul>
         </>
       )}
-    </>
+    </Layout>
   );
 }
