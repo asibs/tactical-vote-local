@@ -41,6 +41,7 @@ export default function Home() {
       if (response.data.addressPicker) {
         console.log("Got some addresses!", response.data.addresses)
         setAddresses(response.data.addresses)
+        setSelectedAddress(response.data.addresses[0]?.slug)
         setStep('SELECT_ADDRESS')
         setLoading(false)
       } else if (response.data.featuredBallot) {
