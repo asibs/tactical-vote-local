@@ -15,7 +15,7 @@ interface Props {
 
 export default function Layout({ showTagline=true, children }: Props) {
   return (
-    <>
+    <div id="wrapper">
       {/* NAVBAR */}
       <nav className="navbar navbar-dark bg-dark navbar-expand-md">
         <div className="container-md">
@@ -59,6 +59,37 @@ export default function Layout({ showTagline=true, children }: Props) {
           {children}
         </div>
       </main>
-    </>
+
+      <footer className="bg-dark">
+        <div className="container-md">
+          <section id="social" className="my-3 text-center">
+            <a className="link-light m-1" href="https://www.facebook.com/">
+              <i className="bi-facebook" style={{ fontSize: '1.5rem' }}></i>
+            </a>
+
+            <a className="link-light m-1" href="https://www.twitter.com/">
+              <i className="bi-twitter" style={{ fontSize: '1.5rem' }}></i>
+            </a>
+
+            <a className="link-light m-1" href="https://www.tiktok.com/">
+              <i className="bi-tiktok" style={{ fontSize: '1.5rem' }}></i>
+            </a>
+
+            <a className="link-light m-1" href="https://www.instagram.com/">
+              <i className="bi-instagram" style={{ fontSize: '1.5rem' }}></i>
+            </a>
+          </section>
+        </div>
+
+        <hr className="my-3" />
+
+        <div
+          id="copyright"
+          className="text-center my-3"
+        >
+          © 2023 Copyright VoteSmart
+        </div>
+      </footer>
+    </div>
   )
 }

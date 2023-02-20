@@ -1,13 +1,24 @@
-// Customise bootstrap variables
+/***** Customise bootstrap variables before importing bootstrap *****/
 $primary: #D63384;
-
 @import '/node_modules/bootstrap/scss/bootstrap.scss';
 
+/***** Set basic background color & font color *****/
 body {
   color: #EEEEEE;
   background-color: $gray-800;
 }
 
+/***** Force footer to the bottom of the page *****/
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+
+/**** Angled text highlighting *****/
 .highlight {
   position: relative;
 }
@@ -25,7 +36,7 @@ body {
   transform: rotate(-2deg);
 }
 
-// Make input placeholders italic
+/***** Make input placeholders italic *****/
 input::-webkit-input-placeholder { /* WebKit browsers */
   font-style: italic;
 }
