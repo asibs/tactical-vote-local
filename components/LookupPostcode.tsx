@@ -36,6 +36,7 @@ export default function LookupPostcode({
               placeholder="SW1A 1AA"
               value={postcode}
               onChange={(e) => setPostcode(e.target.value)}
+              disabled={loading}
             />
           </div>
           <div className="col col-3 col-sm-2">
@@ -43,6 +44,7 @@ export default function LookupPostcode({
               type="button"
               className="btn btn-primary w-100"
               onClick={onClick}
+              disabled={loading}
             >
               {loading
               ? (

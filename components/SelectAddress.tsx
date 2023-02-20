@@ -12,7 +12,7 @@ interface Props {
   onClick: () => void
 }
 
-export default function LookupPostcode({
+export default function SelectAddress({
   addresses,
   selectedAddress,
   setSelectedAddress,
@@ -38,6 +38,7 @@ export default function LookupPostcode({
               style={{ backgroundColor: '#EEEEEE' }}
               value={selectedAddress}
               onChange={(e) => setSelectedAddress(e.target.value)}
+              disabled={loading}
             >
               {addresses.map(address => {
                 return (
@@ -51,6 +52,7 @@ export default function LookupPostcode({
               type="button"
               className="btn btn-primary w-100"
               onClick={onClick}
+              disabled={loading}
             >
               {loading
               ? (
