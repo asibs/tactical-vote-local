@@ -104,7 +104,14 @@ export default function Home() {
         )}
 
         {step === 'NO_ELECTION' && (
-          <p>Looks like you don&apos;t have an upcoming election</p>
+          <div className="text-center">
+            <p>Looks like you don&apos;t have a local election on Thursday 4th May</p>
+            <p>
+              <a href="#" onClick={() => setStep('LOOKUP_POSTCODE')}>
+                Lookup a different postcode
+              </a>
+            </p>
+          </div>
         )}
       </Layout>
     </>
