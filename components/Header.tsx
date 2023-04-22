@@ -3,7 +3,7 @@ import React from 'react'
 import headerBackgroundImage from '../assets/hands-bw-66-cropped-compressed-more.jpg'
 
 interface Props {
-  withBackgroundImage: boolean
+  withBackgroundImage?: boolean
   children: React.ReactNode
 }
 

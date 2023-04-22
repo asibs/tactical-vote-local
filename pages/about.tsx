@@ -30,7 +30,7 @@ export default function About() {
               <h3 className="text-uppercase fw-bold mt-5">Have some info we need to know?</h3>
               <p>Please fill in this Google form with the info you have. We can&apos;t reply to everything, but all info will be taken into consideration. Thanks!</p>
               <p>
-                <a className="btn btn-primary btn-sm me-2" role="button" href="https://forms.gle/8eYAwTVh728W31bN7" style={{ "--bs-body-font-size": "2rem" }} target="_blank" rel="noreferrer">
+                <a className="btn btn-primary btn-sm me-2" role="button" href="https://forms.gle/8eYAwTVh728W31bN7" style={{ ["--bs-body-font-size" as any]: "2rem" }} target="_blank" rel="noreferrer">
                   Submit info
                 </a>
               </p>
@@ -43,7 +43,7 @@ export default function About() {
               <h3 className="text-uppercase fw-bold mt-5">How you can support this project</h3>
               <p>This is first run of this platform that we plan to use to mobilise voters at all upcoming elections. You can donate to our Crowdfunder, or get in touch to talk about larger support.</p>
               <p className="my-3">
-                <Link className="btn btn-primary btn-sm me-2" role="button" href="/donate" style={{ "--bs-body-font-size": "2rem" }}>
+                <Link className="btn btn-primary btn-sm me-2" role="button" href="/donate" style={{ ["--bs-body-font-size" as any]: "2rem" }}>
                   Donate
                 </Link>
                 <Link className="btn btn-secondary btn-sm me-2" role="button" href="/contact">

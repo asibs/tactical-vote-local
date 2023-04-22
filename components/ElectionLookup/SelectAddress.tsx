@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { AddressData } from '../types'
+import { AddressData } from '../../types'
 
 interface Props {
   addresses: Array<AddressData>
