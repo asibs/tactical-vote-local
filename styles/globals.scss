@@ -163,23 +163,23 @@ a span.party {
   border-radius: var(--bs-border-radius-pill)!important;
 }
 
-a span.party-labour, .list-of-councils a.party-labour {
+a span.party-labour, a span.party-lab, .list-of-councils a.party-labour, .list-of-councils a.party-lab {
   background-color: var(--bs-red);
 }
 
-a span.party-libdem, .list-of-councils a.party-libdem {
+a span.party-libdem, a span.party-lib, .list-of-councils a.party-libdem, .list-of-councils a.party-lib {
   background-color: var(--bs-orange);
 }
 
-a span.party-green, .list-of-councils a.party-green {
+a span.party-green, a span.party-grn, .list-of-councils a.party-green, .list-of-councils a.party-grn {
   background-color: var(--bs-green);
 }
 
-a span.party-conservative, .list-of-councils a.party-conservative {
+a span.party-conservative, a span.party-con, .list-of-councils a.party-conservative, .list-of-councils a.party-con {
   background-color: var(--bs-blue);
 }
 
-a span.party-none {
+a span.party-none, .list-of-councils a.party-none {
   background-color: var(--bs-gray-700);
 }
 

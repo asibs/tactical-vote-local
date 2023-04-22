@@ -14,14 +14,28 @@ import {
   faFileDownload,
 } from '@fortawesome/free-solid-svg-icons'
 
-const getPartyCssClass = (seatsContested: number, vote1: string, vote2: string, vote3: string) => {
-  const recommendations = [vote1, vote2, vote3].slice(0,seatsContested).map(v => (!!v ? v : 'none'))
+// const getPartyCssClass = (seatsContested: number, vote1: string, vote2: string, vote3: string) => {
+//   const recommendations = [vote1, vote2, vote3].slice(0,seatsContested).map(v => (!!v ? v : 'none'))
+//   console.log(recommendations)
+//   console.log(seatsContested)
+//
+//   const cssParties = recommendations.map(v => (!v ? 'none' : v).toLowerCase())
+//   console.log(`party-${cssParties.join('-')}`)
+//   return `party-${cssParties.join('-')}`
+// }
+
+const getWardVotes = (seatsContested: number, vote1: string, vote2: string, vote3: string) => {
+  const recommendations = [vote1, vote2, vote3].slice(0,seatsContested).map(v => (!!v ? v.toLowerCase() : 'none'))
   console.log(recommendations)
   console.log(seatsContested)
 
-  const cssParties = recommendations.map(v => (!v ? 'none' : v).toLowerCase())
-  console.log(`party-${cssParties.join('-')}`)
-  return `party-${cssParties.join('-')}`
+  return recommendations.map((partyName, index) => {
+    return (
+      <span className={`party party-${partyName}`}>
+        {index+1}
+      </span>
+    )
+  })
 }
 
 interface Props {
@@ -99,7 +113,7 @@ export default function CouncilElection({ data }: Props) {
         <div className="container-fluid py-3 py-md-5">
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3 className="text-uppercase position-sticky py-3" style={{ top: "74px" }}>
+              <h3 className="text-uppercase position-sticky py-3">
                 How to vote in <strong><span style={{ textDecoration: "underline" }}>{data.councilName}</span></strong> Wards
               </h3>
               <p><a href="#search">Find your ward</a></p>
@@ -108,16 +122,14 @@ export default function CouncilElection({ data }: Props) {
                   {data.wards.map(wardData => {
                     return (
                       <li key={wardData.wardSlug}>
-                        <Link
-                          href={`/local/${data.councilSlug}/${wardData.wardSlug}`}
-                          className={`party ${getPartyCssClass(
+                        <Link href={`/local/${data.councilSlug}/${wardData.wardSlug}`}>
+                          <strong>{wardData.wardName}</strong>
+                          {getWardVotes(
                             wardData.seatsContested,
                             wardData.recommendedVote1,
                             wardData.recommendedVote2,
                             wardData.recommendedVote3,
-                          )}`}
-                        >
-                          <strong>{wardData.wardName}</strong>
+                          )}
                         </Link>
                       </li>
                     )
