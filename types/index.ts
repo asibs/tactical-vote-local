@@ -21,11 +21,17 @@ export interface WardSummaryData {
   recommendedVote3: string
 }
 
+export interface LocalGroupsData {
+  name: string
+  link: string
+}
+
 export interface CouncilElectionData {
   councilName: string
   councilSlug: string
   priority: number
   wards: WardSummaryData[]
+  localGroups: LocalGroupsData[]
 }
 
 export interface WardElectionData {
@@ -40,9 +46,6 @@ export interface WardElectionData {
   recommendedVote2: string
   recommendedVote3: string
   recommendationAdvice: string
-  localGroups: {
-    name: string
-    link: string
-  }[]
+  localGroups: LocalGroupsData[]
   allCouncilWards: WardSummaryData[]
 }

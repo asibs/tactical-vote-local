@@ -4,6 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Layout from './Layout'
+import CopyButton from './CopyButton'
+import DownloadPosterButton from './DownloadPosterButton'
+import FacebookGroupsButton from './FacebookGroupsButton'
 import ElectionLookup from './ElectionLookup/ElectionLookup'
 import WardsSummary from './WardsSummary'
 
@@ -48,14 +51,6 @@ interface Props {
 }
 
 export default function WardElection({ data }: Props) {
-  const [isCopied, setIsCopied] = useState(false)
-
-  const copyUrlToClipboard = () => {
-    navigator.clipboard.writeText(`https://stopthetories.vote/local/${data.councilSlug}/${data.wardSlug}`)
-    setIsCopied(true)
-    setTimeout(() => setIsCopied(false), 2500);
-  }
-
   return (
     <Layout>
 
@@ -130,54 +125,15 @@ export default function WardElection({ data }: Props) {
           <div className="row">
             <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5 col-xxl-4 offset-md-2 offset-xxl-2 align-items-md-center">
               <div className="btn-group-vertical w-100" role="group">
-                <button onClick={copyUrlToClipboard} className="btn btn-primary btn-lg" role="button" disabled={isCopied}>
-                  {isCopied
-                    ? (
-                      <>
-                        <FontAwesomeIcon icon={faClipboardCheck} fixedWidth className="fas text-white" />
-                        Link copied!
-                      </>
-                    )
-                    : (
-                      <>
-                        <FontAwesomeIcon icon={faCopy} fixedWidth className="fas text-white" />
-                        Copy link to this page
-                      </>
-                    )
-                  }
-                </button>
-                <Link href="/posters" className="btn btn-primary btn-lg" role="button">
-                  <FontAwesomeIcon icon={faFileDownload} fixedWidth className="fas text-white" />
-                  Download a poster
-                </Link>
+                <CopyButton
+                  textToCopy={`https://stopthetories.vote/local/${data.councilSlug}/${data.wardSlug}`}
+                  buttonText="Copy link to this page"
+                  onClickButtonText="Link copied!"
+                />
 
-                <div className="dropdown btn-group" role="group">
-                  <button className="btn btn-primary btn-lg dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">
-                    <Image src={facebookSquareWhite} alt="Follow us on Facebook" className="fas" width={20} height={20} />
-                    Join local Facebook groups
-                  </button>
-                  <div className="dropdown-menu text-primary w-100">
-                    {data.localGroups.length > 0
-                      ? (
-                        <>
-                          {data.localGroups.map((group) => {
-                            return (
-                              <a className="dropdown-item" href={group.link} target="_blank" rel="noreferrer" key={group.link}>
-                                <Image src={facebookSquareBlue} alt="Facebook icon" className="fas" width={20} height={20} />
-                                {group.name}
-                              </a>
-                            )
-                          })}
-                        </>
-                      ) : (
-                        <a className="dropdown-item">
-                          <Image src={facebookSquareBlue} alt="Facebook icon" className="fas" width={20} height={20} />
-                          No local groups here yet...
-                        </a>
-                      )
-                    }
-                  </div>
-                </div>
+                <DownloadPosterButton />
+
+                <FacebookGroupsButton groups={data.localGroups}/>
               </div>
             </div>
           </div>

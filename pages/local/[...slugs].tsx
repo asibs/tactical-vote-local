@@ -134,7 +134,7 @@ async function getWardData(councilSlug: string, wardSlug: string) {
         name: wardRecord['4th Parliamentary Constituency Name'],
         link: wardRecord['4th social link'],
       },
-    ].filter((group) => !!group.link && group.link != "#N/A"),
+    ].filter((group) => !!group.name && !!group.link && group.name !== "#N/A" && group.link !== "#N/A"),
     allCouncilWards: allCouncilWards,
   }
 
@@ -154,32 +154,41 @@ async function getCouncilData(councilSlug: string) {
       },
     }));
 
-  let councilElectionData = undefined
+  let wardRecords = []
+  let localGroups = []
   for await (const record of parser) {
-    if (!councilElectionData) {
-      councilElectionData = {
-        councilName: record['council_name'],
-        councilSlug: record['council_slug'],
-        priority: record['Target Priority'], // Priority should be the same for all wards in a council!
-        wards: [{
-          wardName: record['ward_name'],
-          wardSlug: record['ward_slug'],
-          seatsContested: Number(record['seats contested']),
-          recommendedVote1: record['recommended vote 1'],
-          recommendedVote2: record['recommended vote 2'],
-          recommendedVote3: record['recommended vote 3'],
-        }],
+    wardRecords.push(record)
+
+    const indexes = ['1st', '2nd', '3rd', '4th']
+    indexes.forEach((i) => {
+      const name = record[`${i} Parliamentary Constituency Name`]
+      const link = record[`${i} social link`]
+
+      if (!!name && !!link && name !== "#N/A" && link !== "#N/A") {
+        if (localGroups.findIndex(x => x.name === name) === -1) {
+          localGroups.push({ name: name, link: link })
+        }
       }
-    } else {
-      councilElectionData.wards.push({
-        wardName: record['ward_name'],
-        wardSlug: record['ward_slug'],
-        seatsContested: Number(record['seats contested']),
-        recommendedVote1: record['recommended vote 1'],
-        recommendedVote2: record['recommended vote 2'],
-        recommendedVote3: record['recommended vote 3'],
-      })
+    })
+  }
+
+  const wards = wardRecords.map((wardRecord) => {
+    return {
+      wardName: wardRecord['ward_name'],
+      wardSlug: wardRecord['ward_slug'],
+      seatsContested: Number(wardRecord['seats contested']),
+      recommendedVote1: wardRecord['recommended vote 1'],
+      recommendedVote2: wardRecord['recommended vote 2'],
+      recommendedVote3: wardRecord['recommended vote 3'],
     }
+  })
+
+  const councilElectionData = {
+    councilName: wardRecords[0]['council_name'],
+    councilSlug: wardRecords[0]['council_slug'],
+    priority: wardRecords[0]['Target Priority'],
+    wards: wards,
+    localGroups: localGroups,
   }
 
   return { props: { councilElection: councilElectionData } }
