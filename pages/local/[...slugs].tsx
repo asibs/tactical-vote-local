@@ -122,7 +122,7 @@ async function getWardData(councilSlug: string, wardSlug: string) {
         name: wardRecord['4th Parliamentary Constituency Name'],
         link: wardRecord['4th social link'],
       },
-    ].filter((link) => !!link && link != "#N/A"),
+    ].filter((group) => !!group.link && group.link != "#N/A"),
   }
 
   return { props: { wardElection: wardElectionData } }

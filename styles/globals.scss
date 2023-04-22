@@ -139,20 +139,24 @@ h3.party {
   text-transform: uppercase;
 }
 
-h3.party-labour {
+h3.party-labour, h3.party-lab {
   color: var(--bs-red);
 }
 
-h3.party-libdem {
+h3.party-libdem, h3.party-lib {
   color: var(--bs-orange);
 }
 
-h3.party-green {
+h3.party-green, h3.party-grn {
   color: var(--bs-green);
 }
 
-h3.party-conservative {
+h3.party-conservative, h3.party-con {
   color: var(--bs-blue);
+}
+
+h3.party-none {
+  color: var(--bs-gray-600);
 }
 
 a span.party {
