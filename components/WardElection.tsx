@@ -15,7 +15,9 @@ import {
   faLightbulb,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons'
-import facebookSquare from "../assets/facebook-square.svg";
+import facebookSquare from '../assets/facebook-square.svg'
+import facebookSquareBlue from '../assets/facebook-square-blue.svg'
+import facebookSquareWhite from '../assets/facebook-square-white.svg'
 
 import insetShadow from '../assets/inset-shadow.png'
 
@@ -104,7 +106,7 @@ export default function WardElection({ data }: Props) {
                     }
                   </p>
                   <p>
-                    <FontAwesomeIcon icon={faTriangleExclamation} />&nbsp;
+                    <FontAwesomeIcon icon={faTriangleExclamation} color="red" />&nbsp;
                     Follow staff guidance, don&apos;t make more votes than you&apos;re allowed in your ward!
                   </p>
                 </div>
@@ -150,7 +152,7 @@ export default function WardElection({ data }: Props) {
 
                 <div className="dropdown btn-group" role="group">
                   <button className="btn btn-primary btn-lg dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">
-                    <Image src={facebookSquare} alt="Follow us on Facebook" className="fas text-white" width={20} height={20} />
+                    <Image src={facebookSquareWhite} alt="Follow us on Facebook" className="fas" width={20} height={20} />
                     Join local Facebook groups
                   </button>
                   <div className="dropdown-menu text-primary w-100">
@@ -160,7 +162,7 @@ export default function WardElection({ data }: Props) {
                           {data.localGroups.map((group) => {
                             return (
                               <a className="dropdown-item" href={group.link} target="_blank" rel="noreferrer" key={group.link}>
-                                <Image src={facebookSquare} alt="Facebook icon" className="fas text-white" width={20} height={20} />
+                                <Image src={facebookSquareBlue} alt="Facebook icon" className="fas" width={20} height={20} />
                                 {group.name}
                               </a>
                             )
@@ -168,7 +170,7 @@ export default function WardElection({ data }: Props) {
                         </>
                       ) : (
                         <a className="dropdown-item">
-                          <Image src={facebookSquare} alt="Facebook icon" className="fas text-white" width={20} height={20} />
+                          <Image src={facebookSquareBlue} alt="Facebook icon" className="fas" width={20} height={20} />
                           No local groups here yet...
                         </a>
                       )
