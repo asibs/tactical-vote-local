@@ -6,6 +6,13 @@ import type { AppProps } from 'next/app'
 import { Analytics } from '@vercel/analytics/react';
 import { useEffect } from 'react'
 
+import { Rubik } from '@next/font/google';
+const rubik = Rubik({ subsets: ['latin'] });
+
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 export default function App({ Component, pageProps }: AppProps) {
   // Import bootstrap js on the client-side only
   useEffect(() => {
@@ -16,6 +23,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      {/* Make rubik font available as a CSS var */}
+      <style jsx global>{`
+        :root {
+          --rubik-font: ${rubik.style.fontFamily};
+        }
+      `}</style>
+
       <Component {...pageProps} />
       <Analytics />
     </>
