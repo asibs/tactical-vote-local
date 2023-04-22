@@ -108,7 +108,11 @@ export default function WardElection({ data }: Props) {
                     Follow staff guidance, don&apos;t make more votes than you&apos;re allowed in your ward!
                   </p>
                 </div>
-                <p><small>Know something we don&apos;t? <a href="/about">Let us know</a>.</small></p>
+                <p>
+                  <small>
+                    Know something we don&apos;t? <Link href="/about">Let us know</Link>.
+                  </small>
+                </p>
               </div>
             </div>
           </div>
