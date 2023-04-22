@@ -40,4 +40,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## TODO:
 
 1. Font weights & sizes using Rubik don't seem quite right - not consistent with the wireframes for some reason...
-2. 
+2. Add a `donate` endpoint (which may just redirect to a crowdfunder website, TBC)
+3. Update the statically generated ward & council pages to have the new style and use the new CSV format
+4. Add facebook groups to the council pages (note, there could be a lot of constituencies & therefore groups for a council...)

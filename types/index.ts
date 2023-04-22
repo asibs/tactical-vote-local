@@ -15,12 +15,15 @@ export interface AddressData {
 export interface CouncilElectionData {
   councilName: string
   councilSlug: string
+  priority: number
   wards: {
     wardName: string
     wardSlug: string
-    wardGeoJsonUri: string
+    seatsContested: number
+    recommendedVote1: string
+    recommendedVote2: string
+    recommendedVote3: string
   }[]
-  geoJsonUri: string
 }
 
 export interface WardElectionData {
@@ -28,11 +31,15 @@ export interface WardElectionData {
   councilSlug: string
   wardName: string
   wardSlug: string
-  geoJsonUri: string
   totalSeats: number
   seatsContested: number
-  targetCouncil: boolean
-  recommendedParty: string
+  priority: number
+  recommendedVote1: string
+  recommendedVote2: string
+  recommendedVote3: string
   recommendationAdvice: string
-  localGroups: string[]
+  localGroups: {
+    name: string
+    link: string
+  }[]
 }

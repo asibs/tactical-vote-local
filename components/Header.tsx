@@ -9,7 +9,7 @@ interface Props {
 
 export default function Header({ withBackgroundImage=false, children }: Props) {
   let headerStyle = (withBackgroundImage
-                      ? { background: `url(${headerBackgroundImage.src}) center / cover no-repeat` }
+                      ? { background: `var(--bs-black) url(${headerBackgroundImage.src}) center / cover no-repeat` }
                       : {}
                     )
 

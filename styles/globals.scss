@@ -3,9 +3,14 @@
 
 /* TYPOGRAPHY */
 
-h1, h2, h3, h4, h5, h6, h7, navbar, nav, .btn {
+h1, h2, h3, h4, h5, h6, navbar, nav, .btn {
   font-family: 'Rubik', sans-serif;
   line-height: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .btn {
@@ -14,20 +19,21 @@ h1, h2, h3, h4, h5, h6, h7, navbar, nav, .btn {
 
 header h1 {
   font-size: 7vmax;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 header h2 {
   font-size: 5vmax;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 header h3 {
   font-size: 3vmax;
-  font-weight: bold;
-  text-transform: uppercase;
+}
+
+header h6 {
+  color: var(--bs-gray-900);
+  background-color: var(--bs-white);
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
 }
 
 /* LINKS */
@@ -69,6 +75,7 @@ main {
 main h3.position-sticky {
   background-color: var(--bs-gray-900);
   color: var(--bs-white);
+  top: 74px;
 }
 
 /* SEARCH */
@@ -76,7 +83,6 @@ main h3.position-sticky {
 main #search {
   background-color: var(--bs-pink);
   color: var(--bs-white);
-  font-size: 18px;
   min-height: 250px;
 }
 
@@ -84,12 +90,31 @@ main #search a:link, main #search a:visited, main #search a:hover, main #search 
   color: var(--bs-white);
 }
 
+div.alert {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+/* INFO AREA */
+
+.info-area {
+  background-color: lightyellow;
+  color: var(--bs-black);
+  padding: 1rem 1rem 0.1rem 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+.info-area a:link, .info-area a:visited, .info-area a:hover, .info-area a:active {
+  color: var(--bs-black);
+}
+
 /* FOOTER */
 
-// footer, #search {
-//   background: var(--bs-gray-100) url("../../assets/img/inset-shadow.png") top no-repeat;
-//   background-size: 100%;
-// }
+footer {
+  background: var(--bs-gray-100);
+}
 
 /* COUNCILS */
 
@@ -108,52 +133,285 @@ a.council:hover {
 
 /* PARTIES */
 
-.party-labour {
+h3.party {
+  font-size: 4.5vmax;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h3.party-labour {
+  color: var(--bs-red);
+}
+
+h3.party-libdem {
+  color: var(--bs-orange);
+}
+
+h3.party-green {
+  color: var(--bs-green);
+}
+
+h3.party-conservative {
+  color: var(--bs-blue);
+}
+
+a span.party {
+  display: inline-block;
+  margin-left: 0.3rem;
+  width: 1.75rem;
+  text-align: center;
+  border-radius: var(--bs-border-radius-pill)!important;
+}
+
+a span.party-labour, .list-of-councils a.party-labour {
   background-color: var(--bs-red);
 }
 
-.party-libdem {
+a span.party-libdem, .list-of-councils a.party-libdem {
   background-color: var(--bs-orange);
 }
 
-.party-green {
+a span.party-green, .list-of-councils a.party-green {
   background-color: var(--bs-green);
 }
 
-.party-none {
+a span.party-conservative, .list-of-councils a.party-conservative {
+  background-color: var(--bs-blue);
+}
+
+a span.party-none {
   background-color: var(--bs-gray-700);
 }
 
-.party-conservative {
-  background-color: var(--bs-link-hover-color);
+ul.list-of-wards, ul.list-of-councils {
+  list-style: none;
+  padding-left: 0;
+  font-weight: 700;
+  color: var(--bs-white);
 }
 
-a.party:link, a.party:visited, a.party:active {
-  text-align: left;
-  color: var(--bs-white);
+ul.list-of-wards a:link, ul.list-of-wards a:visited, ul.list-of-wards a:active {
+  text-decoration: none;
+}
+
+ul.list-of-wards li, ul.list-of-councils li {
+  margin-bottom: 0.5rem;
+}
+
+ul.list-of-councils a:link, ul.list-of-councils a:visited, ul.list-of-councils a:active {
   text-decoration: none;
   display: inline-block;
-  padding: 4px 16px;
   border-radius: var(--bs-border-radius-pill)!important;
+  padding: 0.1rem 0.8rem;
 }
 
 a.party:hover {
   filter: brightness(110%);
 }
 
-ul.list-of-wards {
-  list-style: none;
-  padding-left: 0;
-}
+/* OLD PARTIES CLASSES */
 
-ul.list-of-wards li {
-  margin-bottom: 0.5rem;
-}
+// .party-labour, .party-lab {
+//   background-color: var(--bs-red);
+// }
+//
+// .party-libdem, .party-lib {
+//   background-color: var(--bs-orange);
+// }
+//
+// .party-green, .party-grn {
+//   background-color: var(--bs-green);
+// }
+//
+// .party-conservative, .party-con {
+//   background-color: var(--bs-link-hover-color);
+// }
+//
+// .party-none {
+//   background-color: var(--bs-gray-700);
+// }
+//
+// // 2-party gradients...
+//
+// .party-lab-lab {
+//   background-color: var(--bs-red);
+// }
+// .party-lab-lib {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-orange));
+// }
+// .party-lab-grn {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-green));
+// }
+// .party-lab-none {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-gray-700));
+// }
+//
+// .party-lib-lib {
+//   background-color: var(--bs-orange);
+// }
+// .party-lib-lab {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-red));
+// }
+// .party-lib-grn {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-green));
+// }
+// .party-lib-none {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-gray-700));
+// }
+//
+// .party-grn-grn {
+//   background-color: var(--bs-green);
+// }
+// .party-grn-lab {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-red));
+// }
+// .party-grn-lib {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-orange));
+// }
+// .party-grn-none {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-gray-700));
+// }
+//
+// .party-none-none {
+//   background-color: var(--bs-gray-700);
+// }
+//
+// // 3-party gradients
+//
+// .party-lab-lab-lab {
+//   background-color: var(--bs-red);
+// }
+// .party-lab-lab-lib {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-red), var(--bs-orange));
+// }
+// .party-lab-lab-grn {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-red), var(--bs-green));
+// }
+// .party-lab-lab-none {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-red), var(--bs-gray-700));
+// }
+// .party-lab-lib-lib {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-orange), var(--bs-orange));
+// }
+// .party-lab-lib-grn {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-orange), var(--bs-green));
+// }
+// .party-lab-lib-none {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-orange), var(--bs-gray-700));
+// }
+// .party-lab-grn-lib {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-green), var(--bs-orange));
+// }
+// .party-lab-grn-grn {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-green), var(--bs-green));
+// }
+// .party-lab-grn-none {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-green), var(--bs-gray-700));
+// }
+// .party-lab-none-none {
+//   background-image: linear-gradient(to right, var(--bs-red), var(--bs-gray-700), var(--bs-gray-700));
+// }
+//
+// .party-lib-lib-lib {
+//   background-color: var(--bs-orange);
+// }
+// .party-lib-lib-lab {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-orange), var(--bs-red));
+// }
+// .party-lib-lib-grn {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-orange), var(--bs-green));
+// }
+// .party-lib-lib-none {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-orange), var(--bs-gray-700));
+// }
+// .party-lib-lab-lab {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-red), var(--bs-red));
+// }
+// .party-lib-lab-grn {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-red), var(--bs-green));
+// }
+// .party-lib-lab-none {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-red), var(--bs-gray-700));
+// }
+// .party-lib-grn-lab {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-green), var(--bs-red));
+// }
+// .party-lib-grn-grn {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-green), var(--bs-green));
+// }
+// .party-lib-grn-none {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-green), var(--bs-gray-700));
+// }
+// .party-lib-none-none {
+//   background-image: linear-gradient(to right, var(--bs-orange), var(--bs-gray-700), var(--bs-gray-700));
+// }
+//
+// .party-grn-grn-grn {
+//   background-color: var(--bs-green);
+// }
+// .party-grn-grn-lab {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-green), var(--bs-red));
+// }
+// .party-grn-grn-lib {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-green), var(--bs-orange));
+// }
+// .party-grn-grn-none {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-green), var(--bs-gray-700));
+// }
+// .party-grn-lab-lab {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-red), var(--bs-red));
+// }
+// .party-grn-lab-lib {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-red), var(--bs-orange));
+// }
+// .party-grn-lab-none {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-red), var(--bs-gray-700));
+// }
+// .party-grn-lib-lab {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-orange), var(--bs-red));
+// }
+// .party-grn-lib-lib {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-orange), var(--bs-orange));
+// }
+// .party-grn-lib-none {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-orange), var(--bs-gray-700));
+// }
+// .party-grn-none-none {
+//   background-image: linear-gradient(to right, var(--bs-green), var(--bs-gray-700), var(--bs-gray-700));
+// }
+//
+// .party-none-none-none {
+//   background-color: var(--bs-gray-700);
+// }
+//
+// a.party:link, a.party:visited, a.party:active {
+//   text-align: left;
+//   color: var(--bs-white);
+//   text-decoration: none;
+//   display: inline-block;
+//   padding: 4px 16px;
+//   border-radius: var(--bs-border-radius-pill)!important;
+// }
+//
+// a.party:hover {
+//   filter: brightness(110%);
+// }
+//
+// ul.list-of-wards {
+//   list-style: none;
+//   padding-left: 0;
+// }
+//
+// ul.list-of-wards li {
+//   margin-bottom: 0.5rem;
+// }
 
 /* BUTTON GROUPS */
 
 .btn-group-vertical .btn {
   margin-bottom: 3px;
+  font-weight: 500;
+  text-align: left;
 }
 
 .fa, .fas, .far, .btn svg {

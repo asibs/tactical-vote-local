@@ -9,7 +9,7 @@ export default function Posters() {
   return (
     <Layout>
       <Header>
-        <h1 className="text-uppercase fw-bold">Posters</h1>
+        <h1>Posters</h1>
       </Header>
 
       {/* Content */}
@@ -17,7 +17,7 @@ export default function Posters() {
         <div className="container-fluid py-3 py-md-5">
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3 className="text-uppercase fw-bold">Spread the word in your area</h3>
+              <h3>Spread the word in your area</h3>
               <p>Put this up in your window, your local cafe, or anywhere you can think of</p>
             </div>
           </div>

@@ -26,19 +26,19 @@ export default function Footer() {
         <div className="row">
           <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4 col-xxl-3 offset-md-2 offset-xxl-2 align-items-md-center">
             <div className="btn-group-vertical w-100" role="group">
-              <Link href="/reminders" className="btn btn-primary btn-lg" role="button" style={{ textAlign: "left" }}>
+              <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
                 <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
                 Get reminders
               </Link>
-              <Link href="/local/browse/" className="btn btn-primary btn-lg" role="button" style={{ textAlign: "left" }}>
+              <Link href="/local/browse/" className="btn btn-primary btn-lg" role="button">
                 <FontAwesomeIcon icon={faSearch} fixedWidth className="fas text-white" />
                 Browse councils
               </Link>
-              <Link href="/posters" className="btn btn-primary btn-lg" role="button" style={{ textAlign: "left" }}>
+              <Link href="/posters" className="btn btn-primary btn-lg" role="button">
                 <FontAwesomeIcon icon={faFileDownload} fixedWidth className="fas text-white" />
                 Download a poster
               </Link>
-              <Link href="/" className="btn btn-primary btn-lg" role="button" style={{ textAlign: "left" }}>
+              <Link href="/" className="btn btn-primary btn-lg" role="button">
                 <FontAwesomeIcon icon={faVoteYea} fixedWidth className="fas text-white" />
                 Who to vote for
               </Link>
