@@ -32,7 +32,7 @@ export default function LookupPostcode({
           />
         </div>
         <div>
-          <a
+          <button
             className="btn btn-dark btn-lg ms-2"
             role="button"
             onClick={onClick}
@@ -47,7 +47,7 @@ export default function LookupPostcode({
             : (
               'Go'
             )}
-          </a>
+          </button>
         </div>
       </div>
 

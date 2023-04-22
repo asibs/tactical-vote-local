@@ -39,7 +39,7 @@ export default function SelectAddress({
           </select>
         </div>
         <div>
-          <a
+          <button
             className="btn btn-dark btn-lg ms-2"
             role="button"
             onClick={onClick}
@@ -54,7 +54,7 @@ export default function SelectAddress({
             : (
               'Go'
             )}
-          </a>
+          </button>
         </div>
       </div>
 
