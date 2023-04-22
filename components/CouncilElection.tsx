@@ -10,7 +10,7 @@ interface Props {
 
 export default function CouncilElection({ data }: Props) {
   return (
-    <Layout showTagline={false}>
+    <Layout>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">

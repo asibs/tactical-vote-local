@@ -32,7 +32,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export default function Layout({ showTagline=true, children }: Props) {
+export default function Layout({ children }: Props) {
   return (
     <>
       <Head>
