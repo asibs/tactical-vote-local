@@ -23,7 +23,7 @@ export default function Posters() {
           </div>
           <div className="row">
             <div className="col-8 col-md-4 col-xxl-3 offset-0 offset-md-2 offset-xxl-2 align-items-md-center" style={{ position: "relative"}}>
-              <Image src={poster} style={{ width: "100%", height: "auto" }} />
+              <Image src={poster} alt="Stop The Tories poster" style={{ width: "100%", height: "auto" }} />
             </div>
             <div className="col-8 col-md-4 col-xxl-3 align-items-md-center" style={{ paddingTop: "2rem" }}>
               <ul>

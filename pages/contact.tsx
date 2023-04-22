@@ -15,10 +15,12 @@ export default function Contact() {
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="text-uppercase fw-bold">Social Media</h3>
               <p>
-                Twitter&nbsp;<a href="https://twitter.com/MVTFWD" target="_blank">@MVTFWD</a>&nbsp;|&nbsp;<a href="https://twitter.com/GetTheToryOut" target="_blank">@GetTheToryOut</a>
+                Twitter&nbsp;<a href="https://twitter.com/MVTFWD" target="_blank" rel="noreferrer">@MVTFWD</a>
+                &nbsp;|&nbsp; 
+                <a href="https://twitter.com/GetTheToryOut" target="_blank" rel="noreferrer">@GetTheToryOut</a>
               </p>
               <p>
-                Instagram&nbsp;<a href="https://instagram.com/MVTFWD" target="_blank">@MVTFWD</a>
+                Instagram&nbsp;<a href="https://instagram.com/MVTFWD" target="_blank" rel="noreferrer">@MVTFWD</a>
               </p>
 
               <h3 className="text-uppercase fw-bold mt-5">Email</h3>

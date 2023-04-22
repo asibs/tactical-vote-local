@@ -15,7 +15,7 @@ export default function Reminders() {
         <div className="container-fluid py-3 py-md-5">
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3 className="text-uppercase fw-bold">We'll email you what you need, when you need it.</h3>
+              <h3 className="text-uppercase fw-bold">We&apos;ll email you what you need, when you need it.</h3>
               <p>Get our newsletter, updates, and the important reminders you need just at the right times.</p>
 
               <ActionNetworkContactForm />

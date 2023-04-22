@@ -86,7 +86,7 @@ export default function ElectionLookup() {
           />
 
           <p>
-            <Link href="/reminders">Get reminders</Link> if you can't do this right now.
+            <Link href="/reminders">Get reminders</Link> if you can&apos;t do this right now.
           </p>
         </>
       )}
