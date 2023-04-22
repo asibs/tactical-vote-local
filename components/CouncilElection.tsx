@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Layout from './Layout'
 import Header from './Header'
 import ElectionLookup from './ElectionLookup/ElectionLookup'
+import WardsSummary from './WardsSummary'
 import { CouncilElectionData } from '../types'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -54,7 +55,6 @@ export default function CouncilElection({ data }: Props) {
       </Header>
 
       <main>
-
         {/* ACTIONS */}
         <div className="container-fluid pt-5">
           <div className="row">
@@ -105,39 +105,14 @@ export default function CouncilElection({ data }: Props) {
         </div>
 
         {/* WARDS FOR THIS COUNCIL */}
-        <div className="container-fluid py-3 py-md-5">
-          <div className="row">
-            <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3 className="text-uppercase position-sticky py-3">
-                How to vote in <strong><span style={{ textDecoration: "underline" }}>{data.councilName}</span></strong> Wards
-              </h3>
-              <p><a href="#search">Find your ward</a></p>
-              <div className="two-columns three-columns">
-                <ul className="list-of-wards">
-                  {data.wards.map(wardData => {
-                    return (
-                      <li key={wardData.wardSlug}>
-                        <Link href={`/local/${data.councilSlug}/${wardData.wardSlug}`}>
-                          <strong>{wardData.wardName}</strong>
-                          {getWardVotes(
-                            wardData.seatsContested,
-                            wardData.recommendedVote1,
-                            wardData.recommendedVote2,
-                            wardData.recommendedVote3,
-                          )}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <WardsSummary councilSlug={data.councilSlug} wards={data.wards}>
+          <h3 className="text-uppercase py-3">
+            How to vote in <strong><span style={{ textDecoration: "underline" }}>{data.councilName}</span></strong> Wards
+          </h3>
+        </WardsSummary>
 
         {/* ELECTION LOOKUP */}
         <ElectionLookup />
-
       </main>
     </Layout>
   );

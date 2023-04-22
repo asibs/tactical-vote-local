@@ -77,7 +77,7 @@ async function getWardData(councilSlug: string, wardSlug: string) {
     .pipe(parse({
       columns: true,
       on_record: (record) => {
-        if (record.council_slug === councilSlug && record.ward_slug === wardSlug) {
+        if (record.council_slug === councilSlug) {
           return record
         }
         return null
@@ -85,12 +85,24 @@ async function getWardData(councilSlug: string, wardSlug: string) {
     }));
 
   let wardRecord = undefined
+  let allCouncilWards = []
   for await (const record of parser) {
-    if (!wardRecord) {
-      wardRecord = record
-    } else {
-      console.log(`ERROR: Found duplicate line ${record} for ${councilSlug}.${wardSlug}`)
+    if (record.ward_slug === wardSlug) {
+      if (!wardRecord) {
+        wardRecord = record
+      } else {
+        console.log(`ERROR: Found duplicate line ${record} for ${councilSlug}.${wardSlug}`)
+      }
     }
+
+    allCouncilWards.push({
+      wardName: record['ward_name'],
+      wardSlug: record['ward_slug'],
+      seatsContested: Number(record['seats contested']),
+      recommendedVote1: record['recommended vote 1'],
+      recommendedVote2: record['recommended vote 2'],
+      recommendedVote3: record['recommended vote 3'],
+    })
   }
 
   const wardElectionData = {
@@ -123,6 +135,7 @@ async function getWardData(councilSlug: string, wardSlug: string) {
         link: wardRecord['4th social link'],
       },
     ].filter((group) => !!group.link && group.link != "#N/A"),
+    allCouncilWards: allCouncilWards,
   }
 
   return { props: { wardElection: wardElectionData } }

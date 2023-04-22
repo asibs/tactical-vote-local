@@ -5,6 +5,8 @@ import Link from 'next/link'
 
 import Layout from './Layout'
 import ElectionLookup from './ElectionLookup/ElectionLookup'
+import WardsSummary from './WardsSummary'
+
 import { WardElectionData } from '../types'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -99,14 +101,14 @@ export default function WardElection({ data }: Props) {
 
                 <div className="info-area">
                   <p>
-                    <FontAwesomeIcon icon={faLightbulb} />&nbsp;
+                    <FontAwesomeIcon icon={faLightbulb} className="fas" />
                     {data.recommendationAdvice
                       ? data.recommendationAdvice
                       : `${getHumanReadablePartyName(data.recommendedVote1)} previously received the most progressive votes here.`
                     }
                   </p>
                   <p>
-                    <FontAwesomeIcon icon={faTriangleExclamation} color="red" />&nbsp;
+                    <FontAwesomeIcon icon={faTriangleExclamation} className="fas" color="red" />
                     Follow staff guidance, don&apos;t make more votes than you&apos;re allowed in your ward!
                   </p>
                 </div>
@@ -123,7 +125,6 @@ export default function WardElection({ data }: Props) {
       </header>
 
       <main>
-
         {/* ACTIONS */}
         <div className="container-fluid pt-5">
           <div className="row">
@@ -182,11 +183,15 @@ export default function WardElection({ data }: Props) {
           </div>
         </div>
 
-        {/* TODO: All wards in this council - need to pull in more data from the CSV for each ward... */}
+        {/* ALL WARDS FOR THIS COUNCIL */}
+        <WardsSummary councilSlug={data.councilSlug} wards={data.allCouncilWards}>
+          <h3 className="text-uppercase py-3">
+            All <strong><Link href={`/local/${data.councilSlug}`}>{data.councilName}</Link></strong> Wards
+          </h3>
+        </WardsSummary>
 
         {/* ELECTION LOOKUP */}
         <ElectionLookup />
-
       </main>
     </Layout>
   );

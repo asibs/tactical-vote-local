@@ -12,18 +12,20 @@ export interface AddressData {
   slug: string
 }
 
+export interface WardSummaryData {
+  wardName: string
+  wardSlug: string
+  seatsContested: number
+  recommendedVote1: string
+  recommendedVote2: string
+  recommendedVote3: string
+}
+
 export interface CouncilElectionData {
   councilName: string
   councilSlug: string
   priority: number
-  wards: {
-    wardName: string
-    wardSlug: string
-    seatsContested: number
-    recommendedVote1: string
-    recommendedVote2: string
-    recommendedVote3: string
-  }[]
+  wards: WardSummaryData[]
 }
 
 export interface WardElectionData {
@@ -42,4 +44,5 @@ export interface WardElectionData {
     name: string
     link: string
   }[]
+  allCouncilWards: WardSummaryData[]
 }

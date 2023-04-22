@@ -40,10 +40,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## TODO:
 
 1. Add a `donate` endpoint (which may just redirect to a crowdfunder website, TBC)
-2. Fix facebook logo on the ward pages (logo shows up as black rather than white)
-3. Add facebook groups to the council pages (note, there could be a lot of constituencies & therefore groups for a council...)
-4. Add other wards for this council to the ward pages
-5. Add 'browse councils' page
-6. Add specific page for no election
-7. Add special handling for when we have 0 recommendations
-8. Font weights & sizes using Rubik don't seem quite right - not consistent with the wireframes for some reason...
+2. Add other wards for this council to the ward pages
+3. Add 'browse councils' page
+4. Add specific page for no election
+5. Add special handling for when we have 0 recommendations
+6. Font weights & sizes using Rubik don't seem quite right - not consistent with the wireframes for some reason...
