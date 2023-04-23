@@ -33,7 +33,7 @@ export default function BrowseCouncils({ councils }: Props) {
           {/* Target Tory Councils */}
           <div className="row pb-5">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3 className="py-3">Target Tory councils</h3>
+              <h3 className="position-sticky py-3">Target Tory councils</h3>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
@@ -54,7 +54,7 @@ export default function BrowseCouncils({ councils }: Props) {
           {/* Non-Target Tory Councils */}
           <div className="row pb-5">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3 className="py-3">Other Tory councils</h3>
+              <h3 className="position-sticky py-3">Other Tory councils</h3>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
@@ -75,7 +75,7 @@ export default function BrowseCouncils({ councils }: Props) {
           {/* Non-Tory Councils */}
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3 className="py-3">Non-Tory councils</h3>
+              <h3 className="position-sticky py-3">Non-Tory councils</h3>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">

@@ -45,7 +45,7 @@ export default function CouncilElection({ data }: Props) {
 
         {/* WARDS FOR THIS COUNCIL */}
         <WardsSummary councilSlug={data.councilSlug} wards={data.wards}>
-          <h3 className="text-uppercase py-3">
+          <h3 className="text-uppercase position-sticky py-3">
             How to vote in <strong><span style={{ textDecoration: "underline" }}>{data.councilName}</span></strong> Wards
           </h3>
         </WardsSummary>

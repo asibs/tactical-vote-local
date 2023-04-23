@@ -141,7 +141,7 @@ export default function WardElection({ data }: Props) {
 
         {/* ALL WARDS FOR THIS COUNCIL */}
         <WardsSummary councilSlug={data.councilSlug} wards={data.allCouncilWards}>
-          <h3 className="text-uppercase py-3">
+          <h3 className="text-uppercase position-sticky py-3">
             All <strong><Link href={`/local/${data.councilSlug}`}>{data.councilName}</Link></strong> Wards
           </h3>
         </WardsSummary>
