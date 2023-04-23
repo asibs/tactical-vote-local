@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="col-12 col-md-8 col-xxl-6 offset-0 offset-md-2 offset-xxl-2 p-4">
             <div className="fw-bold d-flex align-items-center my-0">
               <span className="bs-icon-md d-flex justify-content-center align-items-center me-2">
-                <a href="https://mvtfwd.com/links">
+                <a href="https://mvtfwd.com/links" target="_blank" rel="noreferrer">
                   <Image src={mvmtFrwdLogo} alt="Movement Forward logo" style={{ width: "3rem", height: "3rem" }} />
                   <span className="mx-2">@MVTFWD</span>
                 </a>
@@ -60,17 +60,17 @@ export default function Footer() {
 
               <ul className="list-inline my-1">
                 <li className="list-inline-item">
-                  <a href="https://twitter.com/mvtfwd">
+                  <a href="https://twitter.com/mvtfwd" target="_blank" rel="noreferrer">
                     <Image src={twitterSquare} alt="Follow us on Twitter" width={32} height={32} />
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="https://facebook.com/mvtfwd">
+                  <a href="https://facebook.com/mvtfwd" target="_blank" rel="noreferrer">
                     <Image src={facebookSquare} alt="Follow us on Facebook" width={32} height={32} />
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="https://instagram.com/mvtfwd">
+                  <a href="https://instagram.com/mvtfwd" target="_blank" rel="noreferrer">
                     <Image src={instagramSquare} alt="Follow us on Instagram" width={32} height={32} />
                   </a>
                 </li>
@@ -86,9 +86,9 @@ export default function Footer() {
 
             <div className="my-5">
               <p className="mb-1">
-                Elections data and postcode lookup powered by <a href="https://democracyclub.org.uk/">Democracy Club</a>
+                Elections data and postcode lookup powered by <a href="https://democracyclub.org.uk/" target="_blank" rel="noreferrer">Democracy Club</a>
               </p>
-              <a href="https://democracyclub.org.uk/">
+              <a href="https://democracyclub.org.uk/" target="_blank" rel="noreferrer">
                 <Image src={demoClubLogo} alt="Movement Forward logo" />
               </a>
             </div>

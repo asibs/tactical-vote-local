@@ -25,7 +25,7 @@ export default function Contact() {
 
               <h3 className="mt-5">Email</h3>
               <p>
-                <a href="mailto:team@mvtfwd.com">team@mvtfwd.com</a>
+                <a href="mailto:team@mvtfwd.com" target="_blank" rel="noreferrer">team@mvtfwd.com</a>
               </p>
             </div>
           </div>
