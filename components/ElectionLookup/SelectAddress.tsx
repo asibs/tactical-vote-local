@@ -22,11 +22,11 @@ export default function SelectAddress({
 }: Props) {
   return (
     <>
-      <div className="d-flex flex-wrap my-3">
-        <div className="me-2" style={{ maxWidth: "350px" }}>
+      <div className="my-3" style={{ maxWidth: "374px" }}>
+        <div className="my-3">
           <select
             id="addressInput"
-            className="form-control form-control-lg"
+            className="form-select form-select-lg"
             value={selectedAddress}
             onChange={(e) => setSelectedAddress(e.target.value)}
             disabled={loading}
@@ -38,9 +38,10 @@ export default function SelectAddress({
             })}
           </select>
         </div>
-        <div>
+        <div className="my-3">
           <button
-            className="btn btn-dark btn-lg ms-2"
+            className="btn btn-dark btn-lg"
+            style={{ width: "33%" }}
             role="button"
             onClick={onClick}
             disabled={loading}
