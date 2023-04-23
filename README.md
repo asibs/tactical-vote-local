@@ -40,8 +40,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## TODO:
 
 1. Add a `donate` endpoint (which may just redirect to a crowdfunder website, TBC)
-2. Add other wards for this council to the ward pages
-3. Add 'browse councils' page
-4. Add specific page for no election
-5. Add special handling for when we have 0 recommendations
-6. Font weights & sizes using Rubik don't seem quite right - not consistent with the wireframes for some reason...
+2. Add specific page for no election
+3. Add special handling for when we have 0 recommendations
+4. Font weights & sizes using Rubik don't seem quite right - not consistent with the wireframes for some reason...

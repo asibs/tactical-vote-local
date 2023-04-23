@@ -1,68 +1,129 @@
-import EveryElectionApi from '../../lib/democracyClub/EveryElectionApi'
+import fs from 'fs'
+import path from 'path'
+import { parse } from 'csv-parse'
 
-const ELECTION_DATE = "2023-05-04"
-const ELECTION_ID_REGEX = "local\.[^\.]*\.2023"
+import Link from 'next/link'
+
+import Layout from '../../components/Layout'
+import Header from '../../components/Header'
+import ElectionLookup from '../../components/ElectionLookup/ElectionLookup'
+
+const ELECTION_DATA_CSV = 'data/local-tactical-2023-05-04-v1.csv'
 
 interface Props {
-  csvData: string
+  councils: {
+    slug: string
+    name: string
+    priority: number
+  }[]
 }
 
-function CouncilElectionCsv({ csvData }: Props) {
+
+export default function BrowseCouncils({ councils }: Props) {
+  console.log(councils)
+
+  console.log(councils.filter((c) => c.priority === 1))
+
   return (
-    <pre>
-      {csvData}
-    </pre>
+    <Layout>
+      <Header>
+        <h2>Tory councils we can take back</h2>
+      </Header>
+
+      {/* Content */}
+      <main>
+        <div className="container-fluid py-3 py-md-5">
+
+          {/* Target Tory Councils */}
+          <div className="row pb-5">
+            <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
+              <h3 className="py-3">Target Tory councils</h3>
+              <p><a href="#search">Find your council and how to vote in your ward</a></p>
+              <div className="two-columns three-columns">
+                <ul className="list-of-councils">
+                  {councils.filter((c) => c.priority === 1).map((council) => {
+                    return (
+                      <li key={council.slug}>
+                        <Link className="party party-conservative" href={`/local/${council.slug}`}>
+                          {council.name}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Non-Target Tory Councils */}
+          <div className="row pb-5">
+            <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
+              <h3 className="py-3">Other Tory councils</h3>
+              <p><a href="#search">Find your council and how to vote in your ward</a></p>
+              <div className="two-columns three-columns">
+                <ul className="list-of-councils">
+                  {councils.filter((c) => c.priority === 2).map((council) => {
+                    return (
+                      <li key={council.slug}>
+                        <Link className="party party-conservative" href={`/local/${council.slug}`}>
+                          {council.name}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Non-Tory Councils */}
+          <div className="row">
+            <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
+              <h3 className="py-3">Non-Tory councils</h3>
+              <p><a href="#search">Find your council and how to vote in your ward</a></p>
+              <div className="two-columns three-columns">
+                <ul className="list-of-councils">
+                  {councils.filter((c) => c.priority !== 1 && c.priority !== 2).map((council) => {
+                    return (
+                      <li key={council.slug}>
+                        <Link className="party party-none" href={`/local/${council.slug}`}>
+                          {council.name}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <ElectionLookup />
+      </main>
+
+    </Layout>
   )
 }
 
-// Statically generate props at build time on server-side.
+/* Generate the data for statically rendering /local
+// Called once at build-time (or per-request in dev mode)
+*/
 export async function getStaticProps() {
-  if (!process.env.GENERATE_COUNCIL_CSV) {
-    // We don't need to generate this page on Prod
-    // TODO: Shift this out of a page, or otherwise exclude from the prod build somehow...
-    const csvData = "Oops"
-    return {
-      props: { csvData },
+  const parser = fs
+    .createReadStream(path.join(process.cwd(), ELECTION_DATA_CSV))
+    .pipe(parse({ columns: true }));
+
+  let councils = []
+  for await (const record of parser) {
+    const slug = record['council_slug']
+    const name = record['council_name']
+    const priority = Number(record['Target Priority'])
+
+    if (councils.findIndex(c => c.slug === slug) === -1) {
+      councils.push({ slug: slug, name: name, priority: priority })
     }
   }
 
-  const api = new EveryElectionApi()
-  const councilElections = await api.getElections(ELECTION_DATE, ELECTION_ID_REGEX)
-  // console.log("Got councilElections", councilElections)
-
-  const wardElectionIds = councilElections.map(councilElection => councilElection.children).flat()
-  console.log("Ward Election IDs", wardElectionIds)
-
-  const wardElectionsData = []
-  // Call each ward election endpoint sequentially
-  // (try to avoid hitting DemocracyClub with 1000s of requests at the same time...!)
-  for (const wardElectionId of wardElectionIds) {
-    console.log("Starting call", wardElectionId)
-    const wardElectionData = await api.getElection(wardElectionId)
-    console.log("Finished call", wardElectionId)
-    wardElectionsData.push(wardElectionData)
-  }
-  // console.log("Ward Elections Data", wardElectionsData)
-
-  const csvData = wardElectionsData.map(election => {
-    // console.log("election", election)
-
-    const councilSlug = election.organisation.slug
-    const wardSlug = election.division.slug
-    const councilName = election.organisation.common_name
-    const wardName = election.division.name
-    const wardGss = election.division.official_identifier
-    const totalSeats = election.division.seats_total
-    const seatsContested = election.seats_contested
-
-    return `${councilSlug}, ${wardSlug}, "${councilName}", "${wardName}", "${wardGss}", ${totalSeats}, ${seatsContested}`
-  }).join("\r\n")
-
-  console.log("CSV DATA", csvData)
-
-  return {
-    props: { csvData },
-  }
+  return { props: { councils: councils } }
 }
-
-export default CouncilElectionCsv
