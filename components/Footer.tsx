@@ -30,7 +30,7 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
                 Get reminders
               </Link>
-              <Link href="/local/browse/" className="btn btn-primary btn-lg" role="button">
+              <Link href="/local" className="btn btn-primary btn-lg" role="button">
                 <FontAwesomeIcon icon={faSearch} fixedWidth className="fas text-white" />
                 Browse councils
               </Link>
