@@ -5,7 +5,7 @@ import { parse } from 'csv-parse'
 
 import CouncilElection from '../../components/CouncilElection'
 import WardElection from '../../components/WardElection'
-import { CouncilElectionData, WardElectionData } from '../../types'
+import { CouncilElectionData, WardElectionData, LocalGroupsData } from '../../types'
 
 const ELECTION_DATA_CSV = 'data/local-tactical-2023-05-04-v1.csv'
 
@@ -155,7 +155,7 @@ async function getCouncilData(councilSlug: string) {
     }));
 
   let wardRecords = []
-  let localGroups = []
+  let localGroups: LocalGroupsData[] = []
   for await (const record of parser) {
     wardRecords.push(record)
 

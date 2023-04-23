@@ -20,10 +20,6 @@ interface Props {
 
 
 export default function BrowseCouncils({ councils }: Props) {
-  console.log(councils)
-
-  console.log(councils.filter((c) => c.priority === 1))
-
   return (
     <Layout>
       <Header>
