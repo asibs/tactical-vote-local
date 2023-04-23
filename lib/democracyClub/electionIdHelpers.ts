@@ -24,5 +24,5 @@ export function getPathFromElectionId(electionId: string) {
   }
 
   // We don't use the dates in our paths, so strip off the last element
-  return pathParts.slice(0, -1).join('/')
+  return `/${pathParts.slice(0, -1).join('/')}`
 }
