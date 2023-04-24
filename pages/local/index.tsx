@@ -8,7 +8,7 @@ import Layout from '../../components/Layout'
 import Header from '../../components/Header'
 import ElectionLookup from '../../components/ElectionLookup/ElectionLookup'
 
-const ELECTION_DATA_CSV = 'data/local-tactical-2023-05-04-v1.csv'
+const ELECTION_DATA_CSV = 'data/local-tactical-2023-05-04-v2.csv'
 
 interface Props {
   councils: {
@@ -34,6 +34,7 @@ export default function BrowseCouncils({ councils }: Props) {
           <div className="row pb-5">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="position-sticky py-3">Target Tory councils</h3>
+              <p>Councils controlled by the Tory party - or Tory coalitions - that we have a good chance of taking back!</p>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
@@ -55,6 +56,7 @@ export default function BrowseCouncils({ councils }: Props) {
           <div className="row pb-5">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="position-sticky py-3">Other Tory councils</h3>
+              <p>Councils controlled by the Tory party that will be harder to take back.</p>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
@@ -76,6 +78,7 @@ export default function BrowseCouncils({ councils }: Props) {
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="position-sticky py-3">Non-Tory councils</h3>
+              <p>Councils currently run by other parties where we need to keep the Tories out!</p>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
