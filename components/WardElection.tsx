@@ -181,7 +181,7 @@ export default function WardElection({ data }: Props) {
                     <strong>let&apos;s take it back!</strong>
                   </p>
                 )}
-                {![1,2].includes(data.priority) && (
+                {data.priority === 3 && (
                   <p>
                     {data.councilName} isn&apos;t under Tory control&nbsp;-&nbsp;
                     <strong>let&apos;s keep it that way!</strong>

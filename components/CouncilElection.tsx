@@ -35,10 +35,16 @@ export default function CouncilElection({ data }: Props) {
             <strong>let&apos;s take it back!</strong>
           </p>
         )}
-        {![1,2].includes(data.priority) && (
+        {data.priority === 3 && (
           <p>
             {data.councilName} isn&apos;t under Tory control&nbsp;-&nbsp;
             <strong>let&apos;s keep it that way!</strong>
+          </p>
+        )}
+        {data.priority === 4 && (
+          <p>
+            {data.councilName} doesn&apos;t have a full election, but does have a
+            byelection in {data.wards.length} ward{data.wards.length > 1 && 's'}
           </p>
         )}
       </Header>

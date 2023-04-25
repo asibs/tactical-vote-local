@@ -8,7 +8,7 @@ import Layout from '../../components/Layout'
 import Header from '../../components/Header'
 import ElectionLookup from '../../components/ElectionLookup/ElectionLookup'
 
-const ELECTION_DATA_CSV = 'data/local-tactical-2023-05-04-v3.csv'
+const ELECTION_DATA_CSV = 'data/local-tactical-2023-05-04-v4.csv'
 
 interface Props {
   councils: {
@@ -17,7 +17,6 @@ interface Props {
     priority: number
   }[]
 }
-
 
 export default function BrowseCouncils({ councils }: Props) {
   return (
@@ -75,14 +74,36 @@ export default function BrowseCouncils({ councils }: Props) {
           </div>
 
           {/* Non-Tory Councils */}
-          <div className="row">
+          <div className="row pb-5">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="position-sticky py-3">Non-Tory councils</h3>
               <p>Councils currently run by other parties where we need to keep the Tories out!</p>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
-                  {councils.filter((c) => c.priority !== 1 && c.priority !== 2).map((council) => {
+                  {councils.filter((c) => c.priority === 3).map((council) => {
+                    return (
+                      <li key={council.slug}>
+                        <Link className="party party-none" href={`/local/${council.slug}`}>
+                          {council.name}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Byelection Councils */}
+          <div className="row">
+            <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
+              <h3 className="position-sticky py-3">Councils with byelections</h3>
+              <p>Councils where only 1 or 2 seats are up for election</p>
+              <p><a href="#search">Find your council and how to vote in your ward</a></p>
+              <div className="two-columns three-columns">
+                <ul className="list-of-councils">
+                  {councils.filter((c) => c.priority === 4).map((council) => {
                     return (
                       <li key={council.slug}>
                         <Link className="party party-none" href={`/local/${council.slug}`}>
