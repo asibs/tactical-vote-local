@@ -228,7 +228,7 @@ export default function WardElection({ data }: Props) {
                   <small>
                     <a href="#info-area">Find out why we made this recommendation.</a><br />
                     Know something we don&apos;t? <Link href="/about">Let us know</Link>.<br />
-                    Don't live here? <a href="#search">Find your area</a>.
+                    Don&apos;t live here? <a href="#search">Find your area</a>.
                   </small>
                 </p>
 

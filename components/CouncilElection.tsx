@@ -58,7 +58,7 @@ export default function CouncilElection({ data }: Props) {
 
                 <p>
                   <small>
-                    Don't live here? <a href="#search">Find your area</a>.
+                    Don&apos;t live here? <a href="#search">Find your area</a>.
                   </small>
                 </p>
               </div>
