@@ -32,6 +32,7 @@ export interface CouncilElectionData {
   priority: number
   wards: WardSummaryData[]
   localGroups: LocalGroupsData[]
+  lastElectionResultsUrl: string
 }
 
 export interface WardElectionData {
@@ -48,4 +49,5 @@ export interface WardElectionData {
   recommendationAdvice: string
   localGroups: LocalGroupsData[]
   allCouncilWards: WardSummaryData[]
+  lastElectionResultsUrl: string
 }

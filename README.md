@@ -43,3 +43,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 2. Add specific page for no election
 3. Add special handling for when we have 0 recommendations
 4. Font weights & sizes using Rubik don't seem quite right - not consistent with the wireframes for some reason...
+
+## Future algorithm changes:
+
+- When comparing votes / candidates elected order, order by candidates elected THEN votes THEN party name - atm we raise the order mismatch for lots of wards where the last election only had 1 seat because we're ordering by candidates elected THEN party name which means if parties total votes aren't alphabetical we error...!
+
+- Before running other checks, first just look if the total number of progressive candidates is <= the total seats... If so, doesn't matter what previous result was (or even if we can't find a previous election) - just recommend the progressive candidates that ARE standing.
+
+-  

@@ -18,6 +18,8 @@ import {
   faClipboardCheck,
   faFileDownload,
   faLightbulb,
+  faChartSimple,
+  faUser,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons'
 import facebookSquare from '../assets/facebook-square.svg'
@@ -35,7 +37,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "NO_ELECTION_FOUND":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
           <i>This looks like a new ward, or a ward whose name or boundary has changed - so
           we can&apos;t see which parties did best here at the last election</i>
@@ -44,7 +46,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "TOP_3_MISMATCH_INDEPENDENT_WON":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
           <i>It looks like an independent candidate or smaller party won here at the last election</i>
         </>
@@ -52,14 +54,14 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "TOP_3_MISMATCH":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Sorry, we can&apos;t make a recommendation here</strong>
         </>
       )
     case "CON_WIN_SECOND_NOT_PROGRESSIVE":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
           <i>It looks like the Tories won here last time, and an independent candidate or smaller party
           came second, so we&apos;re not sure which party is most likely to beat the Tories here</i>
@@ -68,7 +70,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "INDEPENDENT_WON":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
           <i>It looks like an independent candidate or smaller party won here at the last election</i>
         </>
@@ -76,7 +78,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "PROGRESSIVES_TOO_CLOSE_NO_RECC":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
           <i>Multiple progressive parties performed similarly here at the last election, and we
           can&apos;t tell which is most likely to beat the Tories this time</i>
@@ -85,7 +87,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "PROGRESSIVES_TOO_CLOSE":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Sorry, we can&apos;t make a recommendation for all your votes here</strong><br />
           <i>The recommended party aren&apos;t standing enough candidates for all your votes,
           and we can&apos;t tell which party is next most likely to beat the Tories</i>
@@ -94,7 +96,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "VOTE_FOR_PREFERRED_PROGRESSIVE":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Vote for your preferred progressive party</strong><br />
           <i>Based on the last election, we think the Tories are unlikely to win
           here, so tactical voting in this ward probably isn&apos;t necessary</i>
@@ -104,21 +106,21 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       if (advice !== "" && advice !== "EMPTY") {
         return (
           <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" />
+            <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
             {advice}
           </>
         )
       } else if (firstRecommendedParty === "none") {
         return (
           <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" />
+            <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
             <strong>Sorry, we can&apos;t make a recommendation here</strong>
           </>
         )
       } else {
         return (
           <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" />
+            <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
             Based on the previous election results and the candidates standing this time, we
             think <strong>{getHumanReadablePartyName(firstRecommendedParty)}</strong> have
             the best chance of beating the Tories.
@@ -170,7 +172,7 @@ export default function WardElection({ data }: Props) {
                 {data.priority === 1 && (
                   <p>
                     {data.councilName} is currently under Tory control&nbsp;-&nbsp;
-                    <strong>we have a great chance of taking it back!</strong>
+                    <strong>but we have a great chance of taking it back on May 4th!</strong>
                   </p>
                 )}
                 {data.priority === 2 && (
@@ -179,9 +181,9 @@ export default function WardElection({ data }: Props) {
                     <strong>let&apos;s take it back!</strong>
                   </p>
                 )}
-                {data.priority === 3 && (
+                {data.priority !== 1 && data.priority !== 2 && (
                   <p>
-                    {data.councilName} isn't under Tory control&nbsp;-&nbsp;
+                    {data.councilName} isn&apos;t under Tory control&nbsp;-&nbsp;
                     <strong>let&apos;s keep it that way!</strong>
                   </p>
                 )}
@@ -223,6 +225,20 @@ export default function WardElection({ data }: Props) {
                 <div className="info-area">
                   <p>
                     {getAdvice(data.recommendationAdvice, wardVotes[0])}
+                  </p>
+                  {data.lastElectionResultsUrl && (
+                    <p>
+                      <FontAwesomeIcon icon={faChartSimple} className="fas" color="green" />
+                      <a href={data.lastElectionResultsUrl} target="_blank" rel="noreferrer">
+                        View previous election results for this council on Wikipedia
+                      </a>
+                    </p>
+                  )}
+                  <p>
+                    <FontAwesomeIcon icon={faUser} className="fas" color="blue" />
+                    <a href={`https://whocanivotefor.co.uk/elections/local.${data.councilSlug}.${data.wardSlug}.2023-05-04/`} target="_blank" rel="noreferrer">
+                      Find out about the candidates on Who Can I Vote For
+                    </a>
                   </p>
                   <p>
                     <FontAwesomeIcon icon={faTriangleExclamation} className="fas" color="red" />

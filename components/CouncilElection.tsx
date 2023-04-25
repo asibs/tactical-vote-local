@@ -24,7 +24,7 @@ export default function CouncilElection({ data }: Props) {
         {data.priority === 1 && (
           <p>
             {data.councilName} is currently under Tory control&nbsp;-&nbsp;
-            <strong>we have a great chance of taking it back!</strong>
+            <strong>but we have a great chance of taking it back on May 4th!</strong>
           </p>
         )}
         {data.priority === 2 && (
@@ -33,9 +33,9 @@ export default function CouncilElection({ data }: Props) {
             <strong>let&apos;s take it back!</strong>
           </p>
         )}
-        {data.priority === 3 && (
+        {data.priority !== 1 && data.priority !== 2 && (
           <p>
-            {data.councilName} isn't under Tory control&nbsp;-&nbsp;
+            {data.councilName} isn&apos;t under Tory control&nbsp;-&nbsp;
             <strong>let&apos;s keep it that way!</strong>
           </p>
         )}
