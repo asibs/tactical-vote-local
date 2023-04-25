@@ -84,6 +84,7 @@ main #search {
   background-color: var(--bs-pink);
   color: var(--bs-white);
   min-height: 250px;
+  scroll-margin-top: 50px;
 }
 
 main #search a:link, main #search a:visited, main #search a:hover, main #search a:active {
@@ -96,6 +97,10 @@ div.alert {
 }
 
 /* INFO AREA */
+
+#info-area {
+  scroll-margin-top: 100px;
+}
 
 .info-area {
   background-color: lightyellow;

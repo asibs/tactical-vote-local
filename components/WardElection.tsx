@@ -7,6 +7,7 @@ import Layout from './Layout'
 import CopyButton from './CopyButton'
 import DownloadPosterButton from './DownloadPosterButton'
 import FacebookGroupsButton from './FacebookGroupsButton'
+import ShareButton from './ShareButton'
 import ElectionLookup from './ElectionLookup/ElectionLookup'
 import WardsSummary from './WardsSummary'
 
@@ -14,6 +15,7 @@ import { WardElectionData } from '../types'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
+  faBell,
   faCopy,
   faClipboardCheck,
   faFileDownload,
@@ -222,7 +224,49 @@ export default function WardElection({ data }: Props) {
                     )
                 })}
 
-                <div className="info-area">
+                <p>
+                  <small>
+                    <a href="#info-area">Find out why we made this recommendation.</a><br />
+                    Know something we don&apos;t? <Link href="/about">Let us know</Link>.<br />
+                    Don't live here? <a href="#search">Find your area</a>.
+                  </small>
+                </p>
+
+                {/* ACTIONS */}
+                <div className="container-fluid py-4">
+                  <div className="row py-2">
+                    <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5 col-xxl-4 align-items-md-center">
+                      <p className="mb-1"><i>Spread the word to help stop the Tories!</i></p>
+                      <div className="btn-group-vertical w-100" role="group">
+                        <ShareButton
+                          url={`https://stopthetories.vote/local/${data.councilSlug}`}
+                          shareTitle="Stop The Tories on May 4th"
+                          shareText="Vote tactically to take back your local council!"
+                        />
+                        <CopyButton
+                          textToCopy={`https://stopthetories.vote/local/${data.councilSlug}`}
+                          buttonText="Copy link to share this page"
+                          onClickButtonText="Link copied - now share it!"
+                        />
+                        <DownloadPosterButton />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row py-2">
+                    <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5 col-xxl-4 align-items-md-center">
+                      <p className="mb-1"><i>Keep up-to-date</i></p>
+                      <div className="btn-group-vertical w-100" role="group">
+                        <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
+                          <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
+                          Get reminders
+                        </Link>
+                        <FacebookGroupsButton groups={data.localGroups}/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="info-area" className="info-area">
                   <p>
                     {getAdvice(data.recommendationAdvice, wardVotes[0])}
                   </p>
@@ -242,17 +286,11 @@ export default function WardElection({ data }: Props) {
                   </p>
                   <p>
                     <FontAwesomeIcon icon={faTriangleExclamation} className="fas" color="red" />
-                    It looks like there {data.seatsContested === 1 ? "is 1 seat" : `are ${data.seatsContested} seats`} up
-                    for election in this ward so you should have {data.seatsContested} vote{data.seatsContested > 1 && "s"}.
-                    <br />
-                    <strong>But always double check your ballot paper to make sure!</strong>
+                    It looks like there {data.seatsContested === 1 ? "is 1 seat" : `are ${data.seatsContested} seats`} up for
+                    election in this ward so you should have {data.seatsContested} vote{data.seatsContested > 1 && "s"}. <strong>But
+                    always double check your ballot paper to make sure!</strong>
                   </p>
                 </div>
-                <p>
-                  <small>
-                    Know something we don&apos;t? <Link href="/about">Let us know</Link>.
-                  </small>
-                </p>
               </div>
             </div>
           </div>
@@ -261,25 +299,6 @@ export default function WardElection({ data }: Props) {
       </header>
 
       <main>
-        {/* ACTIONS */}
-        <div className="container-fluid pt-5">
-          <div className="row">
-            <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5 col-xxl-4 offset-md-2 offset-xxl-2 align-items-md-center">
-              <div className="btn-group-vertical w-100" role="group">
-                <CopyButton
-                  textToCopy={`https://stopthetories.vote/local/${data.councilSlug}/${data.wardSlug}`}
-                  buttonText="Copy link to share this page"
-                  onClickButtonText="Link copied - now share it!"
-                />
-
-                <DownloadPosterButton />
-
-                <FacebookGroupsButton groups={data.localGroups}/>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* ALL WARDS FOR THIS COUNCIL */}
         <WardsSummary councilSlug={data.councilSlug} wards={data.allCouncilWards}>
           <h3 className="text-uppercase position-sticky py-3">

@@ -8,7 +8,7 @@ export default function DownloadPosterButton() {
   return (
     <Link href="/posters" className="btn btn-primary btn-lg" role="button">
       <FontAwesomeIcon icon={faFileDownload} fixedWidth className="fas text-white" />
-      Download a poster
+      Put up a poster
     </Link>
   )
 }
