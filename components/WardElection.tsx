@@ -38,7 +38,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
+          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
           <i>This looks like a new ward, or a ward whose name or boundary has changed - so
           we can&apos;t see which parties did best here at the last election</i>
         </>
@@ -47,23 +47,23 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
-          <i>It looks like an independent candidate or smaller party won here at the last election</i>
+          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <i>It looks like an independent candidate or smaller party won in this ward at the last election</i>
         </>
       )
     case "TOP_3_MISMATCH":
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation here</strong>
+          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong>
         </>
       )
     case "CON_WIN_SECOND_NOT_PROGRESSIVE":
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
-          <i>It looks like the Tories won here last time, and an independent candidate or smaller party
+          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <i>It looks like the Tories won in this ward last time, and an independent candidate or smaller party
           came second, so we&apos;re not sure which party is most likely to beat the Tories here</i>
         </>
       )
@@ -71,16 +71,16 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
-          <i>It looks like an independent candidate or smaller party won here at the last election</i>
+          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <i>It looks like an independent candidate or smaller party won in this ward at the last election</i>
         </>
       )
     case "PROGRESSIVES_TOO_CLOSE_NO_RECC":
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation here</strong><br />
-          <i>Multiple progressive parties performed similarly here at the last election, and we
+          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <i>Multiple progressive parties performed similarly in this ward at the last election, and we
           can&apos;t tell which is most likely to beat the Tories this time</i>
         </>
       )
@@ -88,8 +88,8 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation for all your votes here</strong><br />
-          <i>The recommended party aren&apos;t standing enough candidates for all your votes,
+          <strong>Sorry, we can&apos;t make a recommendation for all your votes in this ward</strong><br />
+          <i>The recommended party aren&apos;t standing enough candidates for all your votes in this ward,
           and we can&apos;t tell which party is next most likely to beat the Tories</i>
         </>
       )
@@ -99,7 +99,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
           <strong>Vote for your preferred progressive party</strong><br />
           <i>Based on the last election, we think the Tories are unlikely to win
-          here, so tactical voting in this ward probably isn&apos;t necessary</i>
+          in this ward, so tactical voting in this ward probably isn&apos;t necessary</i>
         </>
       )
     default:
@@ -114,14 +114,14 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
         return (
           <>
             <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-            <strong>Sorry, we can&apos;t make a recommendation here</strong>
+            <strong>Sorry, we can&apos;t make a recommendation in this ward</strong>
           </>
         )
       } else {
         return (
           <>
             <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-            Based on the previous election results and the candidates standing this time, we
+            Based on the previous election results in this ward and the candidates standing this time, we
             think <strong>{getHumanReadablePartyName(firstRecommendedParty)}</strong> have
             the best chance of beating the Tories.
           </>
@@ -181,7 +181,7 @@ export default function WardElection({ data }: Props) {
                     <strong>let&apos;s take it back!</strong>
                   </p>
                 )}
-                {data.priority !== 1 && data.priority !== 2 && (
+                {![1,2].includes(data.priority) && (
                   <p>
                     {data.councilName} isn&apos;t under Tory control&nbsp;-&nbsp;
                     <strong>let&apos;s keep it that way!</strong>
@@ -214,7 +214,7 @@ export default function WardElection({ data }: Props) {
                   : wardVotes.map((party, index) => {
                     return (
                       <div key={index}>
-                        <h6>Tactical Vote Seat {index+1}</h6>
+                        <h6>Tactical Vote for Seat {index+1}</h6>
                         <h3 className={`party party-${party.toLowerCase()}`}>
                           {getHumanReadablePartyName(party)}
                         </h3>
@@ -230,14 +230,14 @@ export default function WardElection({ data }: Props) {
                     <p>
                       <FontAwesomeIcon icon={faChartSimple} className="fas" color="green" />
                       <a href={data.lastElectionResultsUrl} target="_blank" rel="noreferrer">
-                        View previous election results for this council on Wikipedia
+                        View previous election results for this council & ward on Wikipedia
                       </a>
                     </p>
                   )}
                   <p>
                     <FontAwesomeIcon icon={faUser} className="fas" color="blue" />
                     <a href={`https://whocanivotefor.co.uk/elections/local.${data.councilSlug}.${data.wardSlug}.2023-05-04/`} target="_blank" rel="noreferrer">
-                      Find out about the candidates on Who Can I Vote For
+                      Find out about the candidates standing in this ward on WhoCanIVoteFor
                     </a>
                   </p>
                   <p>
@@ -268,8 +268,8 @@ export default function WardElection({ data }: Props) {
               <div className="btn-group-vertical w-100" role="group">
                 <CopyButton
                   textToCopy={`https://stopthetories.vote/local/${data.councilSlug}/${data.wardSlug}`}
-                  buttonText="Copy link to this page"
-                  onClickButtonText="Link copied!"
+                  buttonText="Copy link to share this page"
+                  onClickButtonText="Link copied - now share it!"
                 />
 
                 <DownloadPosterButton />

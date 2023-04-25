@@ -32,6 +32,7 @@ export default function Posters() {
                 <li>Use eco mode to save ink</li>
                 <li>Cut strips for easy tearing</li>
                 <li>Put up everywhere!</li>
+                <li>Post a photo of your poster in the wild and tag <a href="https://mvtfwd.com/links" target="_blank" rel="noreferrer">@MVTFWD</a></li>
               </ul>
             </div>
           </div>
