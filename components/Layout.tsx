@@ -37,11 +37,29 @@ export default function Layout({ children }: Props) {
     <>
       <Head>
         <title>Stop The Tories .Vote</title>
+        <meta name="description" content="tactical voting info and resources for your area" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+        {/* favicons */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Facebook meta tags for sharing */}
+        <meta property="og:url" content="https://stopthetories.vote" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Stop The Tories .Vote" />
+        <meta property="og:description" content="There are more of us, let's show up, set the agenda, and own the future" />
+        <meta property="og:image" content="https://stopthetories.vote/stop-the-tories-vote-share-003.png" />
+
+        {/* Twitter meta tags for sharing */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="stopthetories.vote" />
+        <meta property="twitter:url" content="https://stopthetories.vote" />
+        <meta name="twitter:title" content="Stop The Tories .Vote" />
+        <meta name="twitter:description" content="There are more of us, let's show up, set the agenda, and own the future" />
+        <meta name="twitter:image" content="https://stopthetories.vote/stop-the-tories-vote-share-003.png" />
       </Head>
 
       <div style={{ background: "var(--bs-gray-100)" }}>
