@@ -69,8 +69,6 @@ export default function ActionNetworkContactForm() {
             /*INPUTS*/
             #can_embed_form input[type=text],
             #can_embed_form input[type=email] {
-            	color: #FFFFFF !important;
-            	background-color: #333333 !important;
             	border-radius: 4px !important;
             	padding: 1.4rem 1rem !important;
             }
