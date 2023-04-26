@@ -4,6 +4,9 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import axios from 'axios'
 
+import CopyButton from '../CopyButton'
+import DownloadPosterButton from '../DownloadPosterButton'
+import ShareButton from '../ShareButton'
 import LookupPostcode from './LookupPostcode'
 import SelectAddress from './SelectAddress'
 import { getPathFromElectionId } from '../../lib/democracyClub/electionIdHelpers'
@@ -104,10 +107,33 @@ export default function ElectionLookup() {
 
       {step === 'NO_ELECTION' && (
         <div className="my-3">
-          <p>Looks like you don&apos;t have a local election on Thursday 4th May</p>
+          <p className="mb-3">
+            <i>Looks like there&apos;s not a local election in your area on Thursday 4th May.</i><br />
+            <strong>But you can still help Stop The Tories by spreading the word!</strong>
+          </p>
+          <div className="container-fluid pb-5">
+            <div className="row">
+              <div className="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-7 col-xxl-6 align-items-md-center">
+                <div className="btn-group-vertical w-100" role="group">
+                  <ShareButton
+                    url="https://stopthetories.vote"
+                    shareTitle="Stop The Tories on May 4th"
+                    shareText="Vote tactically to take back your local council!"
+                  />
+                  <CopyButton
+                    textToCopy="https://stopthetories.vote"
+                    buttonText="Copy link to share this page"
+                    onClickButtonText="Link copied - now share it!"
+                  />
+                  <DownloadPosterButton />
+                </div>
+              </div>
+            </div>
+          </div>
+
           <p>
             <a href="#" onClick={() => setStep('LOOKUP_POSTCODE')}>
-              Lookup a different postcode
+              Or lookup a different postcode
             </a>
           </p>
         </div>
