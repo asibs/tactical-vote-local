@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 
-import poster from '../assets/stop-the-tories-dot-vote-a4-poster.png'
+import posterThumbnail from '../assets/stop-the-tories-vote-001-thumb.gif'
 
 export default function Posters() {
   return (
@@ -23,15 +23,19 @@ export default function Posters() {
           </div>
           <div className="row">
             <div className="col-8 col-md-4 col-xxl-3 offset-0 offset-md-2 offset-xxl-2 align-items-md-center" style={{ position: "relative"}}>
-              <Image src={poster} alt="Stop The Tories poster" style={{ width: "100%", height: "auto" }} />
+              <a href="/stop-the-tories-vote-001.pdf" download>
+                <Image src={posterThumbnail} alt="Stop The Tories poster" style={{ width: "100%", height: "auto" }} />
+              </a>
             </div>
             <div className="col-8 col-md-4 col-xxl-3 align-items-md-center" style={{ paddingTop: "2rem" }}>
               <ul>
-                <li>Right click and save</li>
-                <li>Print A4 at 100%</li>
-                <li>Use eco mode to save ink</li>
+                <li>
+                  <a href="/stop-the-tories-vote-001.pdf" download><strong>Click here to download the poster</strong></a>
+                </li>
+                <li><strong>Print A4 at 100%</strong> - use eco mode to save ink</li>
+                <li><strong>Write your name and email in the spaces provided</strong> (this is required by the Electoral Commission)</li>
                 <li>Cut strips for easy tearing</li>
-                <li>Put up everywhere!</li>
+                <li><strong>Put up everywhere!</strong></li>
                 <li>Post a photo of your poster in the wild and tag <a href="https://mvtfwd.com/links" target="_blank" rel="noreferrer">@MVTFWD</a></li>
               </ul>
             </div>
