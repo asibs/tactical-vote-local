@@ -76,36 +76,29 @@ export default function CouncilElection({ data }: Props) {
         </WardsSummary>
 
         {/* ACTIONS */}
-        <div className="container-fluid pb-4 pb-md-5">
-          <div className="row py-2">
-            <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5 col-xxl-4 offset-md-2 offset-xxl-2 align-items-md-center">
-              <p className="mb-1"><i>Spread the word to help stop the Tories!</i></p>
-              <div className="btn-group-vertical w-100" role="group">
-                <ShareButton
-                  url={`https://stopthetories.vote/local/${data.councilSlug}`}
-                  shareTitle="Stop The Tories on May 4th"
-                  shareText="Vote tactically to take back your local council!"
-                />
-                <CopyButton
-                  textToCopy={`https://stopthetories.vote/local/${data.councilSlug}`}
-                  buttonText="Copy link to share this page"
-                  onClickButtonText="Link copied - now share it!"
-                />
-                <DownloadPosterButton />
-              </div>
-            </div>
+        <div className="px-3 offset-md-2" style={{ minWidth: "340px", maxWidth: "450px" }}>
+          <p className="mb-1"><i><strong>Spread the word to help stop the Tories!</strong></i></p>
+          <div className="btn-group-vertical mb-3 w-100" role="group">
+            <ShareButton
+              url={`https://stopthetories.vote/local/${data.councilSlug}`}
+              shareTitle="Stop The Tories on May 4th"
+              shareText="Vote tactically to take back your local council!"
+            />
+            <CopyButton
+              textToCopy={`https://stopthetories.vote/local/${data.councilSlug}`}
+              buttonText="Copy link to share this page"
+              onClickButtonText="Link copied - now share it!"
+            />
+            <DownloadPosterButton />
           </div>
-          <div className="row py-2">
-            <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5 col-xxl-4 offset-md-2 offset-xxl-2 align-items-md-center">
-              <p className="mb-1"><i>Keep up-to-date</i></p>
-              <div className="btn-group-vertical w-100" role="group">
-                <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
-                  <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
-                  Get reminders
-                </Link>
-                <FacebookGroupsButton groups={data.localGroups}/>
-              </div>
-            </div>
+
+          <p className="mb-1"><i><strong>Keep up-to-date</strong></i></p>
+          <div className="btn-group-vertical mb-5 w-100" role="group">
+            <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
+              <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
+              Get reminders
+            </Link>
+            <FacebookGroupsButton groups={data.localGroups}/>
           </div>
         </div>
 

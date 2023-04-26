@@ -13,11 +13,11 @@ interface Props {
 export default function FacebookGroupsButton({ groups }: Props) {
   return (
     <div className="dropdown btn-group" role="group">
-      <button className="btn btn-primary btn-lg dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">
+      <button className="btn btn-primary btn-lg dropdown-toggle" style={{ paddingLeft: "19px" }} aria-expanded="false" data-bs-toggle="dropdown" type="button">
         <Image src={facebookSquareWhite} alt="Follow us on Facebook" className="fas" width={20} height={20} />
         Join local Facebook groups
       </button>
-      <div className="dropdown-menu text-primary w-100">
+      <div className="dropdown-menu text-primary w-100 px-1">
         {groups.length > 0
           ? (
             <>

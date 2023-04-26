@@ -111,23 +111,20 @@ export default function ElectionLookup() {
             <i>Looks like there&apos;s not a local election in your area on Thursday 4th May.</i><br />
             <strong>But you can still help Stop The Tories by spreading the word!</strong>
           </p>
-          <div className="container-fluid pb-5">
-            <div className="row">
-              <div className="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-7 col-xxl-6 align-items-md-center">
-                <div className="btn-group-vertical w-100" role="group">
-                  <ShareButton
-                    url="https://stopthetories.vote"
-                    shareTitle="Stop The Tories on May 4th"
-                    shareText="Vote tactically to take back your local council!"
-                  />
-                  <CopyButton
-                    textToCopy="https://stopthetories.vote"
-                    buttonText="Copy link to share this page"
-                    onClickButtonText="Link copied - now share it!"
-                  />
-                  <DownloadPosterButton />
-                </div>
-              </div>
+
+          <div style={{ minWidth: "340px", maxWidth: "450px" }}>
+            <div className="btn-group-vertical mb-3 w-100" role="group">
+              <ShareButton
+                url="https://stopthetories.vote"
+                shareTitle="Stop The Tories on May 4th"
+                shareText="Vote tactically to take back your local council!"
+              />
+              <CopyButton
+                textToCopy="https://stopthetories.vote"
+                buttonText="Copy link to share this page"
+                onClickButtonText="Link copied - now share it!"
+              />
+              <DownloadPosterButton />
             </div>
           </div>
 

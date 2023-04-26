@@ -161,9 +161,9 @@ export default function WardElection({ data }: Props) {
 
       {/* WARD HEADER + VOTE ADVICE (all in header element) */}
       <header>
-
-        {/* HEADER */}
         <div className="container-fluid py-3 py-md-4">
+
+          {/* COUNCIL INFO */}
           <div className="row py-2">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 d-md-flex align-items-md-center">
               <div>
@@ -193,6 +193,7 @@ export default function WardElection({ data }: Props) {
             </div>
           </div>
 
+          {/* WARD INFO */}
           <div className="row py-2" style={{ background: `var(--bs-black) url(${insetShadow.src}) top no-repeat`, backgroundSize: "100%" }}>
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 d-md-flex align-items-md-center">
               <div>
@@ -202,10 +203,10 @@ export default function WardElection({ data }: Props) {
             </div>
           </div>
 
-          {/* VOTE ADVICE (still in header element)*/}
           <div className="row py-2">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 d-md-flex align-items-md-center">
               <div>
+                {/* RECOMMENDATIONS */}
                 {allNoRecommendation
                   ? (
                       <div>
@@ -223,7 +224,6 @@ export default function WardElection({ data }: Props) {
                       </div>
                     )
                 })}
-
                 <p>
                   <small>
                     <a href="#info-area">Find out why we made this recommendation.</a><br />
@@ -233,39 +233,33 @@ export default function WardElection({ data }: Props) {
                 </p>
 
                 {/* ACTIONS */}
-                <div className="container-fluid py-4">
-                  <div className="row py-2">
-                    <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5 col-xxl-4 align-items-md-center">
-                      <p className="mb-1"><i>Spread the word to help stop the Tories!</i></p>
-                      <div className="btn-group-vertical w-100" role="group">
-                        <ShareButton
-                          url={`https://stopthetories.vote/local/${data.councilSlug}`}
-                          shareTitle="Stop The Tories on May 4th"
-                          shareText="Vote tactically to take back your local council!"
-                        />
-                        <CopyButton
-                          textToCopy={`https://stopthetories.vote/local/${data.councilSlug}`}
-                          buttonText="Copy link to share this page"
-                          onClickButtonText="Link copied - now share it!"
-                        />
-                        <DownloadPosterButton />
-                      </div>
-                    </div>
+                <div className="px-1" style={{ minWidth: "340px", maxWidth: "450px" }}>
+                  <p className="mb-1"><i><strong>Spread the word to help stop the Tories!</strong></i></p>
+                  <div className="btn-group-vertical mb-3 w-100" role="group">
+                    <ShareButton
+                      url={`https://stopthetories.vote/local/${data.councilSlug}`}
+                      shareTitle="Stop The Tories on May 4th"
+                      shareText="Vote tactically to take back your local council!"
+                    />
+                    <CopyButton
+                      textToCopy={`https://stopthetories.vote/local/${data.councilSlug}`}
+                      buttonText="Copy link to share this page"
+                      onClickButtonText="Link copied - now share it!"
+                    />
+                    <DownloadPosterButton />
                   </div>
-                  <div className="row py-2">
-                    <div className="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5 col-xxl-4 align-items-md-center">
-                      <p className="mb-1"><i>Keep up-to-date</i></p>
-                      <div className="btn-group-vertical w-100" role="group">
-                        <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
-                          <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
-                          Get reminders
-                        </Link>
-                        <FacebookGroupsButton groups={data.localGroups}/>
-                      </div>
-                    </div>
+
+                  <p className="mb-1"><i><strong>Keep up-to-date</strong></i></p>
+                  <div className="btn-group-vertical mb-5 w-100" role="group">
+                    <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
+                      <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
+                      Get reminders
+                    </Link>
+                    <FacebookGroupsButton groups={data.localGroups}/>
                   </div>
                 </div>
 
+                {/* RECOMMENDATIONS EXTRA INFO */}
                 <div id="info-area" className="info-area">
                   <p>
                     {getAdvice(data.recommendationAdvice, wardVotes[0])}
@@ -294,7 +288,6 @@ export default function WardElection({ data }: Props) {
               </div>
             </div>
           </div>
-
         </div>
       </header>
 
