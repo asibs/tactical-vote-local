@@ -22,6 +22,7 @@ import {
   faLightbulb,
   faChartSimple,
   faUser,
+  faIdCard,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons'
 import facebookSquare from '../assets/facebook-square.svg'
@@ -39,7 +40,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "NO_ELECTION_FOUND":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
           <strong>Sorry, we dont&apos;t have a recommendation in this ward</strong><br />
           <i>This looks like a new ward, or a ward whose name or boundary has changed - so
           we can&apos;t see which parties did best here at the last election</i>
@@ -48,7 +49,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "TOP_3_MISMATCH_INDEPENDENT_WON":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
           <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>It looks like an independent candidate or smaller party won in this ward at the last election</i>
         </>
@@ -56,14 +57,14 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "TOP_3_MISMATCH":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
           <strong>Sorry, we don&apos;t have a recommendation in this ward</strong>
         </>
       )
     case "CON_WIN_SECOND_NOT_PROGRESSIVE":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
           <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>It looks like the Tories won in this ward last time, and an independent candidate or smaller party
           came second, so we&apos;re not sure which party is most likely to beat the Tories here</i>
@@ -72,7 +73,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "INDEPENDENT_WON":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
           <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>It looks like an independent candidate or smaller party won in this ward at the last election</i>
         </>
@@ -80,7 +81,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "PROGRESSIVES_TOO_CLOSE_NO_RECC":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
           <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>Multiple progressive parties performed similarly in this ward at the last election, and we
           can&apos;t tell which is most likely to beat the Tories this time</i>
@@ -89,7 +90,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "PROGRESSIVES_TOO_CLOSE":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
           <strong>Sorry, we don&apos;t have a recommendation for all your votes in this ward</strong><br />
           <i>The recommended party aren&apos;t standing enough candidates for all your votes in this ward,
           and we can&apos;t tell which party is next most likely to beat the Tories</i>
@@ -98,7 +99,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
     case "VOTE_FOR_PREFERRED_PROGRESSIVE":
       return (
         <>
-          <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+          <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
           <strong>Vote for your preferred progressive party</strong><br />
           <i>Based on the last election, we think the Tories are unlikely to win
           in this ward, so tactical voting in this ward probably isn&apos;t necessary</i>
@@ -108,24 +109,24 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       if (advice !== "" && advice !== "EMPTY") {
         return (
           <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+            <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
             {advice}
           </>
         )
       } else if (firstRecommendedParty === "none") {
         return (
           <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
+            <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
             <strong>Sorry, we don&apos;t have a recommendation in this ward</strong>
           </>
         )
       } else {
         return (
           <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-            Based on the previous election results in this ward and the candidates standing this time, we
-            think <strong>{getHumanReadablePartyName(firstRecommendedParty)}</strong> have
-            the best chance of beating the Tories.
+            <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
+            We think <strong>{getHumanReadablePartyName(firstRecommendedParty)}</strong> have
+            the best chance of beating the Tories in this ward - based on the previous election
+            results and the candidates standing this time.
           </>
         )
       }
@@ -272,20 +273,26 @@ export default function WardElection({ data }: Props) {
                   </p>
                   {data.lastElectionResultsUrl && (
                     <p>
-                      <FontAwesomeIcon icon={faChartSimple} className="fas" color="green" />
+                      <FontAwesomeIcon icon={faChartSimple} className="fas" color="Green" />
                       <a href={data.lastElectionResultsUrl} target="_blank" rel="noreferrer">
                         View previous election results for this council & ward on Wikipedia
                       </a>
                     </p>
                   )}
                   <p>
-                    <FontAwesomeIcon icon={faUser} className="fas" color="blue" />
+                    <FontAwesomeIcon icon={faUser} className="fas" color="DeepSkyBlue" />
                     <a href={`https://whocanivotefor.co.uk/elections/local.${data.councilSlug}.${data.wardSlug}.2023-05-04/`} target="_blank" rel="noreferrer">
-                      Find out about the candidates standing in this ward on WhoCanIVoteFor
+                      Find out about the candidates in this ward on WhoCanIVoteFor
                     </a>
                   </p>
                   <p>
-                    <FontAwesomeIcon icon={faTriangleExclamation} className="fas" color="red" />
+                    <FontAwesomeIcon icon={faIdCard} className="fas" color="MidnightBlue" />
+                    <a href="https://www.electoralcommission.org.uk/i-am-a/voter/voter-id/accepted-forms-photo-id" target="_blank" rel="noreferrer">
+                      Don&apos;t forget your Photo ID!
+                    </a>
+                  </p>
+                  <p>
+                    <FontAwesomeIcon icon={faTriangleExclamation} className="fas" color="Red" />
                     It looks like there {data.seatsContested === 1 ? "is 1 seat" : `are ${data.seatsContested} seats`} up for
                     election in this ward so you should have {data.seatsContested} vote{data.seatsContested > 1 && "s"}. <strong>But
                     always double check your ballot paper to make sure!</strong>
