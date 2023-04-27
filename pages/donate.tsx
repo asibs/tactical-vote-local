@@ -6,13 +6,13 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 
 export default function Donate() {
-  {/*
+  const url = "https://www.crowdfunder.co.uk/p/stopthetories"
+
   const router = useRouter()
 
   useEffect(() => {
-    setTimeout(() => router.push("https://google.com"), 2000);
+    setTimeout(() => router.push(url), 2000);
   }, [])
-  */}
 
   return (
     <Layout>
@@ -25,14 +25,13 @@ export default function Donate() {
         <div className="container-fluid py-3 py-md-5">
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h4>Coming Soon...</h4>
-
-              {/*
-              <h4>Redirecting you</h4>
+              <h4 className="pb-5">Redirecting you to our crowdfunder page</h4>
               <p>
-                If you&apos;re not redirected automatically, please <a href="https://google.com" target="_blank" rel="noreferrer">click here</a>
+                <a href={url} target="_blank" rel="noreferrer">
+                  Please click here if you&apos;re not redirected automatically after 3 seconds
+                </a>
               </p>
-              */}
+              <p><a href={url} target="_blank" rel="noreferrer">{url}</a></p>
             </div>
           </div>
         </div>
