@@ -48,7 +48,7 @@ export default function About() {
               <p>If an independent candidate is standing or is incumbent in a seat, we encourage you to find out what you can about them before committing to your vote.</p>
 
               <h3 className="mt-5">Missing elections</h3>
-              <p>Not everywhere has elections this year, most English councils have elections, but some don't - such as London councils.</p>
+              <p>Not everywhere has elections this year, most English councils have elections, but some don&apos;t - such as London councils.</p>
               <p><Link href="/reminders">Sign up for updates</Link> for information about future elections, there&apos;s plenty to get involved in!</p>
 
               <h3 className="mt-5">Wards without recommendations</h3>
