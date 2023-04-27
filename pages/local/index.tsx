@@ -33,7 +33,7 @@ export default function BrowseCouncils({ councils }: Props) {
           <div className="row pb-5">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="position-sticky py-3">Target Tory councils</h3>
-              <p>Councils controlled by the Tory party - or Tory coalitions - that we have a good chance of taking back!</p>
+              <p>Councils controlled by the Tory party - or Tory coalitions - that we have a great chance of taking back!</p>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
@@ -55,7 +55,7 @@ export default function BrowseCouncils({ councils }: Props) {
           <div className="row pb-5">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="position-sticky py-3">Other Tory councils</h3>
-              <p>Councils controlled by the Tory party that will be harder to take back.</p>
+              <p>Councils with big Tory majorities - we need everyone to vote tactically if we want to take back these councils!</p>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
@@ -99,7 +99,7 @@ export default function BrowseCouncils({ councils }: Props) {
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="position-sticky py-3">Councils with byelections</h3>
-              <p>Councils where only 1 or 2 seats are up for election</p>
+              <p>Councils where only 1 or 2 seats are up for election.</p>
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">

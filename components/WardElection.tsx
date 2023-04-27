@@ -40,7 +40,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <strong>Sorry, we dont&apos;t have a recommendation in this ward</strong><br />
           <i>This looks like a new ward, or a ward whose name or boundary has changed - so
           we can&apos;t see which parties did best here at the last election</i>
         </>
@@ -49,7 +49,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>It looks like an independent candidate or smaller party won in this ward at the last election</i>
         </>
       )
@@ -57,14 +57,14 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong>
+          <strong>Sorry, we don&apos;t have a recommendation in this ward</strong>
         </>
       )
     case "CON_WIN_SECOND_NOT_PROGRESSIVE":
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>It looks like the Tories won in this ward last time, and an independent candidate or smaller party
           came second, so we&apos;re not sure which party is most likely to beat the Tories here</i>
         </>
@@ -73,7 +73,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>It looks like an independent candidate or smaller party won in this ward at the last election</i>
         </>
       )
@@ -81,7 +81,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation in this ward</strong><br />
+          <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>Multiple progressive parties performed similarly in this ward at the last election, and we
           can&apos;t tell which is most likely to beat the Tories this time</i>
         </>
@@ -90,7 +90,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-          <strong>Sorry, we can&apos;t make a recommendation for all your votes in this ward</strong><br />
+          <strong>Sorry, we don&apos;t have a recommendation for all your votes in this ward</strong><br />
           <i>The recommended party aren&apos;t standing enough candidates for all your votes in this ward,
           and we can&apos;t tell which party is next most likely to beat the Tories</i>
         </>
@@ -116,7 +116,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
         return (
           <>
             <FontAwesomeIcon icon={faLightbulb} className="fas" color="orange" />
-            <strong>Sorry, we can&apos;t make a recommendation in this ward</strong>
+            <strong>Sorry, we don&apos;t have a recommendation in this ward</strong>
           </>
         )
       } else {
@@ -144,7 +144,7 @@ const getHumanReadablePartyName = (party: string) => {
       return "Green"
       break;
     default:
-      return "Unsure"
+      return "Not Clear"
   }
 }
 
@@ -173,14 +173,14 @@ export default function WardElection({ data }: Props) {
                 </Link>
                 {data.priority === 1 && (
                   <p>
-                    {data.councilName} is currently under Tory control&nbsp;-&nbsp;
-                    <strong>but we have a great chance of taking it back on May 4th!</strong>
+                    {data.councilName} is under Tory control&nbsp;-&nbsp;
+                    <strong>but if we vote tactically we will win it back on May 4th!</strong>
                   </p>
                 )}
                 {data.priority === 2 && (
                   <p>
-                    {data.councilName} is currently under Tory control&nbsp;-&nbsp;
-                    <strong>let&apos;s take it back!</strong>
+                    {data.councilName} has a big Tory majority&nbsp;-&nbsp;
+                    <strong>we need everyone to vote tactically to win back this council!</strong>
                   </p>
                 )}
                 {data.priority === 3 && (
@@ -209,9 +209,15 @@ export default function WardElection({ data }: Props) {
                 {/* RECOMMENDATIONS */}
                 {allNoRecommendation
                   ? (
-                      <div>
+                      <div className="pb-3">
                         <h6>Tactical Vote</h6>
-                        <h3 className="party party-none">Unsure</h3>
+                        <h3 className="party party-none">
+                          {data.recommendationAdvice === "VOTE_FOR_PREFERRED_PROGRESSIVE"
+                            ? "Tories unlikely to win here"
+                            : "Hard To Call"
+                          }
+                        </h3>
+                        <h4>Vote for your preferred progressive party</h4>
                       </div>
                     )
                   : wardVotes.map((party, index) => {

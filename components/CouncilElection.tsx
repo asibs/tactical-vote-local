@@ -33,14 +33,14 @@ export default function CouncilElection({ data }: Props) {
                 <h2 className="text-uppercase fw-bold">{`${data.councilName} Council`}</h2>
                 {data.priority === 1 && (
                   <p>
-                    {data.councilName} is currently under Tory control&nbsp;-&nbsp;
-                    <strong>but we have a great chance of taking it back on May 4th!</strong>
+                    {data.councilName} is under Tory control&nbsp;-&nbsp;
+                    <strong>but if we vote tactically we will win it back on May 4th!</strong>
                   </p>
                 )}
                 {data.priority === 2 && (
                   <p>
-                    {data.councilName} is currently under Tory control&nbsp;-&nbsp;
-                    <strong>let&apos;s take it back!</strong>
+                  {data.councilName} has a big Tory majority&nbsp;-&nbsp;
+                  <strong>we need everyone to vote tactically to win back this council!</strong>
                   </p>
                 )}
                 {data.priority === 3 && (
