@@ -80,7 +80,7 @@ export default function Footer() {
         <p className="my-3">
           <Link href="/donate" className="btn btn-primary btn-sm me-2" role="button">Donate</Link>
           <Link href="/about" className="btn btn-link btn-sm me-2" role="button">About</Link>
-          &nbsp;
+          <Link href="/contact" className="btn btn-link btn-sm me-2" role="button">Contact</Link>
         </p>
 
         {/* POWERED BY DEMOCRACY CLUB FOOTER */}
