@@ -33,7 +33,7 @@ export default function Contact() {
                 Please find our launch press release here:
                 <br />
                 <a href="/launch-of-uks-first-tactical-voting-website-for-uk-local-election-28-04-2023.pdf" target="_blank" rel="noreferrer">
-                  LAUNCH OF UK'S FIRST TACTICAL VOTING WEBSITE FOR UK LOCAL ELECTIONS [PDF]
+                  LAUNCH OF UK&apos;S FIRST TACTICAL VOTING WEBSITE FOR UK LOCAL ELECTIONS [PDF]
                 </a>
               </p>
             </div>
