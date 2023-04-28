@@ -50,6 +50,7 @@ export default function About() {
               <h3 className="mt-5">Wards without recommendations</h3>
               <p>In some cases ward names or boundaries have changed, meaning there&apos;s no historic voting data for us to use.</p>
               <p>In priority cases we&apos;ve tried to calculate a recommendation manually if there was a clear progressive vote in the previous shape of ward.</p>
+              <p>In wards where the Tories were a distant 3rd place (or worse) at the last election, we also don&apos;t make a recommendation. It's probably not necessary to vote tactically in these wards - so vote for your preferred progressive candidate!</p>
 
               <h3 id="missing-elections" className="mt-5">Missing elections</h3>
               <p>Not everywhere has elections this year. Most English councils have elections, but some don&apos;t - such as London councils.</p>
