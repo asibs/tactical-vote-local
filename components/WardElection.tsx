@@ -41,7 +41,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       return (
         <>
           <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
-          <strong>Sorry, we dont&apos;t have a recommendation in this ward</strong><br />
+          <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
           <i>This looks like a new ward, or a ward whose name or boundary has changed - so
           we can&apos;t see which parties did best here at the last election</i>
         </>
