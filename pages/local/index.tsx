@@ -37,7 +37,13 @@ export default function BrowseCouncils({ councils }: Props) {
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
-                  {councils.filter((c) => c.priority === 1).map((council) => {
+                  {councils.filter((c) => c.priority === 1).sort((a,b) => {
+                    const x = a.name.toLowerCase()
+                    const y = b.name.toLowerCase()
+                    if (x < y) {return -1;}
+                    if (x > y) {return 1;}
+                    return 0;
+                  }).map((council) => {
                     return (
                       <li key={council.slug}>
                         <Link className="party party-conservative" href={`/local/${council.slug}`}>
@@ -59,7 +65,13 @@ export default function BrowseCouncils({ councils }: Props) {
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
-                  {councils.filter((c) => c.priority === 2).map((council) => {
+                  {councils.filter((c) => c.priority === 2).sort((a,b) => {
+                    const x = a.name.toLowerCase()
+                    const y = b.name.toLowerCase()
+                    if (x < y) {return -1;}
+                    if (x > y) {return 1;}
+                    return 0;
+                  }).map((council) => {
                     return (
                       <li key={council.slug}>
                         <Link className="party party-conservative" href={`/local/${council.slug}`}>
@@ -81,7 +93,13 @@ export default function BrowseCouncils({ councils }: Props) {
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
-                  {councils.filter((c) => c.priority === 3).map((council) => {
+                  {councils.filter((c) => c.priority === 3).sort((a,b) => {
+                    const x = a.name.toLowerCase()
+                    const y = b.name.toLowerCase()
+                    if (x < y) {return -1;}
+                    if (x > y) {return 1;}
+                    return 0;
+                  }).map((council) => {
                     return (
                       <li key={council.slug}>
                         <Link className="party party-none" href={`/local/${council.slug}`}>
@@ -103,7 +121,13 @@ export default function BrowseCouncils({ councils }: Props) {
               <p><a href="#search">Find your council and how to vote in your ward</a></p>
               <div className="two-columns three-columns">
                 <ul className="list-of-councils">
-                  {councils.filter((c) => c.priority === 4).map((council) => {
+                  {councils.filter((c) => c.priority === 4).sort((a,b) => {
+                    const x = a.name.toLowerCase()
+                    const y = b.name.toLowerCase()
+                    if (x < y) {return -1;}
+                    if (x > y) {return 1;}
+                    return 0;
+                  }).map((council) => {
                     return (
                       <li key={council.slug}>
                         <Link className="party party-none" href={`/local/${council.slug}`}>
