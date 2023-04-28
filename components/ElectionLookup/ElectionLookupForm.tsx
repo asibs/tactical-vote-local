@@ -107,11 +107,17 @@ export default function ElectionLookup() {
 
       {step === 'NO_ELECTION' && (
         <div className="my-3">
-          <p className="mb-3">
-            <i>Looks like there&apos;s not a local election in your area on Thursday 4th May.</i><br />
-            <strong>But you can still help Stop The Tories by spreading the word!</strong>
+          <p className="mb-5">
+            <i>Looks like there&apos;s not a local election in your area on Thursday 4th May.</i>
+            <br />
+            <Link href="/about#missing-elections">
+              <strong>Are we missing your local election? Let us know!</strong>
+            </Link>
           </p>
 
+          <p>
+            <strong>Even if you don&apos;t have an election, you can help Stop The Tories by spreading the word!</strong>
+          </p>
           <div style={{ minWidth: "340px", maxWidth: "450px" }}>
             <div className="btn-group-vertical mb-3 w-100" role="group">
               <ShareButton
@@ -128,9 +134,9 @@ export default function ElectionLookup() {
             </div>
           </div>
 
-          <p>
+          <p className="mt-4">
             <a href="#" onClick={() => setStep('LOOKUP_POSTCODE')}>
-              Or lookup a different postcode
+              Lookup a different postcode
             </a>
           </p>
         </div>
