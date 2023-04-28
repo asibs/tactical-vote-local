@@ -19,6 +19,10 @@ export default function Reminders() {
               <p>Get our newsletter, updates, and the important reminders you need just at the right times.</p>
 
               <ActionNetworkContactForm />
+
+              <p className="fs-6">
+                <a href="https://themovementforward.com/privacy/" target="_blank" rel="noreferrer">Privacy Policy</a>
+              </p>
             </div>
           </div>
         </div>

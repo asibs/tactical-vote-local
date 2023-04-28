@@ -81,6 +81,7 @@ export default function Footer() {
           <Link href="/donate" className="btn btn-primary btn-sm me-2" role="button">Donate</Link>
           <Link href="/about" className="btn btn-link btn-sm me-2" role="button">About</Link>
           <Link href="/contact" className="btn btn-link btn-sm me-2" role="button">Contact</Link>
+          <a href="https://themovementforward.com/privacy/" target="_blank" rel="noreferrer" className="btn btn-link btn-sm me-2" role="button">Privacy</a>
         </p>
 
         {/* POWERED BY DEMOCRACY CLUB FOOTER */}
