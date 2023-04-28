@@ -47,15 +47,16 @@ export default function About() {
               <p>For this reason it&apos;s very hard to know much about their politics, and so we made the decision to only make recommendations for candidates from Labour, the Liberal Democrats, and The Green Party.</p>
               <p>If an independent candidate is standing or is incumbent in a seat, we encourage you to find out what you can about them before committing to your vote.</p>
 
-              <h3 className="mt-5">Missing elections</h3>
-              <p>Not everywhere has elections this year, most English councils have elections, but some don&apos;t - such as London councils.</p>
-              <p><Link href="/reminders">Sign up for updates</Link> for information about future elections, there&apos;s plenty to get involved in!</p>
-
               <h3 className="mt-5">Wards without recommendations</h3>
               <p>In some cases ward names or boundaries have changed, meaning there&apos;s no historic voting data for us to use.</p>
               <p>In priority cases we&apos;ve tried to calculate a recommendation manually if there was a clear progressive vote in the previous shape of ward.</p>
 
-              <h3 className="mt-5">Have some info we need to know?</h3>
+              <h3 id="missing-elections" className="mt-5">Missing elections</h3>
+              <p>Not everywhere has elections this year. Most English councils have elections, but some don&apos;t - such as London councils.</p>
+              <p><strong>If we&apos;re missing information about an election, please <a href="#info-we-need">let us know</a> using the Google form below</strong> - include the name of your council & ward, your postcode, and any links about the election in your area.</p>
+              <p>If you don&apos;t have an election at the moment, you can still share the site with people you know who live elsewhere in the country, and you can <Link href="/reminders">sign up for updates</Link> for information about future elections - there&apos;s plenty to get involved in!</p>
+
+              <h3 id="info-we-need" className="mt-5">Have some info we need to know?</h3>
               <p>Sometimes there&apos;s something we missed - if you can link us to information we should take into account, please let us know.</p>
               <p>Fill in this Google form with the info you have.</p>
               <p><a className="btn btn-primary btn-sm me-2" role="button" href="https://forms.gle/8eYAwTVh728W31bN7" style={{ ["--bs-body-font-size" as any]: "2rem" }} target="_blank" rel="noreferrer">Submit info</a></p>
