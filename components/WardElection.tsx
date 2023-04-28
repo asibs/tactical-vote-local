@@ -233,38 +233,11 @@ export default function WardElection({ data }: Props) {
                 })}
                 <p>
                   <small>
-                    <a href="#info-area">Find out why we made this recommendation.</a><br />
-                    Know something we don&apos;t? <Link href="/about">Let us know</Link>.<br />
+                    <a href="#share-actions">Spread the word to stop the tories!</a><br />
+                    Know something we don&apos;t? <Link href="/about#info-we-need">Let us know</Link>.<br />
                     Don&apos;t live here? <a href="#search">Find your area</a>.
                   </small>
                 </p>
-
-                {/* ACTIONS */}
-                <div className="px-1" style={{ minWidth: "340px", maxWidth: "450px" }}>
-                  <p className="mb-1"><i><strong>Spread the word to help stop the Tories!</strong></i></p>
-                  <div className="btn-group-vertical mb-3 w-100" role="group">
-                    <ShareButton
-                      url={`https://stopthetories.vote/local/${data.councilSlug}`}
-                      shareTitle="Stop The Tories on May 4th"
-                      shareText="Vote tactically to take back your local council!"
-                    />
-                    <CopyButton
-                      textToCopy={`https://stopthetories.vote/local/${data.councilSlug}`}
-                      buttonText="Copy link to share this page"
-                      onClickButtonText="Link copied - now share it!"
-                    />
-                    <DownloadPosterButton />
-                  </div>
-
-                  <p className="mb-1"><i><strong>Keep up-to-date</strong></i></p>
-                  <div className="btn-group-vertical mb-5 w-100" role="group">
-                    <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
-                      <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
-                      Get reminders
-                    </Link>
-                    <FacebookGroupsButton groups={data.localGroups}/>
-                  </div>
-                </div>
 
                 {/* RECOMMENDATIONS EXTRA INFO */}
                 <div id="info-area" className="info-area">
@@ -305,6 +278,33 @@ export default function WardElection({ data }: Props) {
       </header>
 
       <main>
+        {/* ACTIONS */}
+        <div id="share-actions" className="px-3 pt-3 offset-md-2" style={{ minWidth: "340px", maxWidth: "450px" }}>
+          <p className="mb-1"><i><strong>Spread the word to help stop the Tories!</strong></i></p>
+          <div className="btn-group-vertical mb-3 w-100" role="group">
+            <ShareButton
+              url={`https://stopthetories.vote/local/${data.councilSlug}`}
+              shareTitle="Stop The Tories on May 4th"
+              shareText="Vote tactically to take back your local council!"
+            />
+            <CopyButton
+              textToCopy={`https://stopthetories.vote/local/${data.councilSlug}`}
+              buttonText="Copy link to share this page"
+              onClickButtonText="Link copied - now share it!"
+            />
+            <DownloadPosterButton />
+          </div>
+
+          <p className="mb-1"><i><strong>Keep up-to-date</strong></i></p>
+          <div className="btn-group-vertical mb-3 w-100" role="group">
+            <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
+              <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
+              Get reminders
+            </Link>
+            <FacebookGroupsButton groups={data.localGroups}/>
+          </div>
+        </div>
+
         {/* ALL WARDS FOR THIS COUNCIL */}
         <WardsSummary councilSlug={data.councilSlug} wards={data.allCouncilWards}>
           <h3 className="text-uppercase position-sticky py-3">

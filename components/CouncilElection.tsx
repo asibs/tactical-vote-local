@@ -76,7 +76,7 @@ export default function CouncilElection({ data }: Props) {
         </WardsSummary>
 
         {/* ACTIONS */}
-        <div className="px-3 offset-md-2" style={{ minWidth: "340px", maxWidth: "450px" }}>
+        <div className="px-3 py-3 offset-md-2" style={{ minWidth: "340px", maxWidth: "450px" }}>
           <p className="mb-1"><i><strong>Spread the word to help stop the Tories!</strong></i></p>
           <div className="btn-group-vertical mb-3 w-100" role="group">
             <ShareButton
@@ -93,7 +93,7 @@ export default function CouncilElection({ data }: Props) {
           </div>
 
           <p className="mb-1"><i><strong>Keep up-to-date</strong></i></p>
-          <div className="btn-group-vertical mb-5 w-100" role="group">
+          <div className="btn-group-vertical mb-3 w-100" role="group">
             <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
               <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
               Get reminders
