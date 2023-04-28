@@ -13,7 +13,20 @@ export default function Contact() {
         <div className="container-fluid py-3 py-md-5">
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3>Social Media</h3>
+              <h3>Contact Form</h3>
+              <p>
+                If we&apos;ve missed somthing and you can link us to information we should take into account,
+                please let us know by filling in the Google form below.
+              </p>
+              <p>
+                <a className="btn btn-primary btn-sm me-2" role="button" href="https://forms.gle/8eYAwTVh728W31bN7" style={{ ["--bs-body-font-size" as any]: "2rem" }} target="_blank" rel="noreferrer">Submit info</a>
+              </p>
+              <p>
+                We can&apos;t reply to everything, but all info will be taken into consideration. Thanks!
+              </p>
+
+
+              <h3 className="mt-5">Social Media</h3>
               <p>
                 Twitter&nbsp;<a href="https://twitter.com/MVTFWD" target="_blank" rel="noreferrer">@MVTFWD</a>
                 &nbsp;|&nbsp;
@@ -24,6 +37,11 @@ export default function Contact() {
               </p>
 
               <h3 className="mt-5">Email</h3>
+              <p>
+                please use the contact form above for any information that will help us make better tactical voting
+                recommendations, or if you think we&apos;re missing an election in your area. This will help us keep
+                track of all the information submitted.
+              </p>
               <p>
                 <a href="mailto:team@mvtfwd.com" target="_blank" rel="noreferrer">team@mvtfwd.com</a>
               </p>
