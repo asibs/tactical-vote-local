@@ -27,6 +27,15 @@ export default function Contact() {
               <p>
                 <a href="mailto:team@mvtfwd.com" target="_blank" rel="noreferrer">team@mvtfwd.com</a>
               </p>
+
+              <h3 className="mt-5">Press</h3>
+              <p>
+                Please find our launch press release here:
+                <br />
+                <a href="/launch-of-uks-first-tactical-voting-website-for-uk-local-election-28-04-2023.pdf" target="_blank" rel="noreferrer">
+                  LAUNCH OF UK'S FIRST TACTICAL VOTING WEBSITE FOR UK LOCAL ELECTIONS [PDF]
+                </a>
+              </p>
             </div>
           </div>
         </div>
