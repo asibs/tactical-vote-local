@@ -84,6 +84,7 @@ export default function Footer() {
         </p>
 
         {/* POWERED BY DEMOCRACY CLUB FOOTER */}
+        {/* - REMOVED FOR NOW AT DC REQUEST
         <div className="my-5">
           <p className="mb-1">
             Elections data and postcode lookup powered by <a href="https://democracyclub.org.uk/" target="_blank" rel="noreferrer">Democracy Club</a>
@@ -92,6 +93,7 @@ export default function Footer() {
             <Image src={demoClubLogo} alt="Movement Forward logo" />
           </a>
         </div>
+        */}
 
       </div>
     </footer>
