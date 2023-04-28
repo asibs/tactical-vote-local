@@ -23,7 +23,7 @@ const getWardVotes = (seatsContested: number, vote1: string, vote2: string, vote
 
 export default function WardsSummary({ councilSlug, wards, children }: Props) {
   return (
-    <div className="py-3 offset-md-2">
+    <div className="px-3 py-3 offset-md-2">
       {children}
 
       <p>
