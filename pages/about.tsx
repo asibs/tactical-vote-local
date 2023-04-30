@@ -74,7 +74,7 @@ export default function About() {
               <p>We aim to continue the development of this platform and support campaigns to help people show up and own their future!</p>
               <p>You can donate to our Crowdfunder, or get in touch to talk about larger or ongoing support.</p>
               <p className="my-3">
-                <Link className="btn btn-primary btn-sm me-2" role="button" href="/donate" style={{ ["--bs-body-font-size" as any]: "2rem" }}>
+                <Link className="btn btn-primary btn-lg me-2" role="button" href="/donate">
                   Donate
                 </Link>
                 <Link className="btn btn-secondary btn-sm me-2" role="button" href="/contact">

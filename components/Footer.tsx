@@ -10,6 +10,7 @@ import {
   faSearch,
   faFileDownload,
   faVoteYea,
+  faHandHoldingHeart,
 } from '@fortawesome/free-solid-svg-icons'
 import twitterSquare from "../assets/twitter-square.svg";
 import facebookSquare from "../assets/facebook-square.svg";
@@ -41,6 +42,10 @@ export default function Footer() {
           <Link href="/" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faVoteYea} fixedWidth className="fas text-white" />
             Who to vote for
+          </Link>
+          <Link href="/donate" className="btn btn-primary btn-lg" role="button">
+            <FontAwesomeIcon icon={faHandHoldingHeart} fixedWidth className="fas text-white" />
+            Help keep this site running
           </Link>
         </div>
       </div>

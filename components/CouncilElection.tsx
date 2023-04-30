@@ -13,7 +13,7 @@ import WardsSummary from './WardsSummary'
 import { CouncilElectionData } from '../types'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell } from '@fortawesome/free-solid-svg-icons'
+import { faBell, faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
   data: CouncilElectionData
@@ -90,6 +90,14 @@ export default function CouncilElection({ data }: Props) {
               onClickButtonText="Link copied - now share it!"
             />
             <DownloadPosterButton />
+          </div>
+
+          <p className="mb-1"><i><strong>Help us cover the costs of running this site and make it even better!</strong></i></p>
+          <div className="btn-group-vertical mb-3 w-100" role="group">
+            <Link href="/donate" className="btn btn-primary btn-lg" role="button">
+              <FontAwesomeIcon icon={faHandHoldingHeart} fixedWidth className="fas text-white" />
+              Donate
+            </Link>
           </div>
 
           <p className="mb-1"><i><strong>Keep up-to-date</strong></i></p>

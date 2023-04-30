@@ -24,6 +24,7 @@ import {
   faUser,
   faIdCard,
   faTriangleExclamation,
+  faHandHoldingHeart,
 } from '@fortawesome/free-solid-svg-icons'
 import facebookSquare from '../assets/facebook-square.svg'
 import facebookSquareBlue from '../assets/facebook-square-blue.svg'
@@ -293,6 +294,14 @@ export default function WardElection({ data }: Props) {
               onClickButtonText="Link copied - now share it!"
             />
             <DownloadPosterButton />
+          </div>
+
+          <p className="mb-1"><i><strong>Help us cover the costs of running this site and make it even better!</strong></i></p>
+          <div className="btn-group-vertical mb-3 w-100" role="group">
+            <Link href="/donate" className="btn btn-primary btn-lg" role="button">
+              <FontAwesomeIcon icon={faHandHoldingHeart} fixedWidth className="fas text-white" />
+              Donate
+            </Link>
           </div>
 
           <p className="mb-1"><i><strong>Keep up-to-date</strong></i></p>

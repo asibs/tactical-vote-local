@@ -12,6 +12,9 @@ import SelectAddress from './SelectAddress'
 import { getPathFromElectionId } from '../../lib/democracyClub/electionIdHelpers'
 import { AddressData } from '../../types'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons'
+
 type Step = 'LOOKUP_POSTCODE' | 'SELECT_ADDRESS' | 'NO_ELECTION'
 
 export default function ElectionLookup() {
@@ -131,6 +134,10 @@ export default function ElectionLookup() {
                 onClickButtonText="Link copied - now share it!"
               />
               <DownloadPosterButton />
+              <Link href="/donate" className="btn btn-primary btn-lg" role="button">
+                <FontAwesomeIcon icon={faHandHoldingHeart} fixedWidth className="fas text-white" />
+                Help keep this site running
+              </Link>
             </div>
           </div>
 
