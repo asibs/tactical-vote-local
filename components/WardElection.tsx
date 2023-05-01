@@ -127,7 +127,7 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
             <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
             We think <strong>{getHumanReadablePartyName(firstRecommendedParty)}</strong> have
             the best chance of beating the Tories in this ward - based on the previous election
-            results and the candidates standing this time.
+            results and the number of candidates each party is standing in this ward this time.
           </>
         )
       }
