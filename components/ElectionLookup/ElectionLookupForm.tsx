@@ -111,10 +111,13 @@ export default function ElectionLookup() {
       {step === 'NO_ELECTION' && (
         <div className="my-3">
           <p className="mb-5">
-            <i>Looks like there&apos;s not a local election in your area on Thursday 4th May.</i>
+            <strong>Looks like there&apos;s not a council election in your area on Thursday 4th May *</strong>
+            <br />
+            <i>* We don&apos;t cover Parish, Community or Town Council elections - <a href="https://www.gov.uk/understand-how-your-council-works" target="_blank" rel="noreferrer">find out more about the different types of Local Council</a></i>
+            <br />
             <br />
             <Link href="/about#missing-elections">
-              <strong>Are we missing your local election? Let us know!</strong>
+              <strong>Are we missing your council election? Let us know!</strong>
             </Link>
           </p>
 
