@@ -50,7 +50,7 @@ export default function Contact() {
               <p>
                 Please find our launch press release here:
                 <br />
-                <a href="/launch-of-uks-first-tactical-voting-website-for-uk-local-election-28-04-2023.pdf" target="_blank" rel="noreferrer">
+                <a href="/launch-of-uks-first-tactical-voting-website-for-uk-local-election-02-05-2023.pdf" target="_blank" rel="noreferrer">
                   LAUNCH OF UK&apos;S FIRST TACTICAL VOTING WEBSITE FOR UK LOCAL ELECTIONS [PDF]
                 </a>
               </p>
