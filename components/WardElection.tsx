@@ -108,28 +108,40 @@ const getAdvice = (advice: string, firstRecommendedParty: string) => {
       )
     default:
       if (advice !== "" && advice !== "EMPTY") {
-        return (
-          <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
-            {advice}
-          </>
-        )
-      } else if (firstRecommendedParty === "none") {
-        return (
-          <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
-            <strong>Sorry, we don&apos;t have a recommendation in this ward</strong>
-          </>
-        )
+        if (firstRecommendedParty === "none") {
+          return (
+            <>
+              <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
+              <strong>Sorry, we don&apos;t have a recommendation in this ward</strong><br />
+              <i>{advice}</i>
+            </>
+          )
+        } else {
+          return (
+            <>
+              <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
+              {advice}
+            </>
+          )
+        }
       } else {
-        return (
-          <>
-            <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
-            We think <strong>{getHumanReadablePartyName(firstRecommendedParty)}</strong> have
-            the best chance of beating the Tories in this ward - based on the previous election
-            results and the number of candidates each party is standing in this ward this time.
-          </>
-        )
+        if (firstRecommendedParty === "none") {
+          return (
+            <>
+              <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
+              <strong>Sorry, we don&apos;t have a recommendation in this ward</strong>
+            </>
+          )
+        } else {
+          return (
+            <>
+              <FontAwesomeIcon icon={faLightbulb} className="fas" color="Orange" />
+              We think <strong>{getHumanReadablePartyName(firstRecommendedParty)}</strong> have
+              the best chance of beating the Tories in this ward - based on the previous election
+              results and the number of candidates each party is standing in this ward this time.
+            </>
+          )
+        }
       }
   }
 }
