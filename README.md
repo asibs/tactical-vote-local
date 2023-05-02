@@ -39,8 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## TODO:
 
-1. Add a `donate` endpoint (which may just redirect to a crowdfunder website, TBC)
-2. Font weights & sizes using Rubik don't seem quite right - not consistent with the wireframes for some reason...
+1. Font weights & sizes using Rubik don't seem quite right - not consistent with the wireframes for some reason...
 
 ## Future algorithm changes:
 
