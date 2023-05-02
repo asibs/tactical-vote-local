@@ -22,7 +22,7 @@ export default function About() {
 
               <h3 className="mt-5">Tactical voting sucks!</h3>
               <p>Yes, we agree!</p>
-              <p>Ideally our system of elections would be fairer, counting all votes the equally, measuring votes proportionally.</p>
+              <p>Ideally our system of elections would be fairer, counting all votes equally, measuring votes proportionally.</p>
               <p>Which is why we&apos;re supporters of Proportional Representation, which would almost remove the need for voting tactically.</p>
               <p>Not only would it make government more representative, people voting with their ideals, goals, and their hearts... it would also make it much harder to game our elections.</p>
               <p>We&apos;re members of the <a href="https://www.makevotesmatter.org.uk/the-pr-alliance" target="_blank" rel="noreferrer">Make Votes Matter Alliance</a>, along with a huge number of other organisations.</p>
