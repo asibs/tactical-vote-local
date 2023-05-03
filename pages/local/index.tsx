@@ -8,7 +8,7 @@ import Layout from '../../components/Layout'
 import Header from '../../components/Header'
 import ElectionLookup from '../../components/ElectionLookup/ElectionLookup'
 
-const ELECTION_DATA_CSV = 'data/local-tactical-2023-05-04-v17.csv'
+const ELECTION_DATA_CSV = 'data/local-tactical-2023-05-04-v19.csv'
 
 interface Props {
   councils: {
