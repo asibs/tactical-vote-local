@@ -35,11 +35,12 @@ export default function About() {
 
               <h3 className="mt-5">How we&apos;re working out the recommendations</h3>
               <p>In every ward we&apos;ve worked out which opposition party&apos;s candidate has the best chance of winning by looking back at the votes from the previous elections.</p>
-              <p>We average the votes for each party across all their candidates in the ward, and in Tory wards use this to work out which opposition parties came second, third, fourth, etc. </p>
+              <p>We average the votes for each party across all their candidates in the ward, and in Tory wards use this to work out which progrssive opposition parties came second, third, fourth, etc.</p>
               <p>We then recommend those parties to get behind.</p>
               <p>If the party we recommend isn&apos;t standing enough candidates in a ward, then we recommend the next party for the next seat. And continue to do that until we have recommendations for all seats in a ward.</p>
               <p>This can mean that we recommend candidates from multiple parties in a single ward.</p>
-              <p>Or in some circumstances that we can only offer recommendations for one or two seats, if there aren&apos;t enough opposition candidates from all parties standing in that ward, or if it&apos;s unclear which progressive party is best placed to beat the Tories.</p>
+              <p>Or in some circumstances that we can only offer recommendations for one or two seats, if there aren&apos;t enough opposition candidates from all parties standing in that ward.</p>
+              <p>If it&apos;s unclear which progressive party is best placed to beat the Tories (ie. multiple parties performed similarly at the last election) then the ward is too close to call and we don&apos;t make a recommendation.</p>
 
               <h3 className="mt-5">Independent candidates</h3>
               <p>There&apos;s more opportunity for candidates not associated with a major political party to run for election in local elections.</p>
@@ -68,6 +69,10 @@ export default function About() {
               <p>Forward Democracy also run <a href="https://mvtfwd.com" target="_blank" rel="noreferrer">The Movement Forward</a>&nbsp;and&nbsp;<a href="https://swapmyvote.uk" target="_blank" rel="noreferrer">Swap My Vote</a>.</p>
               <p>We&apos;re a group of so-far unpaid volunteers (with the exception of modest crowdfunding) who have been working on democracy projects since at least 2015. Individually much longer.</p>
               <p>We are not affiliated with any political party, or financed by them.</p>
+
+              <h3 className="mt-5">Do you favour one party over another?</h3>
+              <p>No, we use the same methodology in all wards. When we receive additional information about a ward or council, we take this into account and may update our recommendations accordingly, but we always look for evidence to back up claims submitted to us.</p>
+              <p>Currently, we are recommending people vote Labour in over 1,700 seats, Liberal Democrat in over 1,000 seats, and Green in over 300 seats. There are also many seats where we cannot make recommendations for the reasons mentioned elsewhere on this page.</p>
 
               <h3 className="mt-5">How you can support this project</h3>
               <p>This is first run of this platform, which we plan to use to mobilise voters at all upcoming elections.</p>
