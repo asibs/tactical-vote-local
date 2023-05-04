@@ -38,6 +38,11 @@ export default function Navbar() {
           </nav>
         </div>
       </div>
+      <div class="alert alert-danger" role="alert">
+        Our postcode lookup currently isn&apos;t working due to heavy load - we hope to have it back online again as soon as possible!
+        <br />
+        If you know which council & ward you are in, you can <Link href="/local">browse the list</Link> yourself.
+      </div>
     </div>
   )
 }
