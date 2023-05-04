@@ -38,10 +38,10 @@ export default function Navbar() {
           </nav>
         </div>
       </div>
-      <div class="alert alert-danger" role="alert">
-        Our postcode lookup currently isn&apos;t working due to heavy load - we hope to have it back online again as soon as possible!
+      <div className="alert alert-danger" role="alert">
+        We&apos;re experiencing heavy traffic - if the postcode lookup doesn&apos;t work, try again in a few minutes!
         <br />
-        If you know which council & ward you are in, you can <Link href="/local">browse the list</Link> yourself.
+        If you know which council & ward you&apos;re in, you can <Link href="/local">browse the list</Link> to find yours.
       </div>
     </div>
   )
