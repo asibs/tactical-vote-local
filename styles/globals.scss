@@ -448,6 +448,20 @@ a.party:hover {
   float: right;
 }
 
+.btn-pink {
+  background-color:#FF66FF;
+}
+
+.btn-pink:hover {
+  background-color:#FF99FF;
+}
+
+@media (max-width: 575px) {
+  .btn-pink {
+    width: 100%;
+  }
+}
+
 /* EXTRAS */
 
 @media (min-width: 992px) {
