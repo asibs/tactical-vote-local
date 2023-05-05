@@ -44,7 +44,7 @@ export default function Home() {
               <ActionNetworkContactForm />
 
               <p className="pt-4">
-                You can still <Link href="/browse">browse the recommendations</Link> we made for the May 4th local elections.
+                You can still <Link href="/local">browse the recommendations</Link> we made for the May 4th local elections.
               </p>
             </div>
           </div>
