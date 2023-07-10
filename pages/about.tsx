@@ -27,13 +27,13 @@ export default function About() {
               <p>Not only would it make government more representative, people voting with their ideals, goals, and their hearts... it would also make it much harder to game our elections.</p>
               <p>We&apos;re members of the <a href="https://www.makevotesmatter.org.uk/the-pr-alliance" target="_blank" rel="noreferrer">Make Votes Matter Alliance</a>, along with a huge number of other organisations.</p>
 
+              {/*
               <h3 className="mt-5">Target councils</h3>
               <p>This website is prioritising flipping Tory led councils to progressive councillors.</p>
               <p>There are over 60 councils the Tories lead where the progressive votes have a good chance of winning by tactically voting for the most likely opposition party to win in a ward.</p>
               <p>And around another 45 where it will be harder, but a higher turnout could make the difference.</p>
               <p>Many wards could change with only a handful more votes.</p>
 
-              {/*
               <h3 className="mt-5">How we&apos;re working out the recommendations</h3>
               <p>In every ward we&apos;ve worked out which opposition party&apos;s candidate has the best chance of winning by looking back at the votes from the previous elections.</p>
               <p>We average the votes for each party across all their candidates in the ward, and in Tory wards use this to work out which progrssive opposition parties came second, third, fourth, etc.</p>
