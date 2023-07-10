@@ -81,7 +81,7 @@ export default function WardElection({ constituencySlug, constituencyName, recom
                 <p>
                   <small>
                     <a href="#share-actions">Spread the word to stop the tories!</a><br />
-                    Don&apos;t live here? <a href="/">Find out if there's an election in your area</a>.
+                    Don&apos;t live here? <Link href="/">Find out if there&apos;s an election in your area</Link>.
                   </small>
                 </p>
 

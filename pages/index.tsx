@@ -29,7 +29,7 @@ export default function Home() {
         >
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-6 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3>Don't have a by-election on May 20th?</h3>
+              <h3>Don&apos;t have a by-election on May 20th?</h3>
 
               <p className="pt-4">
                 <Link href="/donate" className="btn btn-pink btn-lg" role="button">
