@@ -51,7 +51,7 @@ export default function Layout({ children }: Props) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Stop The Tories .Vote" />
         <meta property="og:description" content="There are more of us, let's show up, set the agenda, and own the future" />
-        <meta property="og:image" content="https://stopthetories.vote/stop-the-tories-vote-share-004.png" />
+        <meta property="og:image" content="https://stopthetories.vote/stop-the-tories-vote-share-005.png" />
 
         {/* Twitter meta tags for sharing */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -59,7 +59,7 @@ export default function Layout({ children }: Props) {
         <meta property="twitter:url" content="https://stopthetories.vote" />
         <meta name="twitter:title" content="Stop The Tories .Vote" />
         <meta name="twitter:description" content="There are more of us, let's show up, set the agenda, and own the future" />
-        <meta name="twitter:image" content="https://stopthetories.vote/stop-the-tories-vote-share-004.png" />
+        <meta name="twitter:image" content="https://stopthetories.vote/stop-the-tories-vote-share-005.png" />
       </Head>
 
       <div style={{ background: "var(--bs-gray-100)" }}>
