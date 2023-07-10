@@ -17,9 +17,9 @@ export default function About() {
         <div className="container-fluid py-3 py-md-5">
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h2>General FAQs</h2>
+              <h2><u>General FAQs</u></h2>
 
-              <h3>How does tactical voting work?</h3>
+              <h3 className="mt-5">How does tactical voting work?</h3>
               <p>If there is a Tory MP or councillor in your area, the best way to get them out is for as many people as possible to vote for the most likely opposition party to be able to beat them.</p>
               <p>In many places the numbers needed to flip a Tory held seat are small.</p>
               <p>So tell a friend, and share this website (<Link href="/posters">and poster</Link>) in your local community!</p>
@@ -64,8 +64,8 @@ export default function About() {
                 </Link>
                 &nbsp;
               </p>
-
-              <h2>Local Council Elections FAQs</h2>
+              
+              <h2 className="mt-5"><u>Local Council Elections FAQs</u></h2>
 
               <h3 className="mt-5">Target councils</h3>
               <p>In the May 2023 Local Elections, this website was prioritising flipping Tory led councils to progressive councillors.</p>
