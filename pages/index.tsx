@@ -23,9 +23,8 @@ export default function Home() {
 
         {/* During by-elections, we want to encourage signups / donations for the general election */}
         <div
-          id="search"
           className="container-fluid py-5"
-          style={{ background: `var(--bs-black) url(${insetShadow.src}) top no-repeat`, backgroundSize: "100%" }}
+          style={{ background: `var(--bs-gray-900) url(${insetShadow.src}) top no-repeat`, backgroundSize: "100%" }}
         >
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-6 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
