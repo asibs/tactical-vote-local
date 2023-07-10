@@ -16,8 +16,8 @@ export default function About() {
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3>How tactical voting works</h3>
-              <p>If there is a Tory councillor in your ward, the best way to get them out is to all vote for the most likely opposition candidate to be able to beat them.</p>
-              <p>In many places the numbers needed to flip a council seat are very small. This isn&apos;t a parliamentary general election and many council wards only have a few hundred voters.</p>
+              <p>If there is a Tory MP in your constituency, the best way to get them out is to all vote for the most likely opposition candidate to be able to beat them.</p>
+              <p>In many places the numbers needed to flip a constituency are small.</p>
               <p>So tell a friend, and share this website (<Link href="/posters">and poster</Link>) in your local community!</p>
 
               <h3 className="mt-5">Tactical voting sucks!</h3>
@@ -33,6 +33,7 @@ export default function About() {
               <p>And around another 45 where it will be harder, but a higher turnout could make the difference.</p>
               <p>Many wards could change with only a handful more votes.</p>
 
+              {/*
               <h3 className="mt-5">How we&apos;re working out the recommendations</h3>
               <p>In every ward we&apos;ve worked out which opposition party&apos;s candidate has the best chance of winning by looking back at the votes from the previous elections.</p>
               <p>We average the votes for each party across all their candidates in the ward, and in Tory wards use this to work out which progrssive opposition parties came second, third, fourth, etc.</p>
@@ -57,6 +58,7 @@ export default function About() {
               <p>Not everywhere has elections this year. Most English councils have elections, but some don&apos;t - such as London councils.</p>
               <p><strong>If we&apos;re missing information about an election, please <a href="#info-we-need">let us know</a> using the Google form below</strong> - include the name of your council & ward, your postcode, and any links about the election in your area.</p>
               <p>If you don&apos;t have an election at the moment, you can still share the site with people you know who live elsewhere in the country, and you can <Link href="/reminders">sign up for updates</Link> for information about future elections - there&apos;s plenty to get involved in!</p>
+              */}
 
               <h3 id="info-we-need" className="mt-5">Have some info we need to know?</h3>
               <p>Sometimes there&apos;s something we missed - if you can link us to information we should take into account, please let us know.</p>
@@ -71,8 +73,7 @@ export default function About() {
               <p>We are not affiliated with any political party, or financed by them.</p>
 
               <h3 className="mt-5">Do you favour one party over another?</h3>
-              <p>No, we use the same methodology in all wards. When we receive additional information about a ward or council, we take this into account and may update our recommendations accordingly, but we always look for evidence to back up claims submitted to us.</p>
-              <p>Currently, we are recommending people vote Labour in over 1,700 seats, Liberal Democrat in over 1,000 seats, and Green in over 300 seats. There are also many seats where we cannot make recommendations for the reasons mentioned elsewhere on this page.</p>
+              <p>No, we recommend whichever progressive party we believe is most likely to beat the Tories in each area.</p>
 
               <h3 className="mt-5">How you can support this project</h3>
               <p>This is first run of this platform, which we plan to use to mobilise voters at all upcoming elections.</p>
