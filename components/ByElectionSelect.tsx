@@ -5,8 +5,7 @@ import insetShadow from '../assets/inset-shadow.png'
 export default function ByElectionSelect() {
   return (
     <div
-      className="container-fluid py-5"
-      style={{ background: `var(--bs-pink) url(${insetShadow.src}) top no-repeat`, backgroundSize: "100%" }}
+      className="container-fluid py-5 bg-black bg-gradient"
     >
       <div className="row">
         <div className="col-12 col-md-8 col-xxl-6 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
