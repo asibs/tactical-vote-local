@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {/* Make rubik font available as a CSS var */}
       <style jsx global>{`
         :root {
-          --rubik-font: ${rubik.style.fontFamily};
+          --font-rubik: ${rubik.style.fontFamily};
         }
       `}</style>
 

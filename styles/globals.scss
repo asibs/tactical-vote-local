@@ -4,7 +4,7 @@
 /* TYPOGRAPHY */
 
 h1, h2, h3, h4, h5, h6, navbar, nav, .btn {
-  font-family: 'Rubik', sans-serif;
+  font-family: var(--font-rubik), sans-serif;
   line-height: 1;
 }
 
