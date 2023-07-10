@@ -21,7 +21,7 @@ export default function Header({ withBackgroundImage=false, children }: Props) {
             <div>
               {children}
               <p>
-                <strong>VOTE TACTICALLY</strong> in the <span style={{ textDecoration: "underline" }}>May 4th</span> local elections.
+                <strong>VOTE TACTICALLY</strong> in the <span style={{ textDecoration: "underline" }}>July 20th</span> by-elections.
               </p>
             </div>
           </div>

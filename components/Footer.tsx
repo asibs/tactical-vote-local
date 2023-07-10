@@ -31,14 +31,10 @@ export default function Footer() {
             <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
             Get reminders
           </Link>
-          <Link href="/local" className="btn btn-primary btn-lg" role="button">
-            <FontAwesomeIcon icon={faSearch} fixedWidth className="fas text-white" />
-            Browse councils
-          </Link>
-          <Link href="/posters" className="btn btn-primary btn-lg" role="button">
+          {/* <Link href="/posters" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faFileDownload} fixedWidth className="fas text-white" />
             Download a poster
-          </Link>
+          </Link> */}
           <Link href="/" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faVoteYea} fixedWidth className="fas text-white" />
             Who to vote for
