@@ -26,15 +26,32 @@ export default function Footer() {
 
       {/* FOOTER NAVIGATION BUTTONS */}
       <div className="pt-5 px-3 offset-md-2" style={{ minWidth: "340px", maxWidth: "450px" }}>
+        <p className="mb-1"><i><strong>Help pay for this site and make it even better!</strong></i></p>
+        <div className="btn-group-vertical mb-3 w-100" role="group">
+          <Link href="/donate" className="btn btn-primary btn-lg" role="button">
+            <FontAwesomeIcon icon={faHandHoldingHeart} fixedWidth className="fas text-white" />
+            Donate
+          </Link>
+        </div>
+
+        <p className="mb-1"><i><strong>Hear about our plans for the General Election!</strong></i></p>
         <div className="btn-group-vertical mb-3 w-100" role="group">
           <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
             Get reminders
           </Link>
-          {/* <Link href="/posters" className="btn btn-primary btn-lg" role="button">
+        </div>
+
+        {/*
+        <div className="btn-group-vertical mb-3 w-100" role="group">
+          <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
+            <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
+            Get reminders
+          </Link>
+          <Link href="/posters" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faFileDownload} fixedWidth className="fas text-white" />
             Download a poster
-          </Link> */}
+          </Link>
           <Link href="/" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faVoteYea} fixedWidth className="fas text-white" />
             Who to vote for
@@ -44,6 +61,7 @@ export default function Footer() {
             Help keep this site running
           </Link>
         </div>
+        */}
       </div>
 
       <div className="py-4 py-md-5 px-3 offset-md-2 links">

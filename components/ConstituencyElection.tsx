@@ -123,22 +123,6 @@ export default function WardElection({ constituencySlug, constituencyName, recom
             />
             <DownloadPosterButton />
           </div>
-
-          <p className="mb-1"><i><strong>Help us cover the costs of running this site and make it even better!</strong></i></p>
-          <div className="btn-group-vertical mb-3 w-100" role="group">
-            <Link href="/donate" className="btn btn-primary btn-lg" role="button">
-              <FontAwesomeIcon icon={faHandHoldingHeart} fixedWidth className="fas text-white" />
-              Donate
-            </Link>
-          </div>
-
-          <p className="mb-1"><i><strong>Keep up-to-date</strong></i></p>
-          <div className="btn-group-vertical mb-3 w-100" role="group">
-            <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
-              <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
-              Get reminders
-            </Link>
-          </div>
         </div>
 
       </main>
