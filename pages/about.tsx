@@ -10,14 +10,18 @@ export default function About() {
         <h1>About</h1>
       </Header>
 
+
+
       {/* Content */}
       <main>
         <div className="container-fluid py-3 py-md-5">
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <h3>How tactical voting works</h3>
-              <p>If there is a Tory MP in your constituency, the best way to get them out is to all vote for the most likely opposition candidate to be able to beat them.</p>
-              <p>In many places the numbers needed to flip a constituency are small.</p>
+              <h2>General FAQs</h2>
+
+              <h3>How does tactical voting work?</h3>
+              <p>If there is a Tory MP or councillor in your area, the best way to get them out is for as many people as possible to vote for the most likely opposition party to be able to beat them.</p>
+              <p>In many places the numbers needed to flip a Tory held seat are small.</p>
               <p>So tell a friend, and share this website (<Link href="/posters">and poster</Link>) in your local community!</p>
 
               <h3 className="mt-5">Tactical voting sucks!</h3>
@@ -27,38 +31,10 @@ export default function About() {
               <p>Not only would it make government more representative, people voting with their ideals, goals, and their hearts... it would also make it much harder to game our elections.</p>
               <p>We&apos;re members of the <a href="https://www.makevotesmatter.org.uk/the-pr-alliance" target="_blank" rel="noreferrer">Make Votes Matter Alliance</a>, along with a huge number of other organisations.</p>
 
-              {/*
-              <h3 className="mt-5">Target councils</h3>
-              <p>This website is prioritising flipping Tory led councils to progressive councillors.</p>
-              <p>There are over 60 councils the Tories lead where the progressive votes have a good chance of winning by tactically voting for the most likely opposition party to win in a ward.</p>
-              <p>And around another 45 where it will be harder, but a higher turnout could make the difference.</p>
-              <p>Many wards could change with only a handful more votes.</p>
-
-              <h3 className="mt-5">How we&apos;re working out the recommendations</h3>
-              <p>In every ward we&apos;ve worked out which opposition party&apos;s candidate has the best chance of winning by looking back at the votes from the previous elections.</p>
-              <p>We average the votes for each party across all their candidates in the ward, and in Tory wards use this to work out which progrssive opposition parties came second, third, fourth, etc.</p>
-              <p>We then recommend those parties to get behind.</p>
-              <p>If the party we recommend isn&apos;t standing enough candidates in a ward, then we recommend the next party for the next seat. And continue to do that until we have recommendations for all seats in a ward.</p>
-              <p>This can mean that we recommend candidates from multiple parties in a single ward.</p>
-              <p>Or in some circumstances that we can only offer recommendations for one or two seats, if there aren&apos;t enough opposition candidates from all parties standing in that ward.</p>
-              <p>If it&apos;s unclear which progressive party is best placed to beat the Tories (ie. multiple parties performed similarly at the last election) then the ward is too close to call and we don&apos;t make a recommendation.</p>
-
-              <h3 className="mt-5">Independent candidates</h3>
-              <p>There&apos;s more opportunity for candidates not associated with a major political party to run for election in local elections.</p>
-              <p>They cover a broad political spectrum, and there are potentially thousands of them.</p>
-              <p>For this reason it&apos;s very hard to know much about their politics, and so we made the decision to only make recommendations for candidates from Labour, the Liberal Democrats, and The Green Party.</p>
-              <p>If an independent candidate is standing or is incumbent in a seat, we encourage you to find out what you can about them before committing to your vote.</p>
-
-              <h3 className="mt-5">Wards without recommendations</h3>
-              <p>In some cases ward names or boundaries have changed, meaning there&apos;s no historic voting data for us to use.</p>
-              <p>In priority cases we&apos;ve tried to calculate a recommendation manually if there was a clear progressive vote in the previous shape of ward.</p>
-              <p>In wards where the Tories were a distant 3rd place (or worse) at the last election, we also don&apos;t make a recommendation. It&apos;s probably not necessary to vote tactically in these wards - so vote for your preferred progressive candidate!</p>
-
               <h3 id="missing-elections" className="mt-5">Missing elections</h3>
-              <p>Not everywhere has elections this year. Most English councils have elections, but some don&apos;t - such as London councils.</p>
-              <p><strong>If we&apos;re missing information about an election, please <a href="#info-we-need">let us know</a> using the Google form below</strong> - include the name of your council & ward, your postcode, and any links about the election in your area.</p>
+              <p>We&apos;re aiming to cover all elections of MPs to the houses of parliament (including by-elections), and the annual local elections - but we don&apos;t have the capacity to cover all local council by-elections.</p>
+              <p><strong>If we&apos;re missing information about an election, please <a href="#info-we-need">let us know</a> using the Google form below</strong> - include the name of the area, your postcode, and any links about the election.</p>
               <p>If you don&apos;t have an election at the moment, you can still share the site with people you know who live elsewhere in the country, and you can <Link href="/reminders">sign up for updates</Link> for information about future elections - there&apos;s plenty to get involved in!</p>
-              */}
 
               <h3 id="info-we-need" className="mt-5">Have some info we need to know?</h3>
               <p>Sometimes there&apos;s something we missed - if you can link us to information we should take into account, please let us know.</p>
@@ -88,6 +64,35 @@ export default function About() {
                 </Link>
                 &nbsp;
               </p>
+
+              <h2>Local Council Elections FAQs</h2>
+
+              <h3 className="mt-5">Target councils</h3>
+              <p>In the May 2023 Local Elections, this website was prioritising flipping Tory led councils to progressive councillors.</p>
+              <p>There were over 60 councils the Tories were leading, where progressive voters had a good chance of winning by tactically voting for the most likely opposition party to win in each ward.</p>
+              <p>There were around 45 others where it looked harder to flip, but a higher turnout could&apos;ve made the difference.</p>
+              <p>Many wards could&apos;ve changed with only a handful more votes.</p>
+
+              <h3 className="mt-5">How we&apos;re working out the recommendations</h3>
+              <p>This described how we worked out our recommendations for the May 2023 Local Elections:</p>
+              <p>In every ward we&apos;ve worked out which opposition party&apos;s candidate has the best chance of winning by looking back at the votes from the previous elections.</p>
+              <p>We average the votes for each party across all their candidates in the ward, and in Tory wards use this to work out which progrssive opposition parties came second, third, fourth, etc.</p>
+              <p>We then recommend those parties to get behind.</p>
+              <p>If the party we recommend isn&apos;t standing enough candidates in a ward, then we recommend the next party for the next seat. And continue to do that until we have recommendations for all seats in a ward.</p>
+              <p>This can mean that we recommend candidates from multiple parties in a single ward.</p>
+              <p>Or in some circumstances that we can only offer recommendations for one or two seats, if there aren&apos;t enough opposition candidates from all parties standing in that ward.</p>
+              <p>If it&apos;s unclear which progressive party is best placed to beat the Tories (ie. multiple parties performed similarly at the last election) then the ward is too close to call and we don&apos;t make a recommendation.</p>
+
+              <h3 className="mt-5">Independent candidates</h3>
+              <p>There&apos;s more opportunity for candidates not associated with a major political party to run for election in local elections.</p>
+              <p>They cover a broad political spectrum, and there are potentially thousands of them.</p>
+              <p>For this reason it&apos;s very hard to know much about their politics, and so we made the decision to only make recommendations for candidates from Labour, the Liberal Democrats, and The Green Party.</p>
+              <p>If an independent candidate is standing or is incumbent in a seat, we encourage you to find out what you can about them before committing to your vote.</p>
+
+              <h3 className="mt-5">Wards without recommendations</h3>
+              <p>In some cases ward names or boundaries change, meaning there&apos;s no historic voting data for us to use.</p>
+              <p>In priority cases we try to calculate a recommendation manually if there is a clear progressive vote in the previous shape of ward.</p>
+              <p>In wards where the Tories were a distant 3rd place (or worse) at the previous election, we also don&apos;t make a recommendation. It&apos;s probably not necessary to vote tactically in these wards - so vote for your preferred progressive candidate!</p>
             </div>
           </div>
         </div>
