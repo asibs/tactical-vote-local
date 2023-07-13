@@ -12,7 +12,7 @@ export default function ActionNetworkContactForm() {
         <div className="row">
           <div className="col-12 col-sm-8 col-xl-6 col-xxl-5">
             <link href='https://actionnetwork.org/css/style-embed-whitelabel-v3.css' rel='stylesheet' type='text/css' />
-            <Script src='https://actionnetwork.org/widgets/v5/form/stop-the-tories?format=js&source=widget' />
+
             <div id='can-form-area-stop-the-tories' style={{ width: "100%" }}>
               {/* this div is the target for our HTML insertion */}
             </div>
@@ -150,6 +150,9 @@ export default function ActionNetworkContactForm() {
             /*********EMBEDS*********/
             /************************/
             `}</style>
+
+            {/* this script will populate the #can-form-area-stop-the-tories div, but needs to be loaded after other content */}
+            <Script src='https://actionnetwork.org/widgets/v5/form/stop-the-tories?format=js&source=widget' strategy="lazyOnload" />
           </div>
         </div>
       </div>
