@@ -5,7 +5,7 @@ export default function UxbridgeAndSouthRuislip() {
   return (
     <Layout
       shareUrl="https://stopthetories.vote/national/uxbridge-and-south-ruislip"
-      shareImage="https://stopthetories.vote/stop-the-tories-vote-july-20th-by-elections-uxbridge"
+      shareImage="https://stopthetories.vote/stop-the-tories-vote-july-20th-by-elections-uxbridge.png"
     >
       <ConstituencyElection
         constituencySlug="uxbridge-and-south-ruislip"

@@ -5,7 +5,7 @@ export default function SelbyAndAinsty() {
   return (
     <Layout
       shareUrl="https://stopthetories.vote/national/somerton-and-frome"
-      shareImage="https://stopthetories.vote/stop-the-tories-vote-july-20th-by-elections-somerset"
+      shareImage="https://stopthetories.vote/stop-the-tories-vote-july-20th-by-elections-somerset.png"
     >
       <ConstituencyElection
         constituencySlug="somerton-and-frome"
