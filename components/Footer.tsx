@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="btn-group-vertical mb-3 w-100" role="group">
           <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
-            Get reminders
+            Get alerts
           </Link>
         </div>
 
@@ -46,7 +46,7 @@ export default function Footer() {
         <div className="btn-group-vertical mb-3 w-100" role="group">
           <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
-            Get reminders
+            Get alerts
           </Link>
           <Link href="/posters" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faFileDownload} fixedWidth className="fas text-white" />

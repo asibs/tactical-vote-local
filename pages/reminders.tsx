@@ -16,7 +16,7 @@ export default function Reminders() {
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3>We&apos;ll email you what you need, when you need it.</h3>
-              <p>Get our newsletter, updates, and the important reminders you need just at the right times.</p>
+              <p>Get our newsletter, updates, and the important alerts you need just at the right times.</p>
 
               <ActionNetworkContactForm />
 

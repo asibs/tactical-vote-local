@@ -30,7 +30,7 @@ export default function Navbar() {
               <div className="collapse navbar-collapse" id="navcol-2">
                 <ul className="navbar-nav ms-auto"></ul>
                 <Link href="/reminders" className="btn btn-primary btn-sm ms-md-2" role="button">
-                  <FontAwesomeIcon icon={faBell} />Remind me
+                  <FontAwesomeIcon icon={faBell} />Get alerts
                 </Link>
               </div>
 

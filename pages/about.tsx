@@ -34,7 +34,7 @@ export default function About() {
               <h3 id="missing-elections" className="mt-5">Missing elections</h3>
               <p>We&apos;re aiming to cover all elections of MPs to the houses of parliament (including by-elections), and the annual local elections - but we don&apos;t have the capacity to cover all local council by-elections.</p>
               <p><strong>If we&apos;re missing information about an election, please <a href="#info-we-need">let us know</a> using the Google form below</strong> - include the name of the area, your postcode, and any links about the election.</p>
-              <p>If you don&apos;t have an election at the moment, you can still share the site with people you know who live elsewhere in the country, and you can <Link href="/reminders">sign up for updates</Link> for information about future elections - there&apos;s plenty to get involved in!</p>
+              <p>If you don&apos;t have an election at the moment, you can still share the site with people you know who live elsewhere in the country, and you can <Link href="/reminders">sign up for alerts</Link> for information about future elections - there&apos;s plenty to get involved in!</p>
 
               <h3 id="info-we-need" className="mt-5">Have some info we need to know?</h3>
               <p>Sometimes there&apos;s something we missed - if you can link us to information we should take into account, please let us know.</p>

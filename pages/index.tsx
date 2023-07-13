@@ -38,7 +38,7 @@ export default function Home() {
               </p>
 
               <p className="pt-4">
-                <strong>Keep up-to-date with our newsletter, updates, and important reminders</strong>
+                <strong>Keep up-to-date with our newsletter, updates, and important alerts</strong>
               </p>
               <ActionNetworkContactForm />
             </div>

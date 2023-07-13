@@ -104,7 +104,7 @@ export default function CouncilElection({ data }: Props) {
           <div className="btn-group-vertical mb-3 w-100" role="group">
             <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
               <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
-              Get reminders
+              Get alerts
             </Link>
             <FacebookGroupsButton groups={data.localGroups}/>
           </div>
