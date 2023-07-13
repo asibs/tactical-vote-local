@@ -39,8 +39,7 @@ interface Props {
 
 export default function WardElection({ constituencySlug, constituencyName, recommendedPartyCode, recommendedPartyName, recommendedCandidateName, currentlyTory }: Props) {
   return (
-    <Layout>
-
+    <>
       {/* WARD HEADER + VOTE ADVICE (all in header element) */}
       <header>
         <div className="container-fluid py-3 py-md-4">
@@ -126,6 +125,6 @@ export default function WardElection({ constituencySlug, constituencyName, recom
         </div>
 
       </main>
-    </Layout>
+    </>
   );
 }

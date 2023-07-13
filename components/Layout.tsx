@@ -29,10 +29,14 @@ const permanentMarker = Permanent_Marker({
 })
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode,
+  shareUrl?: string,
+  shareTitle?: string,
+  shareDescription?: string,
+  shareImage?: string
 }
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, shareUrl, shareTitle, shareDescription, shareImage }: Props) {
   return (
     <>
       <Head>
@@ -47,19 +51,19 @@ export default function Layout({ children }: Props) {
         <link rel="manifest" href="/site.webmanifest" />
 
         {/* Facebook meta tags for sharing */}
-        <meta property="og:url" content="https://stopthetories.vote" />
+        <meta property="og:url" content={shareUrl || "https://stopthetories.vote"} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Stop The Tories .Vote" />
-        <meta property="og:description" content="There are more of us, let's show up, set the agenda, and own the future" />
-        <meta property="og:image" content="https://stopthetories.vote/stop-the-tories-vote-share-005.jpg" />
+        <meta property="og:title" content={shareTitle || "Stop The Tories .Vote"} />
+        <meta property="og:description" content={shareDescription || "There are more of us, let's show up, set the agenda, and own the future"} />
+        <meta property="og:image" content={shareImage || "https://stopthetories.vote/stop-the-tories-vote-share-005.jpg"} />
 
         {/* Twitter meta tags for sharing */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="stopthetories.vote" />
-        <meta property="twitter:url" content="https://stopthetories.vote" />
-        <meta name="twitter:title" content="Stop The Tories .Vote" />
-        <meta name="twitter:description" content="There are more of us, let's show up, set the agenda, and own the future" />
-        <meta name="twitter:image" content="https://stopthetories.vote/stop-the-tories-vote-share-005.jpg" />
+        <meta property="twitter:url" content={shareUrl || "https://stopthetories.vote"} />
+        <meta name="twitter:title" content={shareTitle || "Stop The Tories .Vote"} />
+        <meta name="twitter:description" content={shareDescription || "There are more of us, let's show up, set the agenda, and own the future"} />
+        <meta name="twitter:image" content={shareImage || "https://stopthetories.vote/stop-the-tories-vote-share-005.jpg"} />
       </Head>
 
       <div style={{ background: "var(--bs-gray-100)" }}>
