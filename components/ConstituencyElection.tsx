@@ -89,7 +89,7 @@ export default function WardElection({ constituencySlug, constituencyName, recom
                   <p>
                     <FontAwesomeIcon icon={faUser} className="fas" color="DeepSkyBlue" />
                     <a href="https://whocanivotefor.co.uk/" target="_blank" rel="noreferrer">
-                      Find out about the candidates in this ward on WhoCanIVoteFor
+                      Find out about the candidates in this area on WhoCanIVoteFor
                     </a>
                   </p>
                   <p>
