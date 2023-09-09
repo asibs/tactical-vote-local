@@ -74,7 +74,7 @@ export default function Home() {
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-6 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <h3 className="pb-2">
-                Join the <a href="https://mvtfwd.com/" target="_blank">Movement Forward</a> newsletter
+                Join the <a href="https://mvtfwd.com/" target="_blank" rel="noreferrer">Movement Forward</a> newsletter
               </h3>
               <p>
                 Keep up-to-date with important alerts and things you can do.
@@ -82,7 +82,7 @@ export default function Home() {
               <ActionNetworkContactForm />
               <p>
                 <small className="text-muted">
-                  <a href="https://mvtfwd.com/privacy" target="_blank">Privacy Policy</a>
+                  <a href="https://mvtfwd.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>
                 </small>
               </p>
             </div>
