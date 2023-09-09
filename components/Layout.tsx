@@ -55,7 +55,7 @@ export default function Layout({ children, shareUrl, shareTitle, shareDescriptio
         <meta property="og:type" content="website" />
         <meta property="og:title" content={shareTitle || "Stop The Tories .Vote"} />
         <meta property="og:description" content={shareDescription || "There are more of us, let's show up, set the agenda, and own the future"} />
-        <meta property="og:image" content={shareImage || "https://stopthetories.vote/stop-the-tories-vote-share-005.jpg"} />
+        <meta property="og:image" content={shareImage || "https://stopthetories.vote/stop-the-tories-vote-share-007.jpg"} />
 
         {/* Twitter meta tags for sharing */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -63,7 +63,7 @@ export default function Layout({ children, shareUrl, shareTitle, shareDescriptio
         <meta property="twitter:url" content={shareUrl || "https://stopthetories.vote"} />
         <meta name="twitter:title" content={shareTitle || "Stop The Tories .Vote"} />
         <meta name="twitter:description" content={shareDescription || "There are more of us, let's show up, set the agenda, and own the future"} />
-        <meta name="twitter:image" content={shareImage || "https://stopthetories.vote/stop-the-tories-vote-share-005.jpg"} />
+        <meta name="twitter:image" content={shareImage || "https://stopthetories.vote/stop-the-tories-vote-share-007.jpg"} />
       </Head>
 
       <div style={{ background: "var(--bs-gray-100)" }}>
