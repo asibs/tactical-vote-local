@@ -25,6 +25,7 @@ export default function Footer() {
     <footer style={{ background: `var(--bs-gray-100) url(${insetShadow.src}) top no-repeat`, backgroundSize: "100%" }}>
 
       {/* FOOTER NAVIGATION BUTTONS */}
+      {/*
       <div className="pt-5 px-3 offset-md-2" style={{ minWidth: "340px", maxWidth: "450px" }}>
         <p className="mb-1"><i><strong>Help pay for this site and make it even better!</strong></i></p>
         <div className="btn-group-vertical mb-3 w-100" role="group">
@@ -41,8 +42,11 @@ export default function Footer() {
             Get alerts
           </Link>
         </div>
+      </div>
+      */}
 
-        {/*
+      {/*
+      <div className="pt-5 px-3 offset-md-2" style={{ minWidth: "340px", maxWidth: "450px" }}>
         <div className="btn-group-vertical mb-3 w-100" role="group">
           <Link href="/reminders" className="btn btn-primary btn-lg" role="button">
             <FontAwesomeIcon icon={faBell} fixedWidth className="fas text-white" />
@@ -61,8 +65,8 @@ export default function Footer() {
             Help keep this site running
           </Link>
         </div>
-        */}
       </div>
+      */}
 
       <div className="py-4 py-md-5 px-3 offset-md-2 links">
 

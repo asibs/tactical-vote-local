@@ -20,9 +20,6 @@ export default function Header({ withBackgroundImage=false, children }: Props) {
           <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 d-md-flex align-items-md-center">
             <div>
               {children}
-              <p>
-                <strong>VOTE TACTICALLY</strong> in the <span style={{ textDecoration: "underline" }}>July 20th</span> by-elections.
-              </p>
             </div>
           </div>
         </div>
