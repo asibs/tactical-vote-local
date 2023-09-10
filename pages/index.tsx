@@ -31,7 +31,7 @@ export default function Home() {
               <h3 className="pb-2">The goal is to totally dominate the narrative at the next election.</h3>
               <p>
                 We&apos;re taking tactical voting mainstream, making it clear that it was us
-                the voters who showed up to use our votes to remove the Tories.
+                - <b>the voters</b> - who showed up to use our votes to remove the Tories.
               </p>
               <p>
                 But that we shouldn&apos;t have to do that!
