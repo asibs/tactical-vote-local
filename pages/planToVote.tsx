@@ -27,14 +27,14 @@ export default function PlanToVote() {
 
               <p>
                 <FontAwesomeIcon icon={faSquareCheck} fixedWidth className="fas text-white" />
-                <a href="https://gov.uk/register-to-vote" target="_blank">
+                <a href="https://gov.uk/register-to-vote" target="_blank" rel="noreferrer">
                   Register to Vote <sup><FontAwesomeIcon icon={faUpRightFromSquare} /></sup>
                 </a>
               </p>
 
               <p>
                 <FontAwesomeIcon icon={faSquareCheck} fixedWidth className="fas text-white" />
-                <a href="https://www.gov.uk/government/publications/apply-for-a-postal-vote" target="_blank">
+                <a href="https://www.gov.uk/government/publications/apply-for-a-postal-vote" target="_blank" rel="noreferrer">
                   Request a Postal Vote <sup><FontAwesomeIcon icon={faUpRightFromSquare} /></sup>
                 </a>
               </p>
