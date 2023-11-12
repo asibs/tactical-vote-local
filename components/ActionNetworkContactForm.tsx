@@ -1,10 +1,23 @@
 import React from 'react'
 import Script from 'next/script'
 import { useEffect, useState } from 'react'
+import { useRef } from "react";
+import { useScript } from "../hooks/useScript";
 
 export default function ActionNetworkContactForm() {
+  const [isLoading, setIsLoading] = useState(true)
   const [isClientSide, setIsClientSide] = useState(false)
   useEffect(() => setIsClientSide(true), [])
+
+  const ref = useRef<HTMLDivElement>(null)
+  useScript(
+    'https://actionnetwork.org/widgets/v5/form/stop-the-tories?format=js&source=widget',
+    () => {
+      console.log('ActionNetwork script loaded')
+      setIsLoading(false)
+    },
+    ref
+  )
 
   return (
     <section>
@@ -16,6 +29,16 @@ export default function ActionNetworkContactForm() {
             <div id='can-form-area-stop-the-tories' style={{ width: "100%" }}>
               {/* this div is the target for our HTML insertion */}
             </div>
+
+            {isLoading && (
+              <div id='action-network-preload'>
+                <p>
+                  Sign-up form not here?
+                  <br />
+                  Wait a moment, or try refreshing the page.
+                </p>
+              </div>
+            )}
 
             <style global jsx>{`
             /************************/
@@ -152,7 +175,7 @@ export default function ActionNetworkContactForm() {
             `}</style>
 
             {/* this script will populate the #can-form-area-stop-the-tories div, but needs to be loaded after other content */}
-            <Script src='https://actionnetwork.org/widgets/v5/form/stop-the-tories?format=js&source=widget' strategy="lazyOnload" />
+            <div ref={ref}></div>
           </div>
         </div>
       </div>
