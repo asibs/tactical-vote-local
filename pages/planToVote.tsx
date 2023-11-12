@@ -21,8 +21,8 @@ export default function PlanToVote() {
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
               <p>
-                We don't know when the next General Election will be - but if we want to Stop The Tories, we
-                need to get organised now.
+                We don&apos;t know when the next General Election will be - but if we want to Stop The Tories,
+                we need to get organised now.
               </p>
 
               <p>
@@ -41,9 +41,13 @@ export default function PlanToVote() {
 
               <p>
                 <FontAwesomeIcon icon={faSquareCheck} fixedWidth className="fas text-white" />
-                <b>Signup for Reminders</b> - we'll keep you up-to-date on when a General Election is happening, tactical voting advice, and all the ways you can help Stop The Tories!
+                <b>Signup for Reminders</b> - we&apos;ll keep you up-to-date on when a General Election is
+                happening, tactical voting advice, and all the ways you can help Stop The Tories!
               </p>
               <ActionNetworkContactForm />
+              <p className="fs-6">
+                <a href="https://themovementforward.com/privacy/" target="_blank" rel="noreferrer">Privacy Policy</a>
+              </p>
 
               {/*
               <RWebShare
@@ -58,10 +62,6 @@ export default function PlanToVote() {
                 </button>
               </RWebShare>
               */}
-
-              <p className="fs-6">
-                <a href="https://themovementforward.com/privacy/" target="_blank" rel="noreferrer">Privacy Policy</a>
-              </p>
             </div>
           </div>
         </div>
