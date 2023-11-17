@@ -4,6 +4,9 @@ import { useEffect, RefObject } from "react"
   * loads. Without it, a script is only loaded the first time the page loads. Subsequent
   * navigations to the page via <Link> attributes don't re-load the script after the page
   * has rendered - meaning scripts which depend on running after page-load don't work.
+  * 
+  * See here: https://github.com/vercel/next.js/issues/4477#issue-326727494
+  * 
   * This includes for example the ActionNetwork script, because it replaces the content
   * of a named div, so needs to re-run after the page is fully rendered.
   */}

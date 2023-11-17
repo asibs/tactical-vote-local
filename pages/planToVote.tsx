@@ -12,7 +12,7 @@ export default function PlanToVote() {
   return (
     <Layout>
       <Header>
-        <h1>Make your plan to vote</h1>
+        <h2>Make your plan to vote</h2>
       </Header>
 
       {/* Content */}
@@ -20,15 +20,25 @@ export default function PlanToVote() {
         <div className="container-fluid py-3 py-md-5">
           <div className="row">
             <div className="col-12 col-md-8 col-xxl-8 offset-0 offset-md-2 offset-xxl-2 align-items-md-center">
-              <p>
-                We don&apos;t know when the next General Election will be - but if we want to Stop The Tories,
-                we need to get organised now.
+              <h6>The Tories are in chaos.</h6>
+              <h6>A general election could come at any moment.</h6>
+              <h6 className="text-decoration-underline">Now is the time to get organised.</h6>
+
+              <p className="pt-4 pb-3">
+                Together, we can Stop The Tories, fix our democracy, and create a fairer &amp; greener society.
               </p>
 
               <p>
                 <FontAwesomeIcon icon={faSquareCheck} fixedWidth className="fas text-white" />
                 <a href="https://gov.uk/register-to-vote" target="_blank" rel="noreferrer">
                   Register to Vote <sup><FontAwesomeIcon icon={faUpRightFromSquare} /></sup>
+                </a>
+              </p>
+
+              <p>
+                <FontAwesomeIcon icon={faSquareCheck} fixedWidth className="fas text-white" />
+                <a href="https://www.gov.uk/how-to-vote/photo-id-youll-need" target="_blank" rel="noreferrer">
+                  Get your Voter ID <sup><FontAwesomeIcon icon={faUpRightFromSquare} /></sup>
                 </a>
               </p>
 
@@ -41,10 +51,13 @@ export default function PlanToVote() {
 
               <p>
                 <FontAwesomeIcon icon={faSquareCheck} fixedWidth className="fas text-white" />
-                <b>Signup for Reminders</b> - we&apos;ll keep you up-to-date on when a General Election is
-                happening, tactical voting advice, and all the ways you can help Stop The Tories!
+                <b>Sign-up for Reminders</b>
               </p>
               <ActionNetworkContactForm />
+              <p>
+                we&apos;ll keep you up-to-date on when a General Election is
+                happening, tactical voting advice, and all the ways you can help Stop The Tories!
+              </p>
               <p className="fs-6">
                 <a href="https://themovementforward.com/privacy/" target="_blank" rel="noreferrer">Privacy Policy</a>
               </p>
