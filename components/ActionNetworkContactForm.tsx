@@ -23,7 +23,7 @@ export default function ActionNetworkContactForm() {
     <section>
       <div className="container px-0" style={{ maxWidth: "100%" }}>
         <div className="row">
-          <div className="col-12 col-sm-8 col-xl-6 col-xxl-5">
+          <div className="col-12 col-sm-10 col-xl-8 col-xxl-6">
             <link href='https://actionnetwork.org/css/style-embed-whitelabel-v3.css' rel='stylesheet' type='text/css' />
 
             <div id='can-form-area-stop-the-tories' style={{ width: "100%" }}>
